@@ -22,6 +22,19 @@ namespace Student
 
         public static List<Exercise> ToBePerformed(Student s)
         {
+            // USE THIS ONE!!!!
+//            select e.*
+//from exercise as e,
+//    (select ceRefined.exerciseId
+//    from
+//        (select *
+//        from class_exercises as ce
+//        where ce.classId = '1') as ceRefined,
+//        (select *
+//        from student_performance
+//        where studentUsername = 'rhowatt') as refinedStuPerf
+//    where ceRefined.exerciseId != refinedStuPerf.exerciseId) as exercisesLeft
+//where e.id = exercisesLeft.exerciseId;
             MySqlDataReader reader = MySQL_Manager.MySqlManager.Instance.ExecuteReader
                  (@"select classExercises.id, classExercises.name, classExercises.text
                     from
