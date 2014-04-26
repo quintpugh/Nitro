@@ -38,7 +38,6 @@
             this.panel_classes = new System.Windows.Forms.Panel();
             this.tabs_classes = new System.Windows.Forms.TabControl();
             this.tab_classes_students = new System.Windows.Forms.TabPage();
-            this.listBox_classes_studentPerformance = new System.Windows.Forms.ListBox();
             this.listBox_classes_students = new System.Windows.Forms.ListBox();
             this.tab_classes_enrollment = new System.Windows.Forms.TabPage();
             this.listBox_classes_studentsEnrolled = new System.Windows.Forms.ListBox();
@@ -84,6 +83,10 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.listView_classes_students_results = new System.Windows.Forms.ListView();
+            this.col_results_exName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_results_time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_results_errorCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel_menu.SuspendLayout();
             this.panel_main.SuspendLayout();
             this.panel_classes.SuspendLayout();
@@ -188,8 +191,8 @@
             // tabs_classes
             // 
             this.tabs_classes.Controls.Add(this.tab_classes_students);
-            this.tabs_classes.Controls.Add(this.tab_classes_enrollment);
             this.tabs_classes.Controls.Add(this.tab_classes_exercises);
+            this.tabs_classes.Controls.Add(this.tab_classes_enrollment);
             this.tabs_classes.Location = new System.Drawing.Point(129, 3);
             this.tabs_classes.Name = "tabs_classes";
             this.tabs_classes.SelectedIndex = 0;
@@ -198,7 +201,7 @@
             // 
             // tab_classes_students
             // 
-            this.tab_classes_students.Controls.Add(this.listBox_classes_studentPerformance);
+            this.tab_classes_students.Controls.Add(this.listView_classes_students_results);
             this.tab_classes_students.Controls.Add(this.listBox_classes_students);
             this.tab_classes_students.Location = new System.Drawing.Point(4, 22);
             this.tab_classes_students.Name = "tab_classes_students";
@@ -207,14 +210,6 @@
             this.tab_classes_students.TabIndex = 0;
             this.tab_classes_students.Text = "Students";
             this.tab_classes_students.UseVisualStyleBackColor = true;
-            // 
-            // listBox_classes_studentPerformance
-            // 
-            this.listBox_classes_studentPerformance.FormattingEnabled = true;
-            this.listBox_classes_studentPerformance.Location = new System.Drawing.Point(189, 6);
-            this.listBox_classes_studentPerformance.Name = "listBox_classes_studentPerformance";
-            this.listBox_classes_studentPerformance.Size = new System.Drawing.Size(443, 446);
-            this.listBox_classes_studentPerformance.TabIndex = 3;
             // 
             // listBox_classes_students
             // 
@@ -637,6 +632,34 @@
             this.textBox5.Size = new System.Drawing.Size(166, 20);
             this.textBox5.TabIndex = 0;
             // 
+            // listView_classes_students_results
+            // 
+            this.listView_classes_students_results.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.col_results_exName,
+            this.col_results_errorCount,
+            this.col_results_time});
+            this.listView_classes_students_results.FullRowSelect = true;
+            this.listView_classes_students_results.Location = new System.Drawing.Point(190, 6);
+            this.listView_classes_students_results.Name = "listView_classes_students_results";
+            this.listView_classes_students_results.Size = new System.Drawing.Size(442, 446);
+            this.listView_classes_students_results.TabIndex = 3;
+            this.listView_classes_students_results.UseCompatibleStateImageBehavior = false;
+            this.listView_classes_students_results.View = System.Windows.Forms.View.Details;
+            // 
+            // col_results_exName
+            // 
+            this.col_results_exName.Text = "Exercise";
+            // 
+            // col_results_time
+            // 
+            this.col_results_time.DisplayIndex = 1;
+            this.col_results_time.Text = "Time";
+            // 
+            // col_results_errorCount
+            // 
+            this.col_results_errorCount.DisplayIndex = 2;
+            this.col_results_errorCount.Text = "Error Count";
+            // 
             // TeacherInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,7 +699,6 @@
         private System.Windows.Forms.Panel panel_classes;
         private System.Windows.Forms.TabControl tabs_classes;
         private System.Windows.Forms.TabPage tab_classes_students;
-        private System.Windows.Forms.ListBox listBox_classes_studentPerformance;
         private System.Windows.Forms.ListBox listBox_classes_students;
         private System.Windows.Forms.TabPage tab_classes_enrollment;
         private System.Windows.Forms.ListBox listBox_classes_studentsEnrolled;
@@ -721,6 +743,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox_exercises;
+        private System.Windows.Forms.ListView listView_classes_students_results;
+        private System.Windows.Forms.ColumnHeader col_results_exName;
+        private System.Windows.Forms.ColumnHeader col_results_errorCount;
+        private System.Windows.Forms.ColumnHeader col_results_time;
 
     }
 }

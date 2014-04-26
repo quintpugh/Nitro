@@ -15,13 +15,13 @@ namespace Teacher
         Teacher teacher;
         public TeacherInterface(String username)
         {
-            InitializeComponent();
-            InitializeCallbacks();
             teacher = new Teacher(username);
+            InitializeComponent();
+            CustomInit();
             panel_classes.Visible = true;
         }
 
-        void InitializeCallbacks()
+        private void CustomInit()
         {
             this.panel_account.VisibleChanged += new System.EventHandler(this.panel_account_VisibleChanged);
             this.panel_classes.VisibleChanged += new System.EventHandler(this.panel_classes_VisibleChanged);
@@ -29,6 +29,13 @@ namespace Teacher
             this.panel_students.VisibleChanged += new System.EventHandler(this.panel_students_VisibleChanged);
             this.listBox_classes.SelectedIndexChanged += new System.EventHandler(this.listBox_classes_SelectedIndexChanged);
             this.tabs_classes.SelectedIndexChanged += new System.EventHandler(this.tabs_classes_SelectedIndexChanged);
+            this.listBox_classes_students.SelectedIndexChanged += new System.EventHandler(this.listBox_classes_students_SelectedIndexChanged);
+            
+
+            listBox_classes.DisplayMember = "name";
+            listBox_classes.ValueMember = "id";
+            listBox_classes_students.DisplayMember = "FullName";
+            listBox_classes_students.ValueMember = "username";
         }
         #region Menu Button Clicks
         private void button_menu_classes_Click(object sender, EventArgs e)
@@ -89,33 +96,76 @@ namespace Teacher
             }
             System.Diagnostics.Debug.WriteLine("classes panel visible changed");
             teacher.classes = Class.Generate(teacher);
-
             listBox_classes.DataSource = teacher.classes;
-            listBox_classes.DisplayMember = "name";
-            //listBox_classes.ValueMember = "id";?
         }
 
         private void listBox_classes_SelectedIndexChanged(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("selected index changed to: " + listBox_classes.SelectedIndex);
+            if(tabs_classes.SelectedTab == tab_classes_students)
+            {
+                PopulateClassesStudentsTab();
+            }
+            else if (tabs_classes.SelectedTab == tab_classes_enrollment)
+            {
+                PopulateClassesEnrollmentTab();
+            }
+            else
+            {
+                PopulateClassesExercisesTab();
+            }
         }
 
         private void tabs_classes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(tabs_classes.SelectedTab == tab_classes_students)
             {
-
+                PopulateClassesStudentsTab();
             }
             else if (tabs_classes.SelectedTab == tab_classes_enrollment)
             {
-
+                PopulateClassesEnrollmentTab();
             }
-            else if (tabs_classes.SelectedTab == tab_classes_enrollment)
+            else if (tabs_classes.SelectedTab == tab_classes_exercises)
             {
-
+                PopulateClassesExercisesTab();
             }
         }
         
+        private void PopulateClassesStudentsTab()
+        {
+            System.Diagnostics.Debug.WriteLine("populating students tab");
+            int c = listBox_classes.SelectedIndex;
+            teacher.classes[c].students = Student.GenerateIn(teacher.classes[c]);
+            listBox_classes_students.DataSource = teacher.classes[c].students;
+        }
+
+        private void listBox_classes_students_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listView_classes_students_results.Items.Clear();
+            int c = listBox_classes.SelectedIndex;
+            int s = listBox_classes_students.SelectedIndex;
+            teacher.classes[c].students[s].results = ExerciseResult.Generate(teacher.classes[c].students[s]);
+
+            foreach(ExerciseResult er in teacher.classes[c].students[s].results)
+            {
+                ListViewItem item = new ListViewItem(Exercise.GetName(er.exId));
+                item.SubItems.Add(er.errorCount.ToString());
+                item.SubItems.Add(er.time.ToString());
+                listView_classes_students_results.Items.Add(item);
+            }
+        }
+
+        private void PopulateClassesEnrollmentTab()
+        {
+            System.Diagnostics.Debug.WriteLine("populating enrollment tab");
+        }
+
+        private void PopulateClassesExercisesTab()
+        {
+            System.Diagnostics.Debug.WriteLine("populating exercises tab");
+        }
+
         private void panel_exercises_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_exercises.Visible)

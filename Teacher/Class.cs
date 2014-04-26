@@ -8,7 +8,7 @@ namespace Teacher
 {
     public class Class
     {
-        public int id;
+        public int id { get; set; }
         public String name {get; set;}
         public Teacher teacher;
         public List<Student> students;
