@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 namespace Teacher
 {
     public class Teacher
@@ -12,10 +11,13 @@ namespace Teacher
         private String password;
         public String fName;
         public String lName;
+        public List<Class> classes;
+        public List<Exercise> exercises;
+
         public Teacher(String uName)
         {
             String str = "select * from teacher as t where t.username = '" + uName + "'";
-            MySqlDataReader rdr = MySQL_Manager.MySqlManager.Instance.ExecuteReader(str);
+            MySql.Data.MySqlClient.MySqlDataReader rdr = MySQL_Manager.MySqlManager.Instance.ExecuteReader(str);
             if (rdr == null)
             {
                 throw new Exception("ERROR: THE AUTHENTICATED TEACHER DOESN'T EXIST!");
@@ -25,6 +27,7 @@ namespace Teacher
             this.password = rdr["password"].ToString();
             this.fName = rdr["fName"].ToString();
             this.lName = rdr["lName"].ToString();
+            rdr.Close();
         }
 
         public bool Update(String pWord, String fName, String lName)
