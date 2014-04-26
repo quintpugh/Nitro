@@ -122,6 +122,7 @@
             // 
             // Textbox_ExerciseText
             // 
+            this.Textbox_ExerciseText.Enabled = false;
             this.Textbox_ExerciseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Textbox_ExerciseText.Location = new System.Drawing.Point(3, 3);
             this.Textbox_ExerciseText.Name = "Textbox_ExerciseText";

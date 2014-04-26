@@ -21,18 +21,19 @@ namespace Student
         public StudentInterface(String uName)
         {
             InitializeComponent();
-            //this.student = new Student(uName);
+            this.student = new Student(uName);
             PopulateExerciseList();
         }
 
         private void PopulateExerciseList()
         {
 
-            /*exercises = Exercise.ToBePerformed(student);
+            exercises = Exercise.ToBePerformed(student);
             ListBox_ExerciseList.DataSource = exercises;
             ListBox_ExerciseList.DisplayMember = "name";
             ListBox_ExerciseList.ValueMember = "text";
-            ListBox_ExerciseList.SetSelected(0, true);*/
+            Label_Exercises.Text = exercises.Count().ToString();
+            ListBox_ExerciseList.SetSelected(0, true);
 
             // use exercises to populate ExerciseList
 

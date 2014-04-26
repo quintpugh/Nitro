@@ -28,8 +28,8 @@ namespace Login
                 switch (cmbBox_userType.Text)
                 {
                     case ("Student"):
-                        //StudentInterface studentInterface = new StudentInterface(tb_username.Text);
-                        //studentinterface.show();
+                        Student.StudentInterface studentInterface = new Student.StudentInterface(tb_username.Text);
+                        studentInterface.Show();
                         break;
                     case ("Teacher"):
                         Teacher.TeacherInterface teacherInterface = new Teacher.TeacherInterface(tb_username.Text);

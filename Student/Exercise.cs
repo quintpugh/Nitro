@@ -20,41 +20,36 @@ namespace Student
             text = t;
         }
 
-//        public static List<Exercise> ToBePerformed(Student s)
-//        {
-//            MySqlDataReader returnMySqlResults = MySQL_Manager.MySqlManager.Instance.ExecuteReader
-//                (@"select classExercises.id, classExercises.name, classExercises.text
-//from
-//
-//(select e.id, e.name, e.text
-//
-//from exercise as e,
-//
-//(
-//
-//select *
-//
-//from class_exercises as ce
-//
-//where ce.classId = "" + s.classId + ""
-//
-//) as ce,
-//
-//where e.id = ce.exerciseId)
-//
-//as classExercises, student_performs as sp
-//
-//where classExercises.id != sp.exerciseId;");
+        public static List<Exercise> ToBePerformed(Student s)
+        {
+            MySqlDataReader reader = MySQL_Manager.MySqlManager.Instance.ExecuteReader
+                 (@"select classExercises.id, classExercises.name, classExercises.text
+                    from
+                        (select e.id, e.name, e.text
+                        from exercise as e,
+                        (
+                            select *
+                            from class_exercises as ce
+                            where ce.classId = " + s.classId + @"
+                        ) as ce
+                        where e.id = ce.exerciseId)
+                        as classExercises, student_performance as sp
+                    where classExercises.id != sp.exerciseId;");
+            List<Exercise> list = new List<Exercise>();
 
-//            List<Exercise> list;
 
-//            /*foreach (row in returnMySqlResults)
-//            {
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["id"]);
+                String name = reader["name"].ToString();
+                String text = reader["text"].ToString();
 
-//            }*/
-//            //return list;
+                list.Add(new Exercise(id, name, text));
+            }
+            reader.Close();
+            return list;
 
-            
-//        }
+
+        }
     }
 }
