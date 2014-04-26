@@ -14,18 +14,29 @@ namespace Student
     {
         private DateTime startTime;
         private int prevTextLength;
-       // private Exercise exercisePerforming;
-       // private List<Exercise> exercises;
+        private Exercise exercisePerforming;
+        private List<Exercise> exercises;
+        private Student student;
 
-        public StudentInterface()
+        public StudentInterface(String uName)
         {
             InitializeComponent();
-
-          /*  ListBox_ExerciseList.DataSource = exerciseList;
-            ListBox_ExerciseList.DisplayMember = "name";
-            ListBox_ExerciseList.ValueMember = "content";
-            ListBox_ExerciseList.SetSelected(0, true);*/
+            //this.student = new Student(uName);
+            PopulateExerciseList();
         }
+
+        private void PopulateExerciseList()
+        {
+
+            /*exercises = Exercise.ToBePerformed(student);
+            ListBox_ExerciseList.DataSource = exercises;
+            ListBox_ExerciseList.DisplayMember = "name";
+            ListBox_ExerciseList.ValueMember = "text";
+            ListBox_ExerciseList.SetSelected(0, true);*/
+
+            // use exercises to populate ExerciseList
+
+        } 
 
         private void ButtonStart_Click(object sender, EventArgs e)
         {
@@ -110,13 +121,13 @@ namespace Student
         {
             int prevIndex = ListBox_ExerciseList.SelectedIndex;
 
-            //exerciseList.RemoveAt(prevIndex);
+            //exercises.RemoveAt(prevIndex);
             ListBox_ExerciseList.SelectedIndex = -1;
-            ListBox_ExerciseList.DataSource = null;
-            /*ListBox_ExerciseList.DataSource = exerciseList;
-            ListBox_ExerciseList.SelectedIndex = prevIndex < exerciseList.Count ? prevIndex : prevIndex - 1;
+            /*ListBox_ExerciseList.DataSource = null;
+            ListBox_ExerciseList.DataSource = exercises;
+            ListBox_ExerciseList.SelectedIndex = prevIndex < exercises.Count ? prevIndex : prevIndex - 1;
             ListBox_ExerciseList.DisplayMember = "name";
-            ListBox_ExerciseList.ValueMember = "content";*/
+            ListBox_ExerciseList.ValueMember = "text";*/
             ListBox_ExerciseList.Enabled = true;
             this.AcceptButton = Button_Start;
         }

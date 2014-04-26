@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exercise.cs" />
+    <Compile Include="ExerciseResult.cs" />
     <Compile Include="StudentInterface.cs">
       <SubType>Form</SubType>
     </Compile>
