@@ -12,9 +12,11 @@ namespace Teacher
 {
     public partial class TeacherInterface : Form
     {
-        public TeacherInterface()
+        public TeacherInterface(String username)
         {
             InitializeComponent();
+            Teacher teacher = new Teacher(username);
+            panel_classes.Visible = true;
         }
     }
 }

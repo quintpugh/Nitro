@@ -43,6 +43,7 @@
             // 
             this.cmbBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_userType.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbBox_userType.FormattingEnabled = true;
             this.cmbBox_userType.Items.AddRange(new object[] {
             "Student",
@@ -69,7 +70,7 @@
             this.tb_username.Location = new System.Drawing.Point(135, 104);
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(257, 32);
-            this.tb_username.TabIndex = 4;
+            this.tb_username.TabIndex = 1;
             // 
             // bt_login
             // 
@@ -77,7 +78,7 @@
             this.bt_login.Location = new System.Drawing.Point(145, 219);
             this.bt_login.Name = "bt_login";
             this.bt_login.Size = new System.Drawing.Size(95, 40);
-            this.bt_login.TabIndex = 6;
+            this.bt_login.TabIndex = 3;
             this.bt_login.Text = "Login";
             this.bt_login.UseVisualStyleBackColor = true;
             this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
@@ -107,8 +108,9 @@
             this.tb_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_password.Location = new System.Drawing.Point(135, 142);
             this.tb_password.Name = "tb_password";
+            this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(257, 32);
-            this.tb_password.TabIndex = 9;
+            this.tb_password.TabIndex = 2;
             // 
             // label4
             // 
@@ -125,7 +127,7 @@
             this.lbl_loginError.AutoSize = true;
             this.lbl_loginError.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_loginError.ForeColor = System.Drawing.Color.Red;
-            this.lbl_loginError.Location = new System.Drawing.Point(130, 177);
+            this.lbl_loginError.Location = new System.Drawing.Point(12, 175);
             this.lbl_loginError.Name = "lbl_loginError";
             this.lbl_loginError.Size = new System.Drawing.Size(0, 26);
             this.lbl_loginError.TabIndex = 11;

@@ -16,6 +16,7 @@ namespace Login
         public LoginInterface()
         {
             InitializeComponent();
+            cmbBox_userType.SelectedIndex = 0;
             loginHandler = new LoginHandler();
         }
 
@@ -27,15 +28,15 @@ namespace Login
                 switch (cmbBox_userType.Text)
                 {
                     case ("Student"):
-                        //StudentInterface studentInterface = new StudentInterface(usernameText.text);
+                        //StudentInterface studentInterface = new StudentInterface(tb_username.Text);
                         //studentinterface.show();
                         break;
                     case ("Teacher"):
-                        //TeacherInterface teacherInterface = new TeacherInterface(usernameText.text);
-                        //teacherInterface.Show();
+                        Teacher.TeacherInterface teacherInterface = new Teacher.TeacherInterface(tb_username.Text);
+                        teacherInterface.Show();
                         break;
                     case ("Database Administrator"):
-                        //DbaInterface dbaInterface = new DbaInterface(usernameText.text);
+                        //DbaInterface dbaInterface = new DbaInterface(tb_username.Text);
                         //dbaInterface.Show();
                         break;
                     default:
