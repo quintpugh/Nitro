@@ -44,6 +44,7 @@
             this.Panel_NoExercise = new System.Windows.Forms.Panel();
             this.Label_NoExercise = new System.Windows.Forms.Label();
             this.Button_Logout = new System.Windows.Forms.Button();
+            this.Label_Welcome = new System.Windows.Forms.Label();
             this.Panel_StartExercise.SuspendLayout();
             this.Panel_PerformExercise.SuspendLayout();
             this.Panel_ExerciseResult.SuspendLayout();
@@ -118,6 +119,7 @@
             this.Textbox_InputText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Textbox_InputText.Location = new System.Drawing.Point(3, 201);
             this.Textbox_InputText.Name = "Textbox_InputText";
+            this.Textbox_InputText.ShortcutsEnabled = false;
             this.Textbox_InputText.Size = new System.Drawing.Size(631, 165);
             this.Textbox_InputText.TabIndex = 1;
             this.Textbox_InputText.Text = "";
@@ -217,12 +219,24 @@
             this.Button_Logout.UseVisualStyleBackColor = true;
             this.Button_Logout.Click += new System.EventHandler(this.Button_Logout_Click);
             // 
+            // Label_Welcome
+            // 
+            this.Label_Welcome.AutoSize = true;
+            this.Label_Welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Welcome.ForeColor = System.Drawing.Color.LimeGreen;
+            this.Label_Welcome.Location = new System.Drawing.Point(445, 20);
+            this.Label_Welcome.Name = "Label_Welcome";
+            this.Label_Welcome.Size = new System.Drawing.Size(159, 37);
+            this.Label_Welcome.TabIndex = 6;
+            this.Label_Welcome.Text = "Welcome!";
+            // 
             // StudentInterface
             // 
             this.AcceptButton = this.Button_Start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 542);
+            this.Controls.Add(this.Label_Welcome);
             this.Controls.Add(this.Button_Logout);
             this.Controls.Add(this.Panel_NoExercise);
             this.Controls.Add(this.Panel_ExerciseResult);
@@ -263,5 +277,6 @@
         private System.Windows.Forms.Panel Panel_NoExercise;
         private System.Windows.Forms.Label Label_NoExercise;
         private System.Windows.Forms.Button Button_Logout;
+        private System.Windows.Forms.Label Label_Welcome;
     }
 }

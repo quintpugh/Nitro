@@ -29,6 +29,7 @@ namespace Login
                 {
                     case ("Student"):
                         Student.StudentInterface studentInterface = new Student.StudentInterface(tb_username.Text);
+                        tb_username.Focus();
                         this.Hide();
                         this.Owner = studentInterface;
                         studentInterface.FormClosing += SubFormClosing;
@@ -39,8 +40,8 @@ namespace Login
                         teacherInterface.Show();
                         break;
                     case ("Database Administrator"):
-                        //DbaInterface dbaInterface = new DbaInterface(tb_username.Text);
-                        //dbaInterface.Show();
+                        Dba.DbaInterface dbaInterface = new Dba.DbaInterface(tb_username.Text);
+                        dbaInterface.Show();
                         break;
                     default:
                         throw new Exception("How did you get a user that doesn't exist?");

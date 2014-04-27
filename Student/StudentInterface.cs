@@ -22,6 +22,7 @@ namespace Student
         {
             InitializeComponent();
             this.student = new Student(uName);
+            Label_Welcome.Text = "Welcome, " + student.fName + "!";
             PopulateExerciseList();
         }
 
@@ -151,6 +152,7 @@ namespace Student
                 ListBox_ExerciseList.ValueMember = "text";
                 ListBox_ExerciseList.Enabled = true;
                 this.AcceptButton = Button_Start;
+                Button_Start.Focus();
             }
 
             if (exercises.Count < 1)
