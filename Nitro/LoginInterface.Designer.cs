@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbBox_userType = new System.Windows.Forms.ComboBox();
+            this.comboBox_userType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_username = new System.Windows.Forms.TextBox();
+            this.textBox_username = new System.Windows.Forms.TextBox();
             this.button_login = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tb_password = new System.Windows.Forms.TextBox();
+            this.textbox_password = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_loginError = new System.Windows.Forms.Label();
+            this.label_loginError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cmbBox_userType
+            // comboBox_userType
             // 
-            this.cmbBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBox_userType.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmbBox_userType.FormattingEnabled = true;
-            this.cmbBox_userType.Items.AddRange(new object[] {
+            this.comboBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_userType.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBox_userType.FormattingEnabled = true;
+            this.comboBox_userType.Items.AddRange(new object[] {
             "Student",
             "Teacher",
             "Database Administrator"});
-            this.cmbBox_userType.Location = new System.Drawing.Point(135, 65);
-            this.cmbBox_userType.Name = "cmbBox_userType";
-            this.cmbBox_userType.Size = new System.Drawing.Size(257, 33);
-            this.cmbBox_userType.TabIndex = 0;
+            this.comboBox_userType.Location = new System.Drawing.Point(135, 65);
+            this.comboBox_userType.Name = "comboBox_userType";
+            this.comboBox_userType.Size = new System.Drawing.Size(257, 33);
+            this.comboBox_userType.TabIndex = 0;
             // 
             // label1
             // 
@@ -64,13 +64,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "User Type:";
             // 
-            // tb_username
+            // textBox_username
             // 
-            this.tb_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_username.Location = new System.Drawing.Point(135, 104);
-            this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(257, 32);
-            this.tb_username.TabIndex = 1;
+            this.textBox_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_username.Location = new System.Drawing.Point(135, 104);
+            this.textBox_username.Name = "textBox_username";
+            this.textBox_username.Size = new System.Drawing.Size(257, 32);
+            this.textBox_username.TabIndex = 1;
             // 
             // button_login
             // 
@@ -103,15 +103,15 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Password:";
             // 
-            // tb_password
+            // textbox_password
             // 
-            this.tb_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_password.Location = new System.Drawing.Point(135, 142);
-            this.tb_password.Name = "tb_password";
-            this.tb_password.PasswordChar = '*';
-            this.tb_password.Size = new System.Drawing.Size(257, 32);
-            this.tb_password.TabIndex = 2;
-            this.tb_password.UseSystemPasswordChar = true;
+            this.textbox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_password.Location = new System.Drawing.Point(135, 142);
+            this.textbox_password.Name = "textbox_password";
+            this.textbox_password.PasswordChar = '*';
+            this.textbox_password.Size = new System.Drawing.Size(257, 32);
+            this.textbox_password.TabIndex = 2;
+            this.textbox_password.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -123,15 +123,15 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Welcome to TurboType!";
             // 
-            // lbl_loginError
+            // label_loginError
             // 
-            this.lbl_loginError.AutoSize = true;
-            this.lbl_loginError.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_loginError.ForeColor = System.Drawing.Color.Red;
-            this.lbl_loginError.Location = new System.Drawing.Point(12, 175);
-            this.lbl_loginError.Name = "lbl_loginError";
-            this.lbl_loginError.Size = new System.Drawing.Size(0, 26);
-            this.lbl_loginError.TabIndex = 11;
+            this.label_loginError.AutoSize = true;
+            this.label_loginError.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_loginError.ForeColor = System.Drawing.Color.Red;
+            this.label_loginError.Location = new System.Drawing.Point(12, 175);
+            this.label_loginError.Name = "label_loginError";
+            this.label_loginError.Size = new System.Drawing.Size(0, 26);
+            this.label_loginError.TabIndex = 11;
             // 
             // LoginInterface
             // 
@@ -139,15 +139,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 271);
-            this.Controls.Add(this.lbl_loginError);
+            this.Controls.Add(this.label_loginError);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tb_password);
+            this.Controls.Add(this.textbox_password);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button_login);
-            this.Controls.Add(this.tb_username);
+            this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbBox_userType);
+            this.Controls.Add(this.comboBox_userType);
             this.Name = "LoginInterface";
             this.Text = "TurboType Login";
             this.ResumeLayout(false);
@@ -157,15 +157,15 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbBox_userType;
+        private System.Windows.Forms.ComboBox comboBox_userType;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_username;
+        private System.Windows.Forms.TextBox textBox_username;
         private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tb_password;
+        private System.Windows.Forms.TextBox textbox_password;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl_loginError;
+        private System.Windows.Forms.Label label_loginError;
 
     }
 }
