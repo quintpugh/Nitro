@@ -185,15 +185,9 @@ namespace Student
                 if (textBox_performExercise_inputText.Text.ElementAtOrDefault(textBox_performExercise_inputText.TextLength - 1) != ' ')
                 {
                     //int start = Textbox_InputText.TextLength > Textbox_ExerciseText.TextLength ? -1 : Textbox_ExerciseText.Text.IndexOf(' ', Textbox_InputText.TextLength);
-<<<<<<< HEAD
                     int start = textBox_performExercise_exerciseText.Text.LastIndexOf(' ') >= textBox_performExercise_inputText.TextLength - 1 ? textBox_performExercise_exerciseText.Text.IndexOf(' ', textBox_performExercise_inputText.TextLength) : textBox_performExercise_exerciseText.TextLength;
                     int diff = textBox_performExercise_inputText.TextLength > textBox_performExercise_exerciseText.TextLength ? 0 : start - textBox_performExercise_inputText.TextLength;
                      textBox_performExercise_inputText.AppendText(new String(' ', diff));
-=======
-                    int start = Textbox_ExerciseText.Text.LastIndexOf(' ') >= Textbox_InputText.TextLength - 1 ? Textbox_ExerciseText.Text.IndexOf(' ', Textbox_InputText.TextLength) : Textbox_ExerciseText.TextLength;
-                    int diff = Textbox_InputText.TextLength > Textbox_ExerciseText.TextLength ? 0 : start - Textbox_InputText.TextLength;
-                    Textbox_InputText.AppendText(new String(' ', diff));
->>>>>>> b7a46d7848c1b81b485cd5d174963fe66f6c7d1c
                 }
             }
             else if (e.KeyCode == Keys.Back)
