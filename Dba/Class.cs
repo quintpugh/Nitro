@@ -37,7 +37,7 @@ namespace Dba
 
         public bool Delete()
         {
-            int studentEnrollmentCount = Convert.ToInt32(MySQL_Manager.MySqlManager.Instance.ExecuteScalar ("select count(*) from student as s where s.id = " + id));
+            int studentEnrollmentCount = Convert.ToInt32(MySQL_Manager.MySqlManager.Instance.ExecuteScalar ("select count(*) from student as s where s.classId = " + id));
 
             if (studentEnrollmentCount == 0 && teacher == "")
             {
