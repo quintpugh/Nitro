@@ -299,6 +299,7 @@ namespace Teacher
         {
             teacher.exercises = Exercise.Generate(teacher);
             listBox_exercises.DataSource = teacher.exercises;
+            label_exercises_error.Text = String.Empty;
         }
 
         private void button_exercises_new_Click(object sender, EventArgs e)
@@ -322,6 +323,7 @@ namespace Teacher
                 textBox_exercises_name.Text = String.Empty;
                 textBox_exercises_text.Text = String.Empty;
             }
+            label_exercises_error.Text = String.Empty;
         }
 
         private void button_exercises_delete_Click(object sender, EventArgs e)
@@ -333,6 +335,11 @@ namespace Teacher
 
         private void button_exercises_save_Click(object sender, EventArgs e)
         {
+            if(textBox_exercises_name.Text.Length == 0 || textBox_exercises_text.Text.Length == 0)
+            {
+                label_exercises_error.Text = "Both fields required!";
+                return;
+            }
             if (listBox_exercises.SelectedItem != null)
             {
                 Exercise ex = (Exercise)listBox_exercises.SelectedItem;
@@ -458,12 +465,17 @@ namespace Teacher
         {
             System.Diagnostics.Debug.WriteLine("button_students_save_Click");
             
+            if(textBox_students_fName.Text.Length == 0 || textBox_students_lName.Text.Length == 0 || textBox_students_username.Text.Length == 0)
+            {
+                label_students_error.Text = "First Name, Last Name, Username, and Password fields are required.";
+                return;
+            }
+
             if(!PasswordMeetsRequirements(textBox_students_password.Text))
             {
                 label_students_error.Text = "Entered password do not meet minimum requirements\n1 upper case letter, 1 lower case letter, 1 digit, and legth of at least 8.";
                 return;
             }
-
             Class c = (Class)comboBox_students_classes.SelectedItem;
             if (c.id == -1)
             {
@@ -515,6 +527,14 @@ namespace Teacher
         private void button_account_save_Click(object sender, EventArgs e)
         {
             label_account_error.Text = String.Empty;
+
+            if (textBox_account_fName.Text.Length == 0 || textBox_account_lName.Text.Length == 0)
+            {
+                label_account_error.ForeColor = Color.Red;
+                label_account_error.Text = "First Name, Last Name, and Passwords are required fields.";
+                return;
+            }
+
             if(textBox_account_password.Text.Equals(textBox_account_confirmPassword.Text, StringComparison.Ordinal))
             {
                 if (PasswordMeetsRequirements(textBox_account_password.Text))
