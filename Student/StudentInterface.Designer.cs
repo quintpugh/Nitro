@@ -66,7 +66,7 @@
             // 
             this.label_exercisesList.AutoSize = true;
             this.label_exercisesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_exercisesList.Location = new System.Drawing.Point(12, 52);
+            this.label_exercisesList.Location = new System.Drawing.Point(41, 52);
             this.label_exercisesList.Name = "label_exercisesList";
             this.label_exercisesList.Size = new System.Drawing.Size(106, 25);
             this.label_exercisesList.TabIndex = 1;
@@ -213,7 +213,7 @@
             this.button_menu_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_menu_logout.Location = new System.Drawing.Point(12, 483);
             this.button_menu_logout.Name = "button_menu_logout";
-            this.button_menu_logout.Size = new System.Drawing.Size(121, 47);
+            this.button_menu_logout.Size = new System.Drawing.Size(165, 47);
             this.button_menu_logout.TabIndex = 5;
             this.button_menu_logout.Text = "Logout";
             this.button_menu_logout.UseVisualStyleBackColor = true;
@@ -224,7 +224,7 @@
             this.label_welcome.AutoSize = true;
             this.label_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_welcome.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label_welcome.Location = new System.Drawing.Point(445, 20);
+            this.label_welcome.Location = new System.Drawing.Point(353, 20);
             this.label_welcome.Name = "label_welcome";
             this.label_welcome.Size = new System.Drawing.Size(159, 37);
             this.label_welcome.TabIndex = 6;
@@ -236,12 +236,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 542);
+            this.Controls.Add(this.panel_startExercise);
+            this.Controls.Add(this.panel_performExercise);
             this.Controls.Add(this.label_welcome);
             this.Controls.Add(this.button_menu_logout);
             this.Controls.Add(this.panel_noExercise);
             this.Controls.Add(this.panel_exerciseResult);
-            this.Controls.Add(this.panel_performExercise);
-            this.Controls.Add(this.panel_startExercise);
             this.Controls.Add(this.label_exercisesList);
             this.Controls.Add(this.listBox_exercisesList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
