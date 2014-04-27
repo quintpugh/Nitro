@@ -31,7 +31,8 @@ namespace Teacher
             this.tabs_classes.SelectedIndexChanged += new System.EventHandler(this.tabs_classes_SelectedIndexChanged);
             this.listBox_classes_students.SelectedIndexChanged += new System.EventHandler(this.listBox_classes_students_SelectedIndexChanged);
             this.listBox_exercises.SelectedIndexChanged += new System.EventHandler(this.listBox_exercise_SelectedIndexChanged);
-
+            this.listBox_students.SelectedIndexChanged += new System.EventHandler(this.listBox_students_SelectedIndexChanged);
+            
             listBox_classes.DisplayMember = "name";
             listBox_classes.ValueMember = "id";
             listBox_classes_students.DisplayMember = "FullName";
@@ -46,6 +47,10 @@ namespace Teacher
             listBox_classes_exercisesNotIn.ValueMember = "id";
             listBox_exercises.DisplayMember = "name";
             listBox_exercises.ValueMember = "id";
+            listBox_students.DisplayMember = "FullName";
+            listBox_students.ValueMember = "username";
+            comboBox_students_classes.DisplayMember = "name";
+            comboBox_students_classes.ValueMember = "id";
         }
         #region Menu Button Clicks
         private void button_menu_classes_Click(object sender, EventArgs e)
@@ -94,7 +99,8 @@ namespace Teacher
 
         private void button_menu_logout_Click(object sender, EventArgs e)
         {
-
+            this.RemoveOwnedForm(this.OwnedForms.ElementAt(0));
+            this.Close();
         }
         #endregion
 
@@ -187,7 +193,7 @@ namespace Teacher
             ListBox.SelectedObjectCollection col = listBox_classes_studentsEnrolled.SelectedItems;
             foreach(Student student in col)
             {
-                Student.RemoveFromClass(student.username);
+                student.RemoveFromClass();
             }
             PopulateClassesEnrollmentTab();
         }
@@ -201,7 +207,7 @@ namespace Teacher
             ListBox.SelectedObjectCollection col = listBox_classes_studentsNotEnrolled.SelectedItems;
             foreach (Student student in col)
             {
-                Student.AddToClass(student.username, teacher.classes[listBox_classes.SelectedIndex]);
+                student.AddToClass(teacher.classes[listBox_classes.SelectedIndex]);
             }
             PopulateClassesEnrollmentTab();
         }
@@ -211,7 +217,7 @@ namespace Teacher
             ListBox.ObjectCollection col = listBox_classes_studentsEnrolled.Items;
             foreach (Student student in col)
             {
-                Student.RemoveFromClass(student.username);
+                student.RemoveFromClass();
             }
             PopulateClassesEnrollmentTab();
         }
@@ -276,17 +282,72 @@ namespace Teacher
                 return;
             }
             System.Diagnostics.Debug.WriteLine("exercises panel visible changed");
+            PopulateExerciseList();
+        }
+        
+        private void listBox_exercise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("selected index changed to: " + listBox_classes.SelectedIndex);
+            Exercise ex = (Exercise)listBox_exercises.SelectedItem;
+            if (ex == null) return;
+            textBox_exercises_name.Text = ex.name;
+            textBox_exercises_text.Text = ex.text;
+            button_exercises_save.Text = "Save";
+        }
+
+        private void PopulateExerciseList()
+        {
             teacher.exercises = Exercise.Generate(teacher);
             listBox_exercises.DataSource = teacher.exercises;
         }
 
-        private void listBox_exercise_SelectedIndexChanged(object sender, EventArgs e)
+        private void button_exercises_new_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("selected index changed to: " + listBox_classes.SelectedIndex);
+            textBox_exercises_name.Text = String.Empty;
+            textBox_exercises_text.Text = String.Empty;
+            listBox_exercises.ClearSelected();
+            button_exercises_save.Text = "Add";
         }
 
+        private void button_exercises_reset_Click(object sender, EventArgs e)
+        {
+            if (listBox_exercises.SelectedItem != null)
+            {
+                Exercise ex = (Exercise)listBox_exercises.SelectedItem;
+                textBox_exercises_name.Text = ex.name;
+                textBox_exercises_text.Text = ex.text;
+            }
+            else
+            {
+                textBox_exercises_name.Text = String.Empty;
+                textBox_exercises_text.Text = String.Empty;
+            }
+        }
 
+        private void button_exercises_delete_Click(object sender, EventArgs e)
+        {
+            Exercise ex = (Exercise)listBox_exercises.SelectedItem;
+            ex.Delete();
+            PopulateExerciseList();
+        }
+
+        private void button_exercises_save_Click(object sender, EventArgs e)
+        {
+            if (listBox_exercises.SelectedItem != null)
+            {
+                Exercise ex = (Exercise)listBox_exercises.SelectedItem;
+                ex.Update(textBox_exercises_name.Text, textBox_exercises_text.Text);
+            }
+            else
+            {
+                Exercise newEx = new Exercise(textBox_exercises_name.Text, textBox_exercises_text.Text, teacher);
+                newEx.Add();
+            }
+            PopulateExerciseList();
+        }
         #endregion
+
+        #region Students
         private void panel_students_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_students.Visible)
@@ -294,8 +355,66 @@ namespace Teacher
                 return;
             }
             System.Diagnostics.Debug.WriteLine("students panel visible changed");
+            PopulateStudentPanel();
         }
 
+        private void listBox_students_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Student st = (Student)listBox_students.SelectedItem;
+            textBox_students_fName.Text = st.fName;
+            textBox_students_lName.Text = st.lName;
+            textBox_students_password.Text = String.Empty;
+            textBox_students_username.Text = st.username;
+            int classId = st.GetClassId();
+            if (classId == -1)
+            {
+                comboBox_students_classes.SelectedIndex = -1;
+            }
+            else
+            {
+                comboBox_students_classes.SelectedValue = classId.ToString();
+            }
+            button_students_save.Text = "Save";
+        }
+
+        private void PopulateStudentPanel()
+        {
+            teacher.classes = Class.Generate(teacher);
+            List<Student> studentList = new List<Student>();
+            studentList.AddRange(Student.GenerateNotEnrolled());
+            studentList.AddRange(Student.GenerateIn(teacher.classes));
+            listBox_students.DataSource = studentList;
+
+            comboBox_students_classes.DataSource = teacher.classes;
+        }
+
+        private void button_students_new_Click(object sender, EventArgs e)
+        {
+            listBox_students.ClearSelected();
+            textBox_students_fName.Text = String.Empty;
+            textBox_students_lName.Text = String.Empty;
+            textBox_students_password.Text = String.Empty;
+            textBox_students_username.Text = String.Empty;
+            button_students_save.Text = "Add";
+
+        }
+
+        private void button_students_reset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_students_delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_students_save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
         private void panel_account_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_account.Visible)
