@@ -108,6 +108,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label_exercises_error = new System.Windows.Forms.Label();
             this.panel_menu.SuspendLayout();
             this.panel_main.SuspendLayout();
             this.panel_students.SuspendLayout();
@@ -191,8 +192,8 @@
             // 
             // panel_main
             // 
-            this.panel_main.Controls.Add(this.panel_students);
             this.panel_main.Controls.Add(this.panel_exercises);
+            this.panel_main.Controls.Add(this.panel_students);
             this.panel_main.Controls.Add(this.panel_classes);
             this.panel_main.Controls.Add(this.panel_account);
             this.panel_main.Location = new System.Drawing.Point(159, 12);
@@ -877,6 +878,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label_exercises_error);
             this.panel1.Controls.Add(this.textBox_exercises_text);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -903,6 +905,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(602, 431);
             this.panel2.TabIndex = 16;
+            // 
+            // label_exercises_error
+            // 
+            this.label_exercises_error.AutoSize = true;
+            this.label_exercises_error.ForeColor = System.Drawing.Color.Red;
+            this.label_exercises_error.Location = new System.Drawing.Point(149, 252);
+            this.label_exercises_error.Name = "label_exercises_error";
+            this.label_exercises_error.Size = new System.Drawing.Size(0, 13);
+            this.label_exercises_error.TabIndex = 12;
             // 
             // TeacherInterface
             // 
@@ -1018,6 +1029,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label_exercises_error;
 
     }
 }
