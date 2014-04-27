@@ -30,8 +30,8 @@ namespace Login
                     case ("Student"):
                         Student.StudentInterface studentInterface = new Student.StudentInterface(tb_username.Text);
                         this.Hide();
+                        this.Owner = studentInterface;
                         studentInterface.FormClosing += SubFormClosing;
-
                         studentInterface.Show();
                         break;
                     case ("Teacher"):
