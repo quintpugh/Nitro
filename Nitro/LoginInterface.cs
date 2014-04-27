@@ -38,6 +38,10 @@ namespace Login
                     case ("Teacher"):
                         Teacher.TeacherInterface teacherInterface = new Teacher.TeacherInterface(tb_username.Text);
                         teacherInterface.Show();
+                        this.Hide();
+                        this.Owner = teacherInterface;
+                        teacherInterface.FormClosing += SubFormClosing;
+                        teacherInterface.Show();
                         break;
                     case ("Database Administrator"):
                         Dba.DbaInterface dbaInterface = new Dba.DbaInterface(tb_username.Text);
