@@ -184,8 +184,9 @@ namespace Student
                 //and go fill in spaces until we get there.
                 if (Textbox_InputText.Text.ElementAtOrDefault(Textbox_InputText.TextLength - 1) != ' ')
                 {
-                    int start = Textbox_ExerciseText.Text.IndexOf(' ', Textbox_InputText.TextLength);
-                    int diff = start - Textbox_InputText.TextLength;
+                    //int start = Textbox_InputText.TextLength > Textbox_ExerciseText.TextLength ? -1 : Textbox_ExerciseText.Text.IndexOf(' ', Textbox_InputText.TextLength);
+                    int start = Textbox_ExerciseText.Text.LastIndexOf(' ') >= Textbox_InputText.TextLength - 1 ? Textbox_ExerciseText.Text.IndexOf(' ', Textbox_InputText.TextLength) : Textbox_ExerciseText.TextLength;
+                    int diff = Textbox_InputText.TextLength > Textbox_ExerciseText.TextLength ? 0 : start - Textbox_InputText.TextLength;
                     Textbox_InputText.AppendText(new String(' ', diff));
                 }
             }
