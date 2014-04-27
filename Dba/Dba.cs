@@ -45,7 +45,7 @@ namespace Dba
 
         public bool Add()
         {
-            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery ("insert into dba (username, password, lName, fName) values (" + username + ", " + password + ", " + fName + ", " + lName + ")") 
+            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into dba (username, password, lName, fName) values (" + username + ", " + password + ", " + fName + ", " + lName + ")"); 
         }
 
         public bool Update(String password, String f, String l)
