@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             this.panel_menu = new System.Windows.Forms.Panel();
-            this.Button_Menu_Dba = new System.Windows.Forms.Button();
-            this.Button_Menu_Teacher = new System.Windows.Forms.Button();
-            this.Button_Menu_Class = new System.Windows.Forms.Button();
+            this.button_menu_dba = new System.Windows.Forms.Button();
+            this.button_menu_teacher = new System.Windows.Forms.Button();
+            this.button_menu_class = new System.Windows.Forms.Button();
             this.button_menu_logout = new System.Windows.Forms.Button();
             this.button_menu_account = new System.Windows.Forms.Button();
-            this.Panel_Class = new System.Windows.Forms.Panel();
-            this.Combo_Class_Teacher = new System.Windows.Forms.ComboBox();
-            this.Label_Class_Menu = new System.Windows.Forms.Label();
-            this.Button_Class_Save = new System.Windows.Forms.Button();
-            this.Button_Class_Delete = new System.Windows.Forms.Button();
-            this.Button_Class_Reset = new System.Windows.Forms.Button();
-            this.Textbox_Class_Name = new System.Windows.Forms.TextBox();
-            this.Label_Class_Teacher = new System.Windows.Forms.Label();
-            this.Label_Class_Name = new System.Windows.Forms.Label();
-            this.Button_Class_New = new System.Windows.Forms.Button();
-            this.Listbox_Class = new System.Windows.Forms.ListBox();
-            this.Panel_Teacher = new System.Windows.Forms.Panel();
-            this.Button_Teacher_New = new System.Windows.Forms.Button();
-            this.Button_Teacher_Save = new System.Windows.Forms.Button();
-            this.Button_Teacher_Delete = new System.Windows.Forms.Button();
-            this.Button_Teacher_Reset = new System.Windows.Forms.Button();
-            this.Textbox_Teacher_Password = new System.Windows.Forms.TextBox();
-            this.Textbox_Teacher_Username = new System.Windows.Forms.TextBox();
-            this.Textbox_Teacher_lName = new System.Windows.Forms.TextBox();
-            this.Textbox_Teacher_fName = new System.Windows.Forms.TextBox();
-            this.Label_Teacher_Password = new System.Windows.Forms.Label();
-            this.Label_Teacher_Username = new System.Windows.Forms.Label();
-            this.Label_Teacher_Lname = new System.Windows.Forms.Label();
-            this.Label_Teacher_Fname = new System.Windows.Forms.Label();
-            this.Label_Teacher_Menu = new System.Windows.Forms.Label();
-            this.ListBox_Teacher_Name = new System.Windows.Forms.ListBox();
-            this.Panel_Dba = new System.Windows.Forms.Panel();
-            this.Panel_Dba_Account = new System.Windows.Forms.Panel();
+            this.panel_class = new System.Windows.Forms.Panel();
+            this.comboBox_class_teacher = new System.Windows.Forms.ComboBox();
+            this.label_class_menu = new System.Windows.Forms.Label();
+            this.button_class_save = new System.Windows.Forms.Button();
+            this.button_class_delete = new System.Windows.Forms.Button();
+            this.button_class_reset = new System.Windows.Forms.Button();
+            this.textBox_class_name = new System.Windows.Forms.TextBox();
+            this.label_class_teacher = new System.Windows.Forms.Label();
+            this.label_class_name = new System.Windows.Forms.Label();
+            this.button_class_new = new System.Windows.Forms.Button();
+            this.listBox_class = new System.Windows.Forms.ListBox();
+            this.panel_teacher = new System.Windows.Forms.Panel();
+            this.button_teacher_new = new System.Windows.Forms.Button();
+            this.button_teacher_save = new System.Windows.Forms.Button();
+            this.button_teacher_delete = new System.Windows.Forms.Button();
+            this.button_teacher_reset = new System.Windows.Forms.Button();
+            this.textbox_teacher_password = new System.Windows.Forms.TextBox();
+            this.textbox_teacher_username = new System.Windows.Forms.TextBox();
+            this.textbox_teacher_lName = new System.Windows.Forms.TextBox();
+            this.textbox_teacher_fName = new System.Windows.Forms.TextBox();
+            this.label_teacher_password = new System.Windows.Forms.Label();
+            this.label_teacher_username = new System.Windows.Forms.Label();
+            this.label_teacher_lName = new System.Windows.Forms.Label();
+            this.label_teacher_fName = new System.Windows.Forms.Label();
+            this.label_teacher_menu = new System.Windows.Forms.Label();
+            this.listBox_teacher_name = new System.Windows.Forms.ListBox();
+            this.panel_dba = new System.Windows.Forms.Panel();
+            this.panel_dba_account = new System.Windows.Forms.Panel();
             this.label_account_error = new System.Windows.Forms.Label();
             this.button_account_save = new System.Windows.Forms.Button();
             this.button_account_reset = new System.Windows.Forms.Button();
@@ -73,32 +73,32 @@
             this.textBox_account_password = new System.Windows.Forms.TextBox();
             this.textBox_account_lName = new System.Windows.Forms.TextBox();
             this.textBox_account_fName = new System.Windows.Forms.TextBox();
-            this.Button_Dba_New = new System.Windows.Forms.Button();
-            this.Button_Dba_Save = new System.Windows.Forms.Button();
-            this.Button_Dba_Delete = new System.Windows.Forms.Button();
-            this.Button_Dba_Reset = new System.Windows.Forms.Button();
-            this.Textbox_Dba_Password = new System.Windows.Forms.TextBox();
-            this.Textbox_Dba_Username = new System.Windows.Forms.TextBox();
-            this.Textbox_Dba_Lname = new System.Windows.Forms.TextBox();
-            this.Textbox_Dba_Fname = new System.Windows.Forms.TextBox();
-            this.Label_Dba_Password = new System.Windows.Forms.Label();
-            this.Label_Dba_Username = new System.Windows.Forms.Label();
-            this.Label_Dba_Lname = new System.Windows.Forms.Label();
-            this.Label_Dba_Fname = new System.Windows.Forms.Label();
-            this.Label_Dba_Name = new System.Windows.Forms.Label();
-            this.Listbox_Dba = new System.Windows.Forms.ListBox();
+            this.button_dba_new = new System.Windows.Forms.Button();
+            this.button_dba_save = new System.Windows.Forms.Button();
+            this.button_dba_delete = new System.Windows.Forms.Button();
+            this.button_dba_reset = new System.Windows.Forms.Button();
+            this.textbox_dba_password = new System.Windows.Forms.TextBox();
+            this.textbox_dba_username = new System.Windows.Forms.TextBox();
+            this.textbox_dba_lName = new System.Windows.Forms.TextBox();
+            this.textbox_dba_fName = new System.Windows.Forms.TextBox();
+            this.label_dba_password = new System.Windows.Forms.Label();
+            this.label_dba_username = new System.Windows.Forms.Label();
+            this.label_dba_lName = new System.Windows.Forms.Label();
+            this.label_dba_fName = new System.Windows.Forms.Label();
+            this.label_dba_name = new System.Windows.Forms.Label();
+            this.listBox_dba = new System.Windows.Forms.ListBox();
             this.panel_menu.SuspendLayout();
-            this.Panel_Class.SuspendLayout();
-            this.Panel_Teacher.SuspendLayout();
-            this.Panel_Dba.SuspendLayout();
-            this.Panel_Dba_Account.SuspendLayout();
+            this.panel_class.SuspendLayout();
+            this.panel_teacher.SuspendLayout();
+            this.panel_dba.SuspendLayout();
+            this.panel_dba_account.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_menu
             // 
-            this.panel_menu.Controls.Add(this.Button_Menu_Dba);
-            this.panel_menu.Controls.Add(this.Button_Menu_Teacher);
-            this.panel_menu.Controls.Add(this.Button_Menu_Class);
+            this.panel_menu.Controls.Add(this.button_menu_dba);
+            this.panel_menu.Controls.Add(this.button_menu_teacher);
+            this.panel_menu.Controls.Add(this.button_menu_class);
             this.panel_menu.Controls.Add(this.button_menu_logout);
             this.panel_menu.Controls.Add(this.button_menu_account);
             this.panel_menu.Location = new System.Drawing.Point(12, 12);
@@ -108,36 +108,36 @@
             // 
             // Button_Menu_Dba
             // 
-            this.Button_Menu_Dba.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Menu_Dba.Location = new System.Drawing.Point(3, 89);
-            this.Button_Menu_Dba.Name = "Button_Menu_Dba";
-            this.Button_Menu_Dba.Size = new System.Drawing.Size(134, 37);
-            this.Button_Menu_Dba.TabIndex = 7;
-            this.Button_Menu_Dba.Text = "DBA";
-            this.Button_Menu_Dba.UseVisualStyleBackColor = true;
-            this.Button_Menu_Dba.Click += new System.EventHandler(this.Button_Menu_Dba_Click);
+            this.button_menu_dba.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_menu_dba.Location = new System.Drawing.Point(3, 89);
+            this.button_menu_dba.Name = "Button_Menu_Dba";
+            this.button_menu_dba.Size = new System.Drawing.Size(134, 37);
+            this.button_menu_dba.TabIndex = 7;
+            this.button_menu_dba.Text = "DBA";
+            this.button_menu_dba.UseVisualStyleBackColor = true;
+            this.button_menu_dba.Click += new System.EventHandler(this.Button_Menu_Dba_Click);
             // 
             // Button_Menu_Teacher
             // 
-            this.Button_Menu_Teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Menu_Teacher.Location = new System.Drawing.Point(3, 46);
-            this.Button_Menu_Teacher.Name = "Button_Menu_Teacher";
-            this.Button_Menu_Teacher.Size = new System.Drawing.Size(134, 37);
-            this.Button_Menu_Teacher.TabIndex = 6;
-            this.Button_Menu_Teacher.Text = "Teacher";
-            this.Button_Menu_Teacher.UseVisualStyleBackColor = true;
-            this.Button_Menu_Teacher.Click += new System.EventHandler(this.Button_Menu_Teacher_Click);
+            this.button_menu_teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_menu_teacher.Location = new System.Drawing.Point(3, 46);
+            this.button_menu_teacher.Name = "Button_Menu_Teacher";
+            this.button_menu_teacher.Size = new System.Drawing.Size(134, 37);
+            this.button_menu_teacher.TabIndex = 6;
+            this.button_menu_teacher.Text = "Teacher";
+            this.button_menu_teacher.UseVisualStyleBackColor = true;
+            this.button_menu_teacher.Click += new System.EventHandler(this.Button_Menu_Teacher_Click);
             // 
             // Button_Menu_Class
             // 
-            this.Button_Menu_Class.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Menu_Class.Location = new System.Drawing.Point(3, 3);
-            this.Button_Menu_Class.Name = "Button_Menu_Class";
-            this.Button_Menu_Class.Size = new System.Drawing.Size(134, 37);
-            this.Button_Menu_Class.TabIndex = 5;
-            this.Button_Menu_Class.Text = "Class";
-            this.Button_Menu_Class.UseVisualStyleBackColor = true;
-            this.Button_Menu_Class.Click += new System.EventHandler(this.Button_Menu_Class_Click);
+            this.button_menu_class.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_menu_class.Location = new System.Drawing.Point(3, 3);
+            this.button_menu_class.Name = "Button_Menu_Class";
+            this.button_menu_class.Size = new System.Drawing.Size(134, 37);
+            this.button_menu_class.TabIndex = 5;
+            this.button_menu_class.Text = "Class";
+            this.button_menu_class.UseVisualStyleBackColor = true;
+            this.button_menu_class.Click += new System.EventHandler(this.Button_Menu_Class_Click);
             // 
             // button_menu_logout
             // 
@@ -163,305 +163,305 @@
             // 
             // Panel_Class
             // 
-            this.Panel_Class.Controls.Add(this.Combo_Class_Teacher);
-            this.Panel_Class.Controls.Add(this.Label_Class_Menu);
-            this.Panel_Class.Controls.Add(this.Button_Class_Save);
-            this.Panel_Class.Controls.Add(this.Button_Class_Delete);
-            this.Panel_Class.Controls.Add(this.Button_Class_Reset);
-            this.Panel_Class.Controls.Add(this.Textbox_Class_Name);
-            this.Panel_Class.Controls.Add(this.Label_Class_Teacher);
-            this.Panel_Class.Controls.Add(this.Label_Class_Name);
-            this.Panel_Class.Controls.Add(this.Button_Class_New);
-            this.Panel_Class.Controls.Add(this.Listbox_Class);
-            this.Panel_Class.Location = new System.Drawing.Point(158, 15);
-            this.Panel_Class.Name = "Panel_Class";
-            this.Panel_Class.Size = new System.Drawing.Size(656, 495);
-            this.Panel_Class.TabIndex = 2;
-            this.Panel_Class.VisibleChanged += new System.EventHandler(this.Panel_Class_VisibleChanged);
+            this.panel_class.Controls.Add(this.comboBox_class_teacher);
+            this.panel_class.Controls.Add(this.label_class_menu);
+            this.panel_class.Controls.Add(this.button_class_save);
+            this.panel_class.Controls.Add(this.button_class_delete);
+            this.panel_class.Controls.Add(this.button_class_reset);
+            this.panel_class.Controls.Add(this.textBox_class_name);
+            this.panel_class.Controls.Add(this.label_class_teacher);
+            this.panel_class.Controls.Add(this.label_class_name);
+            this.panel_class.Controls.Add(this.button_class_new);
+            this.panel_class.Controls.Add(this.listBox_class);
+            this.panel_class.Location = new System.Drawing.Point(158, 15);
+            this.panel_class.Name = "Panel_Class";
+            this.panel_class.Size = new System.Drawing.Size(656, 495);
+            this.panel_class.TabIndex = 2;
+            this.panel_class.VisibleChanged += new System.EventHandler(this.Panel_Class_VisibleChanged);
             // 
             // Combo_Class_Teacher
             // 
-            this.Combo_Class_Teacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Combo_Class_Teacher.FormattingEnabled = true;
-            this.Combo_Class_Teacher.Location = new System.Drawing.Point(332, 174);
-            this.Combo_Class_Teacher.Name = "Combo_Class_Teacher";
-            this.Combo_Class_Teacher.Size = new System.Drawing.Size(200, 21);
-            this.Combo_Class_Teacher.TabIndex = 10;
+            this.comboBox_class_teacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_class_teacher.FormattingEnabled = true;
+            this.comboBox_class_teacher.Location = new System.Drawing.Point(332, 174);
+            this.comboBox_class_teacher.Name = "Combo_Class_Teacher";
+            this.comboBox_class_teacher.Size = new System.Drawing.Size(200, 21);
+            this.comboBox_class_teacher.TabIndex = 10;
             // 
             // Label_Class_Menu
             // 
-            this.Label_Class_Menu.AutoSize = true;
-            this.Label_Class_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Class_Menu.Location = new System.Drawing.Point(3, 3);
-            this.Label_Class_Menu.Name = "Label_Class_Menu";
-            this.Label_Class_Menu.Size = new System.Drawing.Size(116, 24);
-            this.Label_Class_Menu.TabIndex = 9;
-            this.Label_Class_Menu.Text = "Class Name:";
+            this.label_class_menu.AutoSize = true;
+            this.label_class_menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_class_menu.Location = new System.Drawing.Point(3, 3);
+            this.label_class_menu.Name = "Label_Class_Menu";
+            this.label_class_menu.Size = new System.Drawing.Size(116, 24);
+            this.label_class_menu.TabIndex = 9;
+            this.label_class_menu.Text = "Class Name:";
             // 
             // Button_Class_Save
             // 
-            this.Button_Class_Save.Location = new System.Drawing.Point(503, 201);
-            this.Button_Class_Save.Name = "Button_Class_Save";
-            this.Button_Class_Save.Size = new System.Drawing.Size(75, 23);
-            this.Button_Class_Save.TabIndex = 8;
-            this.Button_Class_Save.Text = "Save";
-            this.Button_Class_Save.UseVisualStyleBackColor = true;
-            this.Button_Class_Save.Click += new System.EventHandler(this.Button_Class_Save_Click);
+            this.button_class_save.Location = new System.Drawing.Point(503, 201);
+            this.button_class_save.Name = "Button_Class_Save";
+            this.button_class_save.Size = new System.Drawing.Size(75, 23);
+            this.button_class_save.TabIndex = 8;
+            this.button_class_save.Text = "Save";
+            this.button_class_save.UseVisualStyleBackColor = true;
+            this.button_class_save.Click += new System.EventHandler(this.Button_Class_Save_Click);
             // 
             // Button_Class_Delete
             // 
-            this.Button_Class_Delete.Location = new System.Drawing.Point(383, 201);
-            this.Button_Class_Delete.Name = "Button_Class_Delete";
-            this.Button_Class_Delete.Size = new System.Drawing.Size(75, 23);
-            this.Button_Class_Delete.TabIndex = 7;
-            this.Button_Class_Delete.Text = "Delete";
-            this.Button_Class_Delete.UseVisualStyleBackColor = true;
-            this.Button_Class_Delete.Click += new System.EventHandler(this.Button_Class_Delete_Click);
+            this.button_class_delete.Location = new System.Drawing.Point(383, 201);
+            this.button_class_delete.Name = "Button_Class_Delete";
+            this.button_class_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_class_delete.TabIndex = 7;
+            this.button_class_delete.Text = "Delete";
+            this.button_class_delete.UseVisualStyleBackColor = true;
+            this.button_class_delete.Click += new System.EventHandler(this.Button_Class_Delete_Click);
             // 
             // Button_Class_Reset
             // 
-            this.Button_Class_Reset.Location = new System.Drawing.Point(266, 201);
-            this.Button_Class_Reset.Name = "Button_Class_Reset";
-            this.Button_Class_Reset.Size = new System.Drawing.Size(75, 23);
-            this.Button_Class_Reset.TabIndex = 6;
-            this.Button_Class_Reset.Text = "Reset";
-            this.Button_Class_Reset.UseVisualStyleBackColor = true;
-            this.Button_Class_Reset.Click += new System.EventHandler(this.Button_Class_Reset_Click);
+            this.button_class_reset.Location = new System.Drawing.Point(266, 201);
+            this.button_class_reset.Name = "Button_Class_Reset";
+            this.button_class_reset.Size = new System.Drawing.Size(75, 23);
+            this.button_class_reset.TabIndex = 6;
+            this.button_class_reset.Text = "Reset";
+            this.button_class_reset.UseVisualStyleBackColor = true;
+            this.button_class_reset.Click += new System.EventHandler(this.Button_Class_Reset_Click);
             // 
             // Textbox_Class_Name
             // 
-            this.Textbox_Class_Name.Location = new System.Drawing.Point(332, 149);
-            this.Textbox_Class_Name.Name = "Textbox_Class_Name";
-            this.Textbox_Class_Name.Size = new System.Drawing.Size(200, 20);
-            this.Textbox_Class_Name.TabIndex = 4;
+            this.textBox_class_name.Location = new System.Drawing.Point(332, 149);
+            this.textBox_class_name.Name = "Textbox_Class_Name";
+            this.textBox_class_name.Size = new System.Drawing.Size(200, 20);
+            this.textBox_class_name.TabIndex = 4;
             // 
             // Label_Class_Teacher
             // 
-            this.Label_Class_Teacher.AutoSize = true;
-            this.Label_Class_Teacher.Location = new System.Drawing.Point(282, 178);
-            this.Label_Class_Teacher.Name = "Label_Class_Teacher";
-            this.Label_Class_Teacher.Size = new System.Drawing.Size(47, 13);
-            this.Label_Class_Teacher.TabIndex = 3;
-            this.Label_Class_Teacher.Text = "Teacher";
+            this.label_class_teacher.AutoSize = true;
+            this.label_class_teacher.Location = new System.Drawing.Point(282, 178);
+            this.label_class_teacher.Name = "Label_Class_Teacher";
+            this.label_class_teacher.Size = new System.Drawing.Size(47, 13);
+            this.label_class_teacher.TabIndex = 3;
+            this.label_class_teacher.Text = "Teacher";
             // 
             // Label_Class_Name
             // 
-            this.Label_Class_Name.AutoSize = true;
-            this.Label_Class_Name.Location = new System.Drawing.Point(291, 152);
-            this.Label_Class_Name.Name = "Label_Class_Name";
-            this.Label_Class_Name.Size = new System.Drawing.Size(38, 13);
-            this.Label_Class_Name.TabIndex = 2;
-            this.Label_Class_Name.Text = "Name:";
+            this.label_class_name.AutoSize = true;
+            this.label_class_name.Location = new System.Drawing.Point(291, 152);
+            this.label_class_name.Name = "Label_Class_Name";
+            this.label_class_name.Size = new System.Drawing.Size(38, 13);
+            this.label_class_name.TabIndex = 2;
+            this.label_class_name.Text = "Name:";
             // 
             // Button_Class_New
             // 
-            this.Button_Class_New.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Class_New.Location = new System.Drawing.Point(40, 431);
-            this.Button_Class_New.Name = "Button_Class_New";
-            this.Button_Class_New.Size = new System.Drawing.Size(101, 42);
-            this.Button_Class_New.TabIndex = 1;
-            this.Button_Class_New.Text = "New";
-            this.Button_Class_New.UseVisualStyleBackColor = true;
-            this.Button_Class_New.Click += new System.EventHandler(this.Button_Class_New_Click);
+            this.button_class_new.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_class_new.Location = new System.Drawing.Point(40, 431);
+            this.button_class_new.Name = "Button_Class_New";
+            this.button_class_new.Size = new System.Drawing.Size(101, 42);
+            this.button_class_new.TabIndex = 1;
+            this.button_class_new.Text = "New";
+            this.button_class_new.UseVisualStyleBackColor = true;
+            this.button_class_new.Click += new System.EventHandler(this.Button_Class_New_Click);
             // 
             // Listbox_Class
             // 
-            this.Listbox_Class.FormattingEnabled = true;
-            this.Listbox_Class.Location = new System.Drawing.Point(3, 31);
-            this.Listbox_Class.Name = "Listbox_Class";
-            this.Listbox_Class.Size = new System.Drawing.Size(183, 394);
-            this.Listbox_Class.TabIndex = 0;
-            this.Listbox_Class.SelectedIndexChanged += new System.EventHandler(this.Listbox_Class_SelectedIndexChanged);
+            this.listBox_class.FormattingEnabled = true;
+            this.listBox_class.Location = new System.Drawing.Point(3, 31);
+            this.listBox_class.Name = "Listbox_Class";
+            this.listBox_class.Size = new System.Drawing.Size(183, 394);
+            this.listBox_class.TabIndex = 0;
+            this.listBox_class.SelectedIndexChanged += new System.EventHandler(this.Listbox_Class_SelectedIndexChanged);
             // 
             // Panel_Teacher
             // 
-            this.Panel_Teacher.Controls.Add(this.Button_Teacher_New);
-            this.Panel_Teacher.Controls.Add(this.Button_Teacher_Save);
-            this.Panel_Teacher.Controls.Add(this.Button_Teacher_Delete);
-            this.Panel_Teacher.Controls.Add(this.Button_Teacher_Reset);
-            this.Panel_Teacher.Controls.Add(this.Textbox_Teacher_Password);
-            this.Panel_Teacher.Controls.Add(this.Textbox_Teacher_Username);
-            this.Panel_Teacher.Controls.Add(this.Textbox_Teacher_lName);
-            this.Panel_Teacher.Controls.Add(this.Textbox_Teacher_fName);
-            this.Panel_Teacher.Controls.Add(this.Label_Teacher_Password);
-            this.Panel_Teacher.Controls.Add(this.Label_Teacher_Username);
-            this.Panel_Teacher.Controls.Add(this.Label_Teacher_Lname);
-            this.Panel_Teacher.Controls.Add(this.Label_Teacher_Fname);
-            this.Panel_Teacher.Controls.Add(this.Label_Teacher_Menu);
-            this.Panel_Teacher.Controls.Add(this.ListBox_Teacher_Name);
-            this.Panel_Teacher.Location = new System.Drawing.Point(158, 9);
-            this.Panel_Teacher.Name = "Panel_Teacher";
-            this.Panel_Teacher.Size = new System.Drawing.Size(653, 495);
-            this.Panel_Teacher.TabIndex = 9;
-            this.Panel_Teacher.Visible = false;
-            this.Panel_Teacher.VisibleChanged += new System.EventHandler(this.Panel_Teacher_VisibleChanged);
+            this.panel_teacher.Controls.Add(this.button_teacher_new);
+            this.panel_teacher.Controls.Add(this.button_teacher_save);
+            this.panel_teacher.Controls.Add(this.button_teacher_delete);
+            this.panel_teacher.Controls.Add(this.button_teacher_reset);
+            this.panel_teacher.Controls.Add(this.textbox_teacher_password);
+            this.panel_teacher.Controls.Add(this.textbox_teacher_username);
+            this.panel_teacher.Controls.Add(this.textbox_teacher_lName);
+            this.panel_teacher.Controls.Add(this.textbox_teacher_fName);
+            this.panel_teacher.Controls.Add(this.label_teacher_password);
+            this.panel_teacher.Controls.Add(this.label_teacher_username);
+            this.panel_teacher.Controls.Add(this.label_teacher_lName);
+            this.panel_teacher.Controls.Add(this.label_teacher_fName);
+            this.panel_teacher.Controls.Add(this.label_teacher_menu);
+            this.panel_teacher.Controls.Add(this.listBox_teacher_name);
+            this.panel_teacher.Location = new System.Drawing.Point(158, 9);
+            this.panel_teacher.Name = "Panel_Teacher";
+            this.panel_teacher.Size = new System.Drawing.Size(653, 495);
+            this.panel_teacher.TabIndex = 9;
+            this.panel_teacher.Visible = false;
+            this.panel_teacher.VisibleChanged += new System.EventHandler(this.Panel_Teacher_VisibleChanged);
             // 
             // Button_Teacher_New
             // 
-            this.Button_Teacher_New.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Teacher_New.Location = new System.Drawing.Point(37, 424);
-            this.Button_Teacher_New.Name = "Button_Teacher_New";
-            this.Button_Teacher_New.Size = new System.Drawing.Size(101, 42);
-            this.Button_Teacher_New.TabIndex = 13;
-            this.Button_Teacher_New.Text = "New";
-            this.Button_Teacher_New.UseVisualStyleBackColor = true;
-            this.Button_Teacher_New.Click += new System.EventHandler(this.Button_Teacher_New_Click);
+            this.button_teacher_new.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_teacher_new.Location = new System.Drawing.Point(37, 424);
+            this.button_teacher_new.Name = "Button_Teacher_New";
+            this.button_teacher_new.Size = new System.Drawing.Size(101, 42);
+            this.button_teacher_new.TabIndex = 13;
+            this.button_teacher_new.Text = "New";
+            this.button_teacher_new.UseVisualStyleBackColor = true;
+            this.button_teacher_new.Click += new System.EventHandler(this.Button_Teacher_New_Click);
             // 
             // Button_Teacher_Save
             // 
-            this.Button_Teacher_Save.Location = new System.Drawing.Point(488, 276);
-            this.Button_Teacher_Save.Name = "Button_Teacher_Save";
-            this.Button_Teacher_Save.Size = new System.Drawing.Size(75, 23);
-            this.Button_Teacher_Save.TabIndex = 12;
-            this.Button_Teacher_Save.Text = "Save";
-            this.Button_Teacher_Save.UseVisualStyleBackColor = true;
-            this.Button_Teacher_Save.Click += new System.EventHandler(this.Button_Teacher_Save_Click);
+            this.button_teacher_save.Location = new System.Drawing.Point(488, 276);
+            this.button_teacher_save.Name = "Button_Teacher_Save";
+            this.button_teacher_save.Size = new System.Drawing.Size(75, 23);
+            this.button_teacher_save.TabIndex = 12;
+            this.button_teacher_save.Text = "Save";
+            this.button_teacher_save.UseVisualStyleBackColor = true;
+            this.button_teacher_save.Click += new System.EventHandler(this.Button_Teacher_Save_Click);
             // 
             // Button_Teacher_Delete
             // 
-            this.Button_Teacher_Delete.Location = new System.Drawing.Point(367, 276);
-            this.Button_Teacher_Delete.Name = "Button_Teacher_Delete";
-            this.Button_Teacher_Delete.Size = new System.Drawing.Size(75, 23);
-            this.Button_Teacher_Delete.TabIndex = 11;
-            this.Button_Teacher_Delete.Text = "Delete";
-            this.Button_Teacher_Delete.UseVisualStyleBackColor = true;
-            this.Button_Teacher_Delete.Click += new System.EventHandler(this.Button_Teacher_Delete_Click);
+            this.button_teacher_delete.Location = new System.Drawing.Point(367, 276);
+            this.button_teacher_delete.Name = "Button_Teacher_Delete";
+            this.button_teacher_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_teacher_delete.TabIndex = 11;
+            this.button_teacher_delete.Text = "Delete";
+            this.button_teacher_delete.UseVisualStyleBackColor = true;
+            this.button_teacher_delete.Click += new System.EventHandler(this.Button_Teacher_Delete_Click);
             // 
             // Button_Teacher_Reset
             // 
-            this.Button_Teacher_Reset.Location = new System.Drawing.Point(251, 276);
-            this.Button_Teacher_Reset.Name = "Button_Teacher_Reset";
-            this.Button_Teacher_Reset.Size = new System.Drawing.Size(75, 23);
-            this.Button_Teacher_Reset.TabIndex = 10;
-            this.Button_Teacher_Reset.Text = "Reset";
-            this.Button_Teacher_Reset.UseVisualStyleBackColor = true;
-            this.Button_Teacher_Reset.Click += new System.EventHandler(this.Button_Teacher_Reset_Click);
+            this.button_teacher_reset.Location = new System.Drawing.Point(251, 276);
+            this.button_teacher_reset.Name = "Button_Teacher_Reset";
+            this.button_teacher_reset.Size = new System.Drawing.Size(75, 23);
+            this.button_teacher_reset.TabIndex = 10;
+            this.button_teacher_reset.Text = "Reset";
+            this.button_teacher_reset.UseVisualStyleBackColor = true;
+            this.button_teacher_reset.Click += new System.EventHandler(this.Button_Teacher_Reset_Click);
             // 
             // Textbox_Teacher_Password
             // 
-            this.Textbox_Teacher_Password.Location = new System.Drawing.Point(338, 235);
-            this.Textbox_Teacher_Password.Name = "Textbox_Teacher_Password";
-            this.Textbox_Teacher_Password.Size = new System.Drawing.Size(191, 20);
-            this.Textbox_Teacher_Password.TabIndex = 9;
+            this.textbox_teacher_password.Location = new System.Drawing.Point(338, 235);
+            this.textbox_teacher_password.Name = "Textbox_Teacher_Password";
+            this.textbox_teacher_password.Size = new System.Drawing.Size(191, 20);
+            this.textbox_teacher_password.TabIndex = 9;
             // 
             // Textbox_Teacher_Username
             // 
-            this.Textbox_Teacher_Username.Location = new System.Drawing.Point(338, 209);
-            this.Textbox_Teacher_Username.Name = "Textbox_Teacher_Username";
-            this.Textbox_Teacher_Username.Size = new System.Drawing.Size(191, 20);
-            this.Textbox_Teacher_Username.TabIndex = 8;
+            this.textbox_teacher_username.Location = new System.Drawing.Point(338, 209);
+            this.textbox_teacher_username.Name = "Textbox_Teacher_Username";
+            this.textbox_teacher_username.Size = new System.Drawing.Size(191, 20);
+            this.textbox_teacher_username.TabIndex = 8;
             // 
             // Textbox_Teacher_lName
             // 
-            this.Textbox_Teacher_lName.Location = new System.Drawing.Point(338, 183);
-            this.Textbox_Teacher_lName.Name = "Textbox_Teacher_lName";
-            this.Textbox_Teacher_lName.Size = new System.Drawing.Size(191, 20);
-            this.Textbox_Teacher_lName.TabIndex = 7;
+            this.textbox_teacher_lName.Location = new System.Drawing.Point(338, 183);
+            this.textbox_teacher_lName.Name = "Textbox_Teacher_lName";
+            this.textbox_teacher_lName.Size = new System.Drawing.Size(191, 20);
+            this.textbox_teacher_lName.TabIndex = 7;
             // 
             // Textbox_Teacher_fName
             // 
-            this.Textbox_Teacher_fName.Location = new System.Drawing.Point(338, 159);
-            this.Textbox_Teacher_fName.Name = "Textbox_Teacher_fName";
-            this.Textbox_Teacher_fName.Size = new System.Drawing.Size(191, 20);
-            this.Textbox_Teacher_fName.TabIndex = 6;
+            this.textbox_teacher_fName.Location = new System.Drawing.Point(338, 159);
+            this.textbox_teacher_fName.Name = "Textbox_Teacher_fName";
+            this.textbox_teacher_fName.Size = new System.Drawing.Size(191, 20);
+            this.textbox_teacher_fName.TabIndex = 6;
             // 
             // Label_Teacher_Password
             // 
-            this.Label_Teacher_Password.AutoSize = true;
-            this.Label_Teacher_Password.Location = new System.Drawing.Point(277, 238);
-            this.Label_Teacher_Password.Name = "Label_Teacher_Password";
-            this.Label_Teacher_Password.Size = new System.Drawing.Size(56, 13);
-            this.Label_Teacher_Password.TabIndex = 5;
-            this.Label_Teacher_Password.Text = "Password:";
+            this.label_teacher_password.AutoSize = true;
+            this.label_teacher_password.Location = new System.Drawing.Point(277, 238);
+            this.label_teacher_password.Name = "Label_Teacher_Password";
+            this.label_teacher_password.Size = new System.Drawing.Size(56, 13);
+            this.label_teacher_password.TabIndex = 5;
+            this.label_teacher_password.Text = "Password:";
             // 
             // Label_Teacher_Username
             // 
-            this.Label_Teacher_Username.AutoSize = true;
-            this.Label_Teacher_Username.Location = new System.Drawing.Point(274, 212);
-            this.Label_Teacher_Username.Name = "Label_Teacher_Username";
-            this.Label_Teacher_Username.Size = new System.Drawing.Size(58, 13);
-            this.Label_Teacher_Username.TabIndex = 4;
-            this.Label_Teacher_Username.Text = "Username:";
+            this.label_teacher_username.AutoSize = true;
+            this.label_teacher_username.Location = new System.Drawing.Point(274, 212);
+            this.label_teacher_username.Name = "Label_Teacher_Username";
+            this.label_teacher_username.Size = new System.Drawing.Size(58, 13);
+            this.label_teacher_username.TabIndex = 4;
+            this.label_teacher_username.Text = "Username:";
             // 
             // Label_Teacher_Lname
             // 
-            this.Label_Teacher_Lname.AutoSize = true;
-            this.Label_Teacher_Lname.Location = new System.Drawing.Point(272, 186);
-            this.Label_Teacher_Lname.Name = "Label_Teacher_Lname";
-            this.Label_Teacher_Lname.Size = new System.Drawing.Size(61, 13);
-            this.Label_Teacher_Lname.TabIndex = 3;
-            this.Label_Teacher_Lname.Text = "Last Name:";
+            this.label_teacher_lName.AutoSize = true;
+            this.label_teacher_lName.Location = new System.Drawing.Point(272, 186);
+            this.label_teacher_lName.Name = "Label_Teacher_Lname";
+            this.label_teacher_lName.Size = new System.Drawing.Size(61, 13);
+            this.label_teacher_lName.TabIndex = 3;
+            this.label_teacher_lName.Text = "Last Name:";
             // 
             // Label_Teacher_Fname
             // 
-            this.Label_Teacher_Fname.AutoSize = true;
-            this.Label_Teacher_Fname.Location = new System.Drawing.Point(272, 162);
-            this.Label_Teacher_Fname.Name = "Label_Teacher_Fname";
-            this.Label_Teacher_Fname.Size = new System.Drawing.Size(60, 13);
-            this.Label_Teacher_Fname.TabIndex = 2;
-            this.Label_Teacher_Fname.Text = "First Name:";
+            this.label_teacher_fName.AutoSize = true;
+            this.label_teacher_fName.Location = new System.Drawing.Point(272, 162);
+            this.label_teacher_fName.Name = "Label_Teacher_Fname";
+            this.label_teacher_fName.Size = new System.Drawing.Size(60, 13);
+            this.label_teacher_fName.TabIndex = 2;
+            this.label_teacher_fName.Text = "First Name:";
             // 
             // Label_Teacher_Menu
             // 
-            this.Label_Teacher_Menu.AutoSize = true;
-            this.Label_Teacher_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Teacher_Menu.Location = new System.Drawing.Point(3, 15);
-            this.Label_Teacher_Menu.Name = "Label_Teacher_Menu";
-            this.Label_Teacher_Menu.Size = new System.Drawing.Size(97, 25);
-            this.Label_Teacher_Menu.TabIndex = 1;
-            this.Label_Teacher_Menu.Text = "Teacher:";
+            this.label_teacher_menu.AutoSize = true;
+            this.label_teacher_menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_teacher_menu.Location = new System.Drawing.Point(3, 15);
+            this.label_teacher_menu.Name = "Label_Teacher_Menu";
+            this.label_teacher_menu.Size = new System.Drawing.Size(97, 25);
+            this.label_teacher_menu.TabIndex = 1;
+            this.label_teacher_menu.Text = "Teacher:";
             // 
             // ListBox_Teacher_Name
             // 
-            this.ListBox_Teacher_Name.FormattingEnabled = true;
-            this.ListBox_Teacher_Name.Location = new System.Drawing.Point(7, 49);
-            this.ListBox_Teacher_Name.Name = "ListBox_Teacher_Name";
-            this.ListBox_Teacher_Name.Size = new System.Drawing.Size(179, 355);
-            this.ListBox_Teacher_Name.TabIndex = 0;
-            this.ListBox_Teacher_Name.SelectedIndexChanged += new System.EventHandler(this.ListBox_Teacher_Name_SelectedIndexChanged);
+            this.listBox_teacher_name.FormattingEnabled = true;
+            this.listBox_teacher_name.Location = new System.Drawing.Point(7, 49);
+            this.listBox_teacher_name.Name = "ListBox_Teacher_Name";
+            this.listBox_teacher_name.Size = new System.Drawing.Size(179, 355);
+            this.listBox_teacher_name.TabIndex = 0;
+            this.listBox_teacher_name.SelectedIndexChanged += new System.EventHandler(this.ListBox_Teacher_Name_SelectedIndexChanged);
             // 
             // Panel_Dba
             // 
-            this.Panel_Dba.Controls.Add(this.Button_Dba_New);
-            this.Panel_Dba.Controls.Add(this.Button_Dba_Save);
-            this.Panel_Dba.Controls.Add(this.Button_Dba_Delete);
-            this.Panel_Dba.Controls.Add(this.Button_Dba_Reset);
-            this.Panel_Dba.Controls.Add(this.Textbox_Dba_Password);
-            this.Panel_Dba.Controls.Add(this.Textbox_Dba_Username);
-            this.Panel_Dba.Controls.Add(this.Textbox_Dba_Lname);
-            this.Panel_Dba.Controls.Add(this.Textbox_Dba_Fname);
-            this.Panel_Dba.Controls.Add(this.Label_Dba_Password);
-            this.Panel_Dba.Controls.Add(this.Label_Dba_Username);
-            this.Panel_Dba.Controls.Add(this.Label_Dba_Lname);
-            this.Panel_Dba.Controls.Add(this.Label_Dba_Fname);
-            this.Panel_Dba.Controls.Add(this.Label_Dba_Name);
-            this.Panel_Dba.Controls.Add(this.Listbox_Dba);
-            this.Panel_Dba.Location = new System.Drawing.Point(155, 9);
-            this.Panel_Dba.Name = "Panel_Dba";
-            this.Panel_Dba.Size = new System.Drawing.Size(659, 510);
-            this.Panel_Dba.TabIndex = 14;
-            this.Panel_Dba.Visible = false;
-            this.Panel_Dba.VisibleChanged += new System.EventHandler(this.Panel_Dba_VisibleChanged);
+            this.panel_dba.Controls.Add(this.button_dba_new);
+            this.panel_dba.Controls.Add(this.button_dba_save);
+            this.panel_dba.Controls.Add(this.button_dba_delete);
+            this.panel_dba.Controls.Add(this.button_dba_reset);
+            this.panel_dba.Controls.Add(this.textbox_dba_password);
+            this.panel_dba.Controls.Add(this.textbox_dba_username);
+            this.panel_dba.Controls.Add(this.textbox_dba_lName);
+            this.panel_dba.Controls.Add(this.textbox_dba_fName);
+            this.panel_dba.Controls.Add(this.label_dba_password);
+            this.panel_dba.Controls.Add(this.label_dba_username);
+            this.panel_dba.Controls.Add(this.label_dba_lName);
+            this.panel_dba.Controls.Add(this.label_dba_fName);
+            this.panel_dba.Controls.Add(this.label_dba_name);
+            this.panel_dba.Controls.Add(this.listBox_dba);
+            this.panel_dba.Location = new System.Drawing.Point(155, 9);
+            this.panel_dba.Name = "Panel_Dba";
+            this.panel_dba.Size = new System.Drawing.Size(659, 510);
+            this.panel_dba.TabIndex = 14;
+            this.panel_dba.Visible = false;
+            this.panel_dba.VisibleChanged += new System.EventHandler(this.Panel_Dba_VisibleChanged);
             // 
             // Panel_Dba_Account
             // 
-            this.Panel_Dba_Account.Controls.Add(this.label_account_error);
-            this.Panel_Dba_Account.Controls.Add(this.button_account_save);
-            this.Panel_Dba_Account.Controls.Add(this.button_account_reset);
-            this.Panel_Dba_Account.Controls.Add(this.label11);
-            this.Panel_Dba_Account.Controls.Add(this.label10);
-            this.Panel_Dba_Account.Controls.Add(this.label9);
-            this.Panel_Dba_Account.Controls.Add(this.label8);
-            this.Panel_Dba_Account.Controls.Add(this.textBox_account_confirmPassword);
-            this.Panel_Dba_Account.Controls.Add(this.textBox_account_password);
-            this.Panel_Dba_Account.Controls.Add(this.textBox_account_lName);
-            this.Panel_Dba_Account.Controls.Add(this.textBox_account_fName);
-            this.Panel_Dba_Account.Location = new System.Drawing.Point(158, 6);
-            this.Panel_Dba_Account.Name = "Panel_Dba_Account";
-            this.Panel_Dba_Account.Size = new System.Drawing.Size(659, 510);
-            this.Panel_Dba_Account.TabIndex = 28;
-            this.Panel_Dba_Account.Visible = false;
-            this.Panel_Dba_Account.VisibleChanged += new System.EventHandler(this.Panel_Dba_Account_VisibleChanged);
+            this.panel_dba_account.Controls.Add(this.label_account_error);
+            this.panel_dba_account.Controls.Add(this.button_account_save);
+            this.panel_dba_account.Controls.Add(this.button_account_reset);
+            this.panel_dba_account.Controls.Add(this.label11);
+            this.panel_dba_account.Controls.Add(this.label10);
+            this.panel_dba_account.Controls.Add(this.label9);
+            this.panel_dba_account.Controls.Add(this.label8);
+            this.panel_dba_account.Controls.Add(this.textBox_account_confirmPassword);
+            this.panel_dba_account.Controls.Add(this.textBox_account_password);
+            this.panel_dba_account.Controls.Add(this.textBox_account_lName);
+            this.panel_dba_account.Controls.Add(this.textBox_account_fName);
+            this.panel_dba_account.Location = new System.Drawing.Point(158, 6);
+            this.panel_dba_account.Name = "Panel_Dba_Account";
+            this.panel_dba_account.Size = new System.Drawing.Size(659, 510);
+            this.panel_dba_account.TabIndex = 28;
+            this.panel_dba_account.Visible = false;
+            this.panel_dba_account.VisibleChanged += new System.EventHandler(this.Panel_Dba_Account_VisibleChanged);
             // 
             // label_account_error
             // 
@@ -562,151 +562,151 @@
             // 
             // Button_Dba_New
             // 
-            this.Button_Dba_New.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Dba_New.Location = new System.Drawing.Point(43, 430);
-            this.Button_Dba_New.Name = "Button_Dba_New";
-            this.Button_Dba_New.Size = new System.Drawing.Size(101, 42);
-            this.Button_Dba_New.TabIndex = 27;
-            this.Button_Dba_New.Text = "New";
-            this.Button_Dba_New.UseVisualStyleBackColor = true;
-            this.Button_Dba_New.Click += new System.EventHandler(this.Button_Dba_New_Click);
+            this.button_dba_new.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_dba_new.Location = new System.Drawing.Point(43, 430);
+            this.button_dba_new.Name = "Button_Dba_New";
+            this.button_dba_new.Size = new System.Drawing.Size(101, 42);
+            this.button_dba_new.TabIndex = 27;
+            this.button_dba_new.Text = "New";
+            this.button_dba_new.UseVisualStyleBackColor = true;
+            this.button_dba_new.Click += new System.EventHandler(this.Button_Dba_New_Click);
             // 
             // Button_Dba_Save
             // 
-            this.Button_Dba_Save.Location = new System.Drawing.Point(494, 282);
-            this.Button_Dba_Save.Name = "Button_Dba_Save";
-            this.Button_Dba_Save.Size = new System.Drawing.Size(75, 23);
-            this.Button_Dba_Save.TabIndex = 26;
-            this.Button_Dba_Save.Text = "Save";
-            this.Button_Dba_Save.UseVisualStyleBackColor = true;
-            this.Button_Dba_Save.Click += new System.EventHandler(this.Button_Dba_Save_Click);
+            this.button_dba_save.Location = new System.Drawing.Point(494, 282);
+            this.button_dba_save.Name = "Button_Dba_Save";
+            this.button_dba_save.Size = new System.Drawing.Size(75, 23);
+            this.button_dba_save.TabIndex = 26;
+            this.button_dba_save.Text = "Save";
+            this.button_dba_save.UseVisualStyleBackColor = true;
+            this.button_dba_save.Click += new System.EventHandler(this.Button_Dba_Save_Click);
             // 
             // Button_Dba_Delete
             // 
-            this.Button_Dba_Delete.Location = new System.Drawing.Point(373, 282);
-            this.Button_Dba_Delete.Name = "Button_Dba_Delete";
-            this.Button_Dba_Delete.Size = new System.Drawing.Size(75, 23);
-            this.Button_Dba_Delete.TabIndex = 25;
-            this.Button_Dba_Delete.Text = "Delete";
-            this.Button_Dba_Delete.UseVisualStyleBackColor = true;
-            this.Button_Dba_Delete.Click += new System.EventHandler(this.Button_Dba_Delete_Click);
+            this.button_dba_delete.Location = new System.Drawing.Point(373, 282);
+            this.button_dba_delete.Name = "Button_Dba_Delete";
+            this.button_dba_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_dba_delete.TabIndex = 25;
+            this.button_dba_delete.Text = "Delete";
+            this.button_dba_delete.UseVisualStyleBackColor = true;
+            this.button_dba_delete.Click += new System.EventHandler(this.Button_Dba_Delete_Click);
             // 
             // Button_Dba_Reset
             // 
-            this.Button_Dba_Reset.Location = new System.Drawing.Point(257, 282);
-            this.Button_Dba_Reset.Name = "Button_Dba_Reset";
-            this.Button_Dba_Reset.Size = new System.Drawing.Size(75, 23);
-            this.Button_Dba_Reset.TabIndex = 24;
-            this.Button_Dba_Reset.Text = "Reset";
-            this.Button_Dba_Reset.UseVisualStyleBackColor = true;
-            this.Button_Dba_Reset.Click += new System.EventHandler(this.Button_Dba_Reset_Click);
+            this.button_dba_reset.Location = new System.Drawing.Point(257, 282);
+            this.button_dba_reset.Name = "Button_Dba_Reset";
+            this.button_dba_reset.Size = new System.Drawing.Size(75, 23);
+            this.button_dba_reset.TabIndex = 24;
+            this.button_dba_reset.Text = "Reset";
+            this.button_dba_reset.UseVisualStyleBackColor = true;
+            this.button_dba_reset.Click += new System.EventHandler(this.Button_Dba_Reset_Click);
             // 
             // Textbox_Dba_Password
             // 
-            this.Textbox_Dba_Password.Location = new System.Drawing.Point(344, 241);
-            this.Textbox_Dba_Password.Name = "Textbox_Dba_Password";
-            this.Textbox_Dba_Password.Size = new System.Drawing.Size(191, 20);
-            this.Textbox_Dba_Password.TabIndex = 23;
+            this.textbox_dba_password.Location = new System.Drawing.Point(344, 241);
+            this.textbox_dba_password.Name = "Textbox_Dba_Password";
+            this.textbox_dba_password.Size = new System.Drawing.Size(191, 20);
+            this.textbox_dba_password.TabIndex = 23;
             // 
             // Textbox_Dba_Username
             // 
-            this.Textbox_Dba_Username.Location = new System.Drawing.Point(344, 215);
-            this.Textbox_Dba_Username.Name = "Textbox_Dba_Username";
-            this.Textbox_Dba_Username.Size = new System.Drawing.Size(191, 20);
-            this.Textbox_Dba_Username.TabIndex = 22;
+            this.textbox_dba_username.Location = new System.Drawing.Point(344, 215);
+            this.textbox_dba_username.Name = "Textbox_Dba_Username";
+            this.textbox_dba_username.Size = new System.Drawing.Size(191, 20);
+            this.textbox_dba_username.TabIndex = 22;
             // 
             // Textbox_Dba_Lname
             // 
-            this.Textbox_Dba_Lname.Location = new System.Drawing.Point(344, 189);
-            this.Textbox_Dba_Lname.Name = "Textbox_Dba_Lname";
-            this.Textbox_Dba_Lname.Size = new System.Drawing.Size(191, 20);
-            this.Textbox_Dba_Lname.TabIndex = 21;
+            this.textbox_dba_lName.Location = new System.Drawing.Point(344, 189);
+            this.textbox_dba_lName.Name = "Textbox_Dba_Lname";
+            this.textbox_dba_lName.Size = new System.Drawing.Size(191, 20);
+            this.textbox_dba_lName.TabIndex = 21;
             // 
             // Textbox_Dba_Fname
             // 
-            this.Textbox_Dba_Fname.Location = new System.Drawing.Point(344, 165);
-            this.Textbox_Dba_Fname.Name = "Textbox_Dba_Fname";
-            this.Textbox_Dba_Fname.Size = new System.Drawing.Size(191, 20);
-            this.Textbox_Dba_Fname.TabIndex = 20;
+            this.textbox_dba_fName.Location = new System.Drawing.Point(344, 165);
+            this.textbox_dba_fName.Name = "Textbox_Dba_Fname";
+            this.textbox_dba_fName.Size = new System.Drawing.Size(191, 20);
+            this.textbox_dba_fName.TabIndex = 20;
             // 
             // Label_Dba_Password
             // 
-            this.Label_Dba_Password.AutoSize = true;
-            this.Label_Dba_Password.Location = new System.Drawing.Point(283, 244);
-            this.Label_Dba_Password.Name = "Label_Dba_Password";
-            this.Label_Dba_Password.Size = new System.Drawing.Size(56, 13);
-            this.Label_Dba_Password.TabIndex = 19;
-            this.Label_Dba_Password.Text = "Password:";
+            this.label_dba_password.AutoSize = true;
+            this.label_dba_password.Location = new System.Drawing.Point(283, 244);
+            this.label_dba_password.Name = "Label_Dba_Password";
+            this.label_dba_password.Size = new System.Drawing.Size(56, 13);
+            this.label_dba_password.TabIndex = 19;
+            this.label_dba_password.Text = "Password:";
             // 
             // Label_Dba_Username
             // 
-            this.Label_Dba_Username.AutoSize = true;
-            this.Label_Dba_Username.Location = new System.Drawing.Point(280, 218);
-            this.Label_Dba_Username.Name = "Label_Dba_Username";
-            this.Label_Dba_Username.Size = new System.Drawing.Size(58, 13);
-            this.Label_Dba_Username.TabIndex = 18;
-            this.Label_Dba_Username.Text = "Username:";
+            this.label_dba_username.AutoSize = true;
+            this.label_dba_username.Location = new System.Drawing.Point(280, 218);
+            this.label_dba_username.Name = "Label_Dba_Username";
+            this.label_dba_username.Size = new System.Drawing.Size(58, 13);
+            this.label_dba_username.TabIndex = 18;
+            this.label_dba_username.Text = "Username:";
             // 
             // Label_Dba_Lname
             // 
-            this.Label_Dba_Lname.AutoSize = true;
-            this.Label_Dba_Lname.Location = new System.Drawing.Point(278, 192);
-            this.Label_Dba_Lname.Name = "Label_Dba_Lname";
-            this.Label_Dba_Lname.Size = new System.Drawing.Size(61, 13);
-            this.Label_Dba_Lname.TabIndex = 17;
-            this.Label_Dba_Lname.Text = "Last Name:";
+            this.label_dba_lName.AutoSize = true;
+            this.label_dba_lName.Location = new System.Drawing.Point(278, 192);
+            this.label_dba_lName.Name = "Label_Dba_Lname";
+            this.label_dba_lName.Size = new System.Drawing.Size(61, 13);
+            this.label_dba_lName.TabIndex = 17;
+            this.label_dba_lName.Text = "Last Name:";
             // 
             // Label_Dba_Fname
             // 
-            this.Label_Dba_Fname.AutoSize = true;
-            this.Label_Dba_Fname.Location = new System.Drawing.Point(278, 168);
-            this.Label_Dba_Fname.Name = "Label_Dba_Fname";
-            this.Label_Dba_Fname.Size = new System.Drawing.Size(60, 13);
-            this.Label_Dba_Fname.TabIndex = 16;
-            this.Label_Dba_Fname.Text = "First Name:";
+            this.label_dba_fName.AutoSize = true;
+            this.label_dba_fName.Location = new System.Drawing.Point(278, 168);
+            this.label_dba_fName.Name = "Label_Dba_Fname";
+            this.label_dba_fName.Size = new System.Drawing.Size(60, 13);
+            this.label_dba_fName.TabIndex = 16;
+            this.label_dba_fName.Text = "First Name:";
             // 
             // Label_Dba_Name
             // 
-            this.Label_Dba_Name.AutoSize = true;
-            this.Label_Dba_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Dba_Name.Location = new System.Drawing.Point(9, 21);
-            this.Label_Dba_Name.Name = "Label_Dba_Name";
-            this.Label_Dba_Name.Size = new System.Drawing.Size(176, 25);
-            this.Label_Dba_Name.TabIndex = 15;
-            this.Label_Dba_Name.Text = "Database Admin:";
+            this.label_dba_name.AutoSize = true;
+            this.label_dba_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_dba_name.Location = new System.Drawing.Point(9, 21);
+            this.label_dba_name.Name = "Label_Dba_Name";
+            this.label_dba_name.Size = new System.Drawing.Size(176, 25);
+            this.label_dba_name.TabIndex = 15;
+            this.label_dba_name.Text = "Database Admin:";
             // 
             // Listbox_Dba
             // 
-            this.Listbox_Dba.FormattingEnabled = true;
-            this.Listbox_Dba.Location = new System.Drawing.Point(13, 55);
-            this.Listbox_Dba.Name = "Listbox_Dba";
-            this.Listbox_Dba.Size = new System.Drawing.Size(179, 355);
-            this.Listbox_Dba.TabIndex = 14;
-            this.Listbox_Dba.SelectedIndexChanged += new System.EventHandler(this.Listbox_Dba_SelectedIndexChanged);
+            this.listBox_dba.FormattingEnabled = true;
+            this.listBox_dba.Location = new System.Drawing.Point(13, 55);
+            this.listBox_dba.Name = "Listbox_Dba";
+            this.listBox_dba.Size = new System.Drawing.Size(179, 355);
+            this.listBox_dba.TabIndex = 14;
+            this.listBox_dba.SelectedIndexChanged += new System.EventHandler(this.Listbox_Dba_SelectedIndexChanged);
             // 
             // DbaInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 531);
-            this.Controls.Add(this.Panel_Dba_Account);
-            this.Controls.Add(this.Panel_Teacher);
-            this.Controls.Add(this.Panel_Dba);
-            this.Controls.Add(this.Panel_Class);
+            this.Controls.Add(this.panel_dba_account);
+            this.Controls.Add(this.panel_teacher);
+            this.Controls.Add(this.panel_dba);
+            this.Controls.Add(this.panel_class);
             this.Controls.Add(this.panel_menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "DbaInterface";
             this.Text = "Database Administrator";
             this.panel_menu.ResumeLayout(false);
-            this.Panel_Class.ResumeLayout(false);
-            this.Panel_Class.PerformLayout();
-            this.Panel_Teacher.ResumeLayout(false);
-            this.Panel_Teacher.PerformLayout();
-            this.Panel_Dba.ResumeLayout(false);
-            this.Panel_Dba.PerformLayout();
-            this.Panel_Dba_Account.ResumeLayout(false);
-            this.Panel_Dba_Account.PerformLayout();
+            this.panel_class.ResumeLayout(false);
+            this.panel_class.PerformLayout();
+            this.panel_teacher.ResumeLayout(false);
+            this.panel_teacher.PerformLayout();
+            this.panel_dba.ResumeLayout(false);
+            this.panel_dba.PerformLayout();
+            this.panel_dba_account.ResumeLayout(false);
+            this.panel_dba_account.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -714,53 +714,53 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_menu;
-        private System.Windows.Forms.Button Button_Menu_Dba;
-        private System.Windows.Forms.Button Button_Menu_Teacher;
-        private System.Windows.Forms.Button Button_Menu_Class;
+        private System.Windows.Forms.Button button_menu_dba;
+        private System.Windows.Forms.Button button_menu_teacher;
+        private System.Windows.Forms.Button button_menu_class;
         private System.Windows.Forms.Button button_menu_logout;
         private System.Windows.Forms.Button button_menu_account;
-        private System.Windows.Forms.Panel Panel_Class;
-        private System.Windows.Forms.Button Button_Class_Save;
-        private System.Windows.Forms.Button Button_Class_Delete;
-        private System.Windows.Forms.Button Button_Class_Reset;
-        private System.Windows.Forms.TextBox Textbox_Class_Name;
-        private System.Windows.Forms.Label Label_Class_Teacher;
-        private System.Windows.Forms.Label Label_Class_Name;
-        private System.Windows.Forms.Button Button_Class_New;
-        private System.Windows.Forms.ListBox Listbox_Class;
-        private System.Windows.Forms.Label Label_Class_Menu;
-        private System.Windows.Forms.Panel Panel_Teacher;
-        private System.Windows.Forms.ListBox ListBox_Teacher_Name;
-        private System.Windows.Forms.ComboBox Combo_Class_Teacher;
-        private System.Windows.Forms.Label Label_Teacher_Menu;
-        private System.Windows.Forms.TextBox Textbox_Teacher_Password;
-        private System.Windows.Forms.TextBox Textbox_Teacher_lName;
-        private System.Windows.Forms.TextBox Textbox_Teacher_fName;
-        private System.Windows.Forms.Label Label_Teacher_Password;
-        private System.Windows.Forms.Label Label_Teacher_Lname;
-        private System.Windows.Forms.Label Label_Teacher_Fname;
-        private System.Windows.Forms.Button Button_Teacher_Save;
-        private System.Windows.Forms.Button Button_Teacher_Delete;
-        private System.Windows.Forms.Button Button_Teacher_Reset;
-        private System.Windows.Forms.Button Button_Teacher_New;
-        private System.Windows.Forms.TextBox Textbox_Teacher_Username;
-        private System.Windows.Forms.Label Label_Teacher_Username;
-        private System.Windows.Forms.Panel Panel_Dba;
-        private System.Windows.Forms.Button Button_Dba_New;
-        private System.Windows.Forms.Button Button_Dba_Save;
-        private System.Windows.Forms.Button Button_Dba_Delete;
-        private System.Windows.Forms.Button Button_Dba_Reset;
-        private System.Windows.Forms.TextBox Textbox_Dba_Password;
-        private System.Windows.Forms.TextBox Textbox_Dba_Username;
-        private System.Windows.Forms.TextBox Textbox_Dba_Lname;
-        private System.Windows.Forms.TextBox Textbox_Dba_Fname;
-        private System.Windows.Forms.Label Label_Dba_Password;
-        private System.Windows.Forms.Label Label_Dba_Username;
-        private System.Windows.Forms.Label Label_Dba_Lname;
-        private System.Windows.Forms.Label Label_Dba_Fname;
-        private System.Windows.Forms.Label Label_Dba_Name;
-        private System.Windows.Forms.ListBox Listbox_Dba;
-        private System.Windows.Forms.Panel Panel_Dba_Account;
+        private System.Windows.Forms.Panel panel_class;
+        private System.Windows.Forms.Button button_class_save;
+        private System.Windows.Forms.Button button_class_delete;
+        private System.Windows.Forms.Button button_class_reset;
+        private System.Windows.Forms.TextBox textBox_class_name;
+        private System.Windows.Forms.Label label_class_teacher;
+        private System.Windows.Forms.Label label_class_name;
+        private System.Windows.Forms.Button button_class_new;
+        private System.Windows.Forms.ListBox listBox_class;
+        private System.Windows.Forms.Label label_class_menu;
+        private System.Windows.Forms.Panel panel_teacher;
+        private System.Windows.Forms.ListBox listBox_teacher_name;
+        private System.Windows.Forms.ComboBox comboBox_class_teacher;
+        private System.Windows.Forms.Label label_teacher_menu;
+        private System.Windows.Forms.TextBox textbox_teacher_password;
+        private System.Windows.Forms.TextBox textbox_teacher_lName;
+        private System.Windows.Forms.TextBox textbox_teacher_fName;
+        private System.Windows.Forms.Label label_teacher_password;
+        private System.Windows.Forms.Label label_teacher_lName;
+        private System.Windows.Forms.Label label_teacher_fName;
+        private System.Windows.Forms.Button button_teacher_save;
+        private System.Windows.Forms.Button button_teacher_delete;
+        private System.Windows.Forms.Button button_teacher_reset;
+        private System.Windows.Forms.Button button_teacher_new;
+        private System.Windows.Forms.TextBox textbox_teacher_username;
+        private System.Windows.Forms.Label label_teacher_username;
+        private System.Windows.Forms.Panel panel_dba;
+        private System.Windows.Forms.Button button_dba_new;
+        private System.Windows.Forms.Button button_dba_save;
+        private System.Windows.Forms.Button button_dba_delete;
+        private System.Windows.Forms.Button button_dba_reset;
+        private System.Windows.Forms.TextBox textbox_dba_password;
+        private System.Windows.Forms.TextBox textbox_dba_username;
+        private System.Windows.Forms.TextBox textbox_dba_lName;
+        private System.Windows.Forms.TextBox textbox_dba_fName;
+        private System.Windows.Forms.Label label_dba_password;
+        private System.Windows.Forms.Label label_dba_username;
+        private System.Windows.Forms.Label label_dba_lName;
+        private System.Windows.Forms.Label label_dba_fName;
+        private System.Windows.Forms.Label label_dba_name;
+        private System.Windows.Forms.ListBox listBox_dba;
+        private System.Windows.Forms.Panel panel_dba_account;
         private System.Windows.Forms.Label label_account_error;
         private System.Windows.Forms.Button button_account_save;
         private System.Windows.Forms.Button button_account_reset;
