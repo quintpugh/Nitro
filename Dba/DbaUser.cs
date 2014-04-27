@@ -7,10 +7,10 @@ using MySql.Data.MySqlClient;
 
 namespace Dba
 {
-    class DbaUser
+    public class DbaUser
     {
         public String username;
-        private String password;
+        public String password;
         public String fName;
         public String lName;
 

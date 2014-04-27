@@ -10,9 +10,9 @@ namespace Dba
     public class Dba
     {
         public String username;
-        private String password;
-        private String fName;
-        private String lName;
+        public String password;
+        public String fName;
+        public String lName;
 
         public String fullName { get { return fName + " " + lName; } }
 
@@ -40,17 +40,17 @@ namespace Dba
 
         public bool Delete()
         {
-            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("delete from dba where username = " + username);
+            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("delete from dba where username = '" + username + "'");
         }
 
         public bool Add()
         {
-            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into dba (username, password, lName, fName) values (" + username + ", " + password + ", " + fName + ", " + lName + ")"); 
+            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into dba (username, password, lName, fName) values ('" + username + "', '" + password + "', '" + fName + "', '" + lName + "')"); 
         }
 
         public bool Update(String password, String f, String l)
         {
-            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("update dba set password = " + password + ", fName = " + f + ", lName " + l + " where id = " + username); 
+            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("update dba set password = '" + password + "', fName = '" + f + "', lName '" + l + "' where id = '" + username + "'"); 
         }
     }
 }

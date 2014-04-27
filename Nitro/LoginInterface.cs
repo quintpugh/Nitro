@@ -37,7 +37,7 @@ namespace Login
                         break;
                     case ("Teacher"):
                         Teacher.TeacherInterface teacherInterface = new Teacher.TeacherInterface(tb_username.Text);
-                        teacherInterface.Show();
+                        tb_username.Focus();
                         this.Hide();
                         this.Owner = teacherInterface;
                         teacherInterface.FormClosing += SubFormClosing;
@@ -45,6 +45,10 @@ namespace Login
                         break;
                     case ("Database Administrator"):
                         Dba.DbaInterface dbaInterface = new Dba.DbaInterface(tb_username.Text);
+                        tb_username.Focus();
+                        this.Hide();
+                        this.Owner = dbaInterface;
+                        dbaInterface.FormClosing += SubFormClosing;
                         dbaInterface.Show();
                         break;
                     default:
