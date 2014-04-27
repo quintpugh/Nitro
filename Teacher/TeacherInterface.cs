@@ -362,6 +362,7 @@ namespace Teacher
         {
             System.Diagnostics.Debug.WriteLine("listBox_students_SelectedIndexChanged");
             Student st = (Student)listBox_students.SelectedItem;
+            if (st == null) return;
             textBox_students_fName.Text = st.fName;
             textBox_students_lName.Text = st.lName;
             textBox_students_password.Text = String.Empty;
@@ -375,20 +376,33 @@ namespace Teacher
                 comboBox_students_classes.SelectedValue = -1;
             }
             button_students_save.Text = "Save";
+            textBox_students_username.Enabled = false;
+            label_students_error.Text = String.Empty;
         }
 
         private void PopulateStudentPanel()
         {
             System.Diagnostics.Debug.WriteLine("PopulateStudentPanel");
-            teacher.classes = Class.Generate(teacher);
-            List<Class> classList = teacher.classes;
-            classList.Insert(0, Class.Empty);
-            comboBox_students_classes.DataSource = classList;
+            PopulateStudentClassDropDown();
+            PopulateStudentList();
+        }
 
+        private void PopulateStudentList()
+        {
+            System.Diagnostics.Debug.WriteLine("PopulateStudentList");
             List<Student> studentList = new List<Student>();
             studentList.AddRange(Student.GenerateNotEnrolled());
             studentList.AddRange(Student.GenerateIn(teacher.classes));
             listBox_students.DataSource = studentList;
+        }
+
+        private void PopulateStudentClassDropDown()
+        {
+            System.Diagnostics.Debug.WriteLine("PopulateStudentClassDropDown");
+            teacher.classes = Class.Generate(teacher);
+            List<Class> classList = teacher.classes;
+            classList.Insert(0, Class.Empty);
+            comboBox_students_classes.DataSource = classList;
         }
 
         private void button_students_new_Click(object sender, EventArgs e)
@@ -400,6 +414,8 @@ namespace Teacher
             textBox_students_password.Text = String.Empty;
             textBox_students_username.Text = String.Empty;
             button_students_save.Text = "Add";
+            textBox_students_username.Enabled = true;
+            comboBox_students_classes.SelectedValue = -1;
 
         }
 
@@ -423,22 +439,58 @@ namespace Teacher
                 textBox_students_username.Text = String.Empty;
                 comboBox_students_classes.SelectedValue = -1;
             }
-
+            label_students_error.Text = String.Empty;
         }
 
         private void button_students_delete_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("button_students_delete_Click");
-
+            if (listBox_students.SelectedItem == null)
+            {
+                return;
+            }
+            Student st = (Student)listBox_students.SelectedItem;
+            st.Delete();
+            PopulateStudentList();
         }
 
         private void button_students_save_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("button_students_save_Click");
+            
+            if(!PasswordMeetsRequirements(textBox_students_password.Text))
+            {
+                label_students_error.Text = "Entered passwords do not meet minimum requirements\n1 upper case letter, 1 lower case letter, 1 digit, and legth of at least 8.";
+                return;
+            }
 
+            Class c = (Class)comboBox_students_classes.SelectedItem;
+            if (c.id == -1)
+            {
+                c = null;
+            }
+            if (listBox_students.SelectedItem == null)
+            {
+                Student st = new Student(textBox_students_username.Text, textBox_students_password.Text, textBox_students_fName.Text, textBox_students_lName.Text, c);
+                if(!st.Add())
+                {
+                    label_students_error.Text = "Error adding student.  Check that the username supplied is not already in use.";
+                }
+            }
+            else
+            {
+                Student st = (Student)listBox_students.SelectedItem;
+                if (!st.Update(textBox_students_password.Text, textBox_students_fName.Text, textBox_students_lName.Text, c))
+                {
+                    label_students_error.Text = "Error updating student.";
+                }
+            }
+            PopulateStudentList();
         }
 
         #endregion
+
+        #region Account
         private void panel_account_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_account.Visible)
@@ -446,6 +498,67 @@ namespace Teacher
                 return;
             }
             System.Diagnostics.Debug.WriteLine("account panel visible changed");
+            label_account_error.Text = String.Empty;
+            textBox_account_fName.Text = teacher.fName;
+            textBox_account_lName.Text = teacher.lName;
+        }
+
+        private void button_account_reset_Click(object sender, EventArgs e)
+        {
+            label_account_error.Text = String.Empty;
+            textBox_account_fName.Text = teacher.fName;
+            textBox_account_lName.Text = teacher.lName;
+            textBox_account_password.Text = String.Empty;
+            textBox_account_confirmPassword.Text = String.Empty;
+        }
+
+        private void button_account_save_Click(object sender, EventArgs e)
+        {
+            label_account_error.Text = String.Empty;
+            if(textBox_account_password.Text.Equals(textBox_account_confirmPassword.Text, StringComparison.Ordinal))
+            {
+                if (PasswordMeetsRequirements(textBox_account_password.Text))
+                {
+                    teacher.Update(textBox_account_password.Text, textBox_account_fName.Text, textBox_account_lName.Text);
+                    label_account_error.ForeColor = Color.Green;
+                    label_account_error.Text = "Save successful!";
+                    textBox_account_password.Text = String.Empty;
+                    textBox_account_confirmPassword.Text = String.Empty;
+                }
+                else
+                {
+                    label_account_error.ForeColor = Color.Red;
+                    label_account_error.Text = "Entered passwords do not meet minimum requirements\n1 upper case letter, 1 lower case letter, 1 digit, and legth of at least 8.";
+                    textBox_account_password.Text = String.Empty;
+                    textBox_account_confirmPassword.Text = String.Empty;
+                }
+            }
+            else
+            {
+                label_account_error.ForeColor = Color.Red;
+                label_account_error.Text = "Entered passwords do not match.";
+                textBox_account_password.Text = String.Empty;
+                textBox_account_confirmPassword.Text = String.Empty;
+            }
+        }
+
+        #endregion
+
+        private bool PasswordMeetsRequirements(String pWord)
+        {
+            bool upper = false;
+            bool lower = false;
+            bool digit = false;
+            if(pWord.Length >= 8)
+            {
+                for (int i = 0; i < pWord.Length; i++)
+                {
+                    if (Char.IsUpper(pWord[i])) upper = true;
+                    else if (Char.IsLower(pWord[i])) lower = true;
+                    else if (Char.IsDigit(pWord[i])) digit = true;
+                }
+            }
+            return upper && lower && digit;
         }
     }
 }
