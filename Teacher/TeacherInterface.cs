@@ -460,7 +460,7 @@ namespace Teacher
             
             if(!PasswordMeetsRequirements(textBox_students_password.Text))
             {
-                label_students_error.Text = "Entered passwords do not meet minimum requirements\n1 upper case letter, 1 lower case letter, 1 digit, and legth of at least 8.";
+                label_students_error.Text = "Entered password do not meet minimum requirements\n1 upper case letter, 1 lower case letter, 1 digit, and legth of at least 8.";
                 return;
             }
 

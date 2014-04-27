@@ -98,6 +98,16 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.label_students_error = new System.Windows.Forms.Label();
             this.label_account_error = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel_menu.SuspendLayout();
             this.panel_main.SuspendLayout();
             this.panel_students.SuspendLayout();
@@ -108,6 +118,8 @@
             this.tab_classes_enrollment.SuspendLayout();
             this.tab_classes_exercises.SuspendLayout();
             this.panel_account.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_menu
@@ -180,9 +192,9 @@
             // panel_main
             // 
             this.panel_main.Controls.Add(this.panel_students);
-            this.panel_main.Controls.Add(this.panel_account);
             this.panel_main.Controls.Add(this.panel_exercises);
             this.panel_main.Controls.Add(this.panel_classes);
+            this.panel_main.Controls.Add(this.panel_account);
             this.panel_main.Location = new System.Drawing.Point(159, 12);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(778, 495);
@@ -190,21 +202,12 @@
             // 
             // panel_students
             // 
-            this.panel_students.Controls.Add(this.label_students_error);
+            this.panel_students.Controls.Add(this.panel2);
+            this.panel_students.Controls.Add(this.label12);
             this.panel_students.Controls.Add(this.button_students_save);
             this.panel_students.Controls.Add(this.button_students_delete);
             this.panel_students.Controls.Add(this.button_students_reset);
             this.panel_students.Controls.Add(this.button_students_new);
-            this.panel_students.Controls.Add(this.label7);
-            this.panel_students.Controls.Add(this.label6);
-            this.panel_students.Controls.Add(this.label5);
-            this.panel_students.Controls.Add(this.label4);
-            this.panel_students.Controls.Add(this.label3);
-            this.panel_students.Controls.Add(this.comboBox_students_classes);
-            this.panel_students.Controls.Add(this.textBox_students_password);
-            this.panel_students.Controls.Add(this.textBox_students_username);
-            this.panel_students.Controls.Add(this.textBox_students_lName);
-            this.panel_students.Controls.Add(this.textBox_students_fName);
             this.panel_students.Controls.Add(this.listBox_students);
             this.panel_students.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_students.Location = new System.Drawing.Point(0, 0);
@@ -245,7 +248,7 @@
             // 
             // button_students_new
             // 
-            this.button_students_new.Location = new System.Drawing.Point(326, 462);
+            this.button_students_new.Location = new System.Drawing.Point(173, 466);
             this.button_students_new.Name = "button_students_new";
             this.button_students_new.Size = new System.Drawing.Size(75, 23);
             this.button_students_new.TabIndex = 11;
@@ -256,7 +259,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(439, 264);
+            this.label7.Location = new System.Drawing.Point(109, 168);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 10;
@@ -265,7 +268,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(418, 237);
+            this.label6.Location = new System.Drawing.Point(88, 141);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 9;
@@ -274,7 +277,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(416, 211);
+            this.label5.Location = new System.Drawing.Point(86, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 8;
@@ -283,7 +286,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(413, 185);
+            this.label4.Location = new System.Drawing.Point(83, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 7;
@@ -292,7 +295,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(414, 159);
+            this.label3.Location = new System.Drawing.Point(84, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 6;
@@ -302,35 +305,35 @@
             // 
             this.comboBox_students_classes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_students_classes.FormattingEnabled = true;
-            this.comboBox_students_classes.Location = new System.Drawing.Point(480, 261);
+            this.comboBox_students_classes.Location = new System.Drawing.Point(150, 165);
             this.comboBox_students_classes.Name = "comboBox_students_classes";
             this.comboBox_students_classes.Size = new System.Drawing.Size(221, 21);
             this.comboBox_students_classes.TabIndex = 5;
             // 
             // textBox_students_password
             // 
-            this.textBox_students_password.Location = new System.Drawing.Point(480, 234);
+            this.textBox_students_password.Location = new System.Drawing.Point(150, 138);
             this.textBox_students_password.Name = "textBox_students_password";
             this.textBox_students_password.Size = new System.Drawing.Size(221, 20);
             this.textBox_students_password.TabIndex = 4;
             // 
             // textBox_students_username
             // 
-            this.textBox_students_username.Location = new System.Drawing.Point(480, 208);
+            this.textBox_students_username.Location = new System.Drawing.Point(150, 112);
             this.textBox_students_username.Name = "textBox_students_username";
             this.textBox_students_username.Size = new System.Drawing.Size(221, 20);
             this.textBox_students_username.TabIndex = 3;
             // 
             // textBox_students_lName
             // 
-            this.textBox_students_lName.Location = new System.Drawing.Point(480, 182);
+            this.textBox_students_lName.Location = new System.Drawing.Point(150, 86);
             this.textBox_students_lName.Name = "textBox_students_lName";
             this.textBox_students_lName.Size = new System.Drawing.Size(221, 20);
             this.textBox_students_lName.TabIndex = 2;
             // 
             // textBox_students_fName
             // 
-            this.textBox_students_fName.Location = new System.Drawing.Point(480, 156);
+            this.textBox_students_fName.Location = new System.Drawing.Point(150, 60);
             this.textBox_students_fName.Name = "textBox_students_fName";
             this.textBox_students_fName.Size = new System.Drawing.Size(221, 20);
             this.textBox_students_fName.TabIndex = 1;
@@ -338,22 +341,20 @@
             // listBox_students
             // 
             this.listBox_students.FormattingEnabled = true;
-            this.listBox_students.Location = new System.Drawing.Point(4, 4);
+            this.listBox_students.Location = new System.Drawing.Point(1, 29);
             this.listBox_students.MultiColumn = true;
             this.listBox_students.Name = "listBox_students";
-            this.listBox_students.Size = new System.Drawing.Size(316, 485);
+            this.listBox_students.Size = new System.Drawing.Size(166, 459);
             this.listBox_students.TabIndex = 0;
             // 
             // panel_exercises
             // 
+            this.panel_exercises.Controls.Add(this.panel1);
             this.panel_exercises.Controls.Add(this.button_exercises_save);
+            this.panel_exercises.Controls.Add(this.label13);
             this.panel_exercises.Controls.Add(this.button_exercises_delete);
             this.panel_exercises.Controls.Add(this.button_exercises_reset);
             this.panel_exercises.Controls.Add(this.button_exercises_new);
-            this.panel_exercises.Controls.Add(this.textBox_exercises_text);
-            this.panel_exercises.Controls.Add(this.textBox_exercises_name);
-            this.panel_exercises.Controls.Add(this.label2);
-            this.panel_exercises.Controls.Add(this.label1);
             this.panel_exercises.Controls.Add(this.listBox_exercises);
             this.panel_exercises.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_exercises.Location = new System.Drawing.Point(0, 0);
@@ -394,7 +395,7 @@
             // 
             // button_exercises_new
             // 
-            this.button_exercises_new.Location = new System.Drawing.Point(184, 453);
+            this.button_exercises_new.Location = new System.Drawing.Point(173, 465);
             this.button_exercises_new.Name = "button_exercises_new";
             this.button_exercises_new.Size = new System.Drawing.Size(75, 23);
             this.button_exercises_new.TabIndex = 5;
@@ -404,7 +405,7 @@
             // 
             // textBox_exercises_text
             // 
-            this.textBox_exercises_text.Location = new System.Drawing.Point(326, 70);
+            this.textBox_exercises_text.Location = new System.Drawing.Point(150, 85);
             this.textBox_exercises_text.Multiline = true;
             this.textBox_exercises_text.Name = "textBox_exercises_text";
             this.textBox_exercises_text.Size = new System.Drawing.Size(308, 164);
@@ -412,7 +413,7 @@
             // 
             // textBox_exercises_name
             // 
-            this.textBox_exercises_name.Location = new System.Drawing.Point(326, 45);
+            this.textBox_exercises_name.Location = new System.Drawing.Point(150, 60);
             this.textBox_exercises_name.Name = "textBox_exercises_name";
             this.textBox_exercises_name.Size = new System.Drawing.Size(308, 20);
             this.textBox_exercises_name.TabIndex = 3;
@@ -420,7 +421,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 146);
+            this.label2.Location = new System.Drawing.Point(113, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 2;
@@ -429,7 +430,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(282, 48);
+            this.label1.Location = new System.Drawing.Point(106, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 1;
@@ -438,15 +439,16 @@
             // listBox_exercises
             // 
             this.listBox_exercises.FormattingEnabled = true;
-            this.listBox_exercises.Location = new System.Drawing.Point(3, 3);
+            this.listBox_exercises.Location = new System.Drawing.Point(3, 29);
             this.listBox_exercises.Name = "listBox_exercises";
-            this.listBox_exercises.Size = new System.Drawing.Size(164, 485);
+            this.listBox_exercises.Size = new System.Drawing.Size(164, 459);
             this.listBox_exercises.TabIndex = 0;
             // 
             // panel_classes
             // 
             this.panel_classes.Controls.Add(this.tabs_classes);
             this.panel_classes.Controls.Add(this.listBox_classes);
+            this.panel_classes.Controls.Add(this.label14);
             this.panel_classes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_classes.Location = new System.Drawing.Point(0, 0);
             this.panel_classes.Name = "panel_classes";
@@ -467,6 +469,7 @@
             // 
             // tab_classes_students
             // 
+            this.tab_classes_students.Controls.Add(this.label19);
             this.tab_classes_students.Controls.Add(this.listView_classes_students_results);
             this.tab_classes_students.Controls.Add(this.listBox_classes_students);
             this.tab_classes_students.Location = new System.Drawing.Point(4, 22);
@@ -511,13 +514,15 @@
             // listBox_classes_students
             // 
             this.listBox_classes_students.FormattingEnabled = true;
-            this.listBox_classes_students.Location = new System.Drawing.Point(6, 6);
+            this.listBox_classes_students.Location = new System.Drawing.Point(6, 32);
             this.listBox_classes_students.Name = "listBox_classes_students";
-            this.listBox_classes_students.Size = new System.Drawing.Size(177, 446);
+            this.listBox_classes_students.Size = new System.Drawing.Size(177, 420);
             this.listBox_classes_students.TabIndex = 2;
             // 
             // tab_classes_enrollment
             // 
+            this.tab_classes_enrollment.Controls.Add(this.label17);
+            this.tab_classes_enrollment.Controls.Add(this.label18);
             this.tab_classes_enrollment.Controls.Add(this.button_classes_enrollmentRemoveAll);
             this.tab_classes_enrollment.Controls.Add(this.button_classes_enrollmentRight);
             this.tab_classes_enrollment.Controls.Add(this.button_classes_enrollmentLeft);
@@ -570,23 +575,25 @@
             // listBox_classes_studentsEnrolled
             // 
             this.listBox_classes_studentsEnrolled.FormattingEnabled = true;
-            this.listBox_classes_studentsEnrolled.Location = new System.Drawing.Point(375, 6);
+            this.listBox_classes_studentsEnrolled.Location = new System.Drawing.Point(375, 32);
             this.listBox_classes_studentsEnrolled.Name = "listBox_classes_studentsEnrolled";
             this.listBox_classes_studentsEnrolled.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox_classes_studentsEnrolled.Size = new System.Drawing.Size(257, 446);
+            this.listBox_classes_studentsEnrolled.Size = new System.Drawing.Size(257, 420);
             this.listBox_classes_studentsEnrolled.TabIndex = 1;
             // 
             // listBox_classes_studentsNotEnrolled
             // 
             this.listBox_classes_studentsNotEnrolled.FormattingEnabled = true;
-            this.listBox_classes_studentsNotEnrolled.Location = new System.Drawing.Point(6, 6);
+            this.listBox_classes_studentsNotEnrolled.Location = new System.Drawing.Point(6, 32);
             this.listBox_classes_studentsNotEnrolled.Name = "listBox_classes_studentsNotEnrolled";
             this.listBox_classes_studentsNotEnrolled.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox_classes_studentsNotEnrolled.Size = new System.Drawing.Size(257, 446);
+            this.listBox_classes_studentsNotEnrolled.Size = new System.Drawing.Size(257, 420);
             this.listBox_classes_studentsNotEnrolled.TabIndex = 0;
             // 
             // tab_classes_exercises
             // 
+            this.tab_classes_exercises.Controls.Add(this.label16);
+            this.tab_classes_exercises.Controls.Add(this.label15);
             this.tab_classes_exercises.Controls.Add(this.button_classes_exercisesRemoveAll);
             this.tab_classes_exercises.Controls.Add(this.button_classes_exercisesRight);
             this.tab_classes_exercises.Controls.Add(this.button_classes_exercisesLeft);
@@ -639,27 +646,27 @@
             // listBox_classes_exercisesIn
             // 
             this.listBox_classes_exercisesIn.FormattingEnabled = true;
-            this.listBox_classes_exercisesIn.Location = new System.Drawing.Point(375, 6);
+            this.listBox_classes_exercisesIn.Location = new System.Drawing.Point(375, 32);
             this.listBox_classes_exercisesIn.Name = "listBox_classes_exercisesIn";
             this.listBox_classes_exercisesIn.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox_classes_exercisesIn.Size = new System.Drawing.Size(257, 446);
+            this.listBox_classes_exercisesIn.Size = new System.Drawing.Size(257, 420);
             this.listBox_classes_exercisesIn.TabIndex = 3;
             // 
             // listBox_classes_exercisesNotIn
             // 
             this.listBox_classes_exercisesNotIn.FormattingEnabled = true;
-            this.listBox_classes_exercisesNotIn.Location = new System.Drawing.Point(6, 6);
+            this.listBox_classes_exercisesNotIn.Location = new System.Drawing.Point(6, 32);
             this.listBox_classes_exercisesNotIn.Name = "listBox_classes_exercisesNotIn";
             this.listBox_classes_exercisesNotIn.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox_classes_exercisesNotIn.Size = new System.Drawing.Size(257, 446);
+            this.listBox_classes_exercisesNotIn.Size = new System.Drawing.Size(257, 420);
             this.listBox_classes_exercisesNotIn.TabIndex = 2;
             // 
             // listBox_classes
             // 
             this.listBox_classes.FormattingEnabled = true;
-            this.listBox_classes.Location = new System.Drawing.Point(3, 3);
+            this.listBox_classes.Location = new System.Drawing.Point(3, 29);
             this.listBox_classes.Name = "listBox_classes";
-            this.listBox_classes.Size = new System.Drawing.Size(120, 485);
+            this.listBox_classes.Size = new System.Drawing.Size(120, 459);
             this.listBox_classes.TabIndex = 0;
             // 
             // panel_account
@@ -684,7 +691,7 @@
             // 
             // button_account_save
             // 
-            this.button_account_save.Location = new System.Drawing.Point(399, 237);
+            this.button_account_save.Location = new System.Drawing.Point(454, 236);
             this.button_account_save.Name = "button_account_save";
             this.button_account_save.Size = new System.Drawing.Size(75, 23);
             this.button_account_save.TabIndex = 9;
@@ -743,7 +750,7 @@
             this.textBox_account_confirmPassword.Location = new System.Drawing.Point(308, 211);
             this.textBox_account_confirmPassword.Name = "textBox_account_confirmPassword";
             this.textBox_account_confirmPassword.PasswordChar = '*';
-            this.textBox_account_confirmPassword.Size = new System.Drawing.Size(166, 20);
+            this.textBox_account_confirmPassword.Size = new System.Drawing.Size(221, 20);
             this.textBox_account_confirmPassword.TabIndex = 3;
             this.textBox_account_confirmPassword.UseSystemPasswordChar = true;
             // 
@@ -752,7 +759,7 @@
             this.textBox_account_password.Location = new System.Drawing.Point(308, 185);
             this.textBox_account_password.Name = "textBox_account_password";
             this.textBox_account_password.PasswordChar = '*';
-            this.textBox_account_password.Size = new System.Drawing.Size(166, 20);
+            this.textBox_account_password.Size = new System.Drawing.Size(221, 20);
             this.textBox_account_password.TabIndex = 2;
             this.textBox_account_password.UseSystemPasswordChar = true;
             // 
@@ -760,21 +767,21 @@
             // 
             this.textBox_account_lName.Location = new System.Drawing.Point(308, 159);
             this.textBox_account_lName.Name = "textBox_account_lName";
-            this.textBox_account_lName.Size = new System.Drawing.Size(166, 20);
+            this.textBox_account_lName.Size = new System.Drawing.Size(221, 20);
             this.textBox_account_lName.TabIndex = 1;
             // 
             // textBox_account_fName
             // 
             this.textBox_account_fName.Location = new System.Drawing.Point(308, 133);
             this.textBox_account_fName.Name = "textBox_account_fName";
-            this.textBox_account_fName.Size = new System.Drawing.Size(166, 20);
+            this.textBox_account_fName.Size = new System.Drawing.Size(221, 20);
             this.textBox_account_fName.TabIndex = 0;
             // 
             // label_students_error
             // 
             this.label_students_error.AutoSize = true;
             this.label_students_error.ForeColor = System.Drawing.Color.Red;
-            this.label_students_error.Location = new System.Drawing.Point(326, 297);
+            this.label_students_error.Location = new System.Drawing.Point(91, 195);
             this.label_students_error.Name = "label_students_error";
             this.label_students_error.Size = new System.Drawing.Size(0, 13);
             this.label_students_error.TabIndex = 2;
@@ -787,6 +794,115 @@
             this.label_account_error.Name = "label_account_error";
             this.label_account_error.Size = new System.Drawing.Size(0, 13);
             this.label_account_error.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(47, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 20);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Students";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(48, 6);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 20);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Exercises";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(31, 6);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(65, 20);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Classes";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(34, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(200, 20);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "Exercises Not In This Class";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(418, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(171, 20);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Exercises In This Class";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(388, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(230, 20);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Students Enrolled In This Class";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(14, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(241, 20);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "Students Not Enrolled In A Class";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(57, 9);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(74, 20);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Students";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox_exercises_text);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBox_exercises_name);
+            this.panel1.Location = new System.Drawing.Point(173, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(602, 431);
+            this.panel1.TabIndex = 17;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label_students_error);
+            this.panel2.Controls.Add(this.textBox_students_username);
+            this.panel2.Controls.Add(this.textBox_students_fName);
+            this.panel2.Controls.Add(this.textBox_students_lName);
+            this.panel2.Controls.Add(this.textBox_students_password);
+            this.panel2.Controls.Add(this.comboBox_students_classes);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(173, 29);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(602, 431);
+            this.panel2.TabIndex = 16;
             // 
             // TeacherInterface
             // 
@@ -804,12 +920,20 @@
             this.panel_exercises.ResumeLayout(false);
             this.panel_exercises.PerformLayout();
             this.panel_classes.ResumeLayout(false);
+            this.panel_classes.PerformLayout();
             this.tabs_classes.ResumeLayout(false);
             this.tab_classes_students.ResumeLayout(false);
+            this.tab_classes_students.PerformLayout();
             this.tab_classes_enrollment.ResumeLayout(false);
+            this.tab_classes_enrollment.PerformLayout();
             this.tab_classes_exercises.ResumeLayout(false);
+            this.tab_classes_exercises.PerformLayout();
             this.panel_account.ResumeLayout(false);
             this.panel_account.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -884,6 +1008,16 @@
         private System.Windows.Forms.Button button_classes_exercisesLeft;
         private System.Windows.Forms.Label label_students_error;
         private System.Windows.Forms.Label label_account_error;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
 
     }
 }
