@@ -360,36 +360,40 @@ namespace Teacher
 
         private void listBox_students_SelectedIndexChanged(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("listBox_students_SelectedIndexChanged");
             Student st = (Student)listBox_students.SelectedItem;
             textBox_students_fName.Text = st.fName;
             textBox_students_lName.Text = st.lName;
             textBox_students_password.Text = String.Empty;
             textBox_students_username.Text = st.username;
-            int classId = st.GetClassId();
-            if (classId == -1)
+            if (st.studentClass != null)
             {
-                comboBox_students_classes.SelectedIndex = -1;
+                comboBox_students_classes.SelectedValue = st.studentClass.id;
             }
             else
             {
-                comboBox_students_classes.SelectedValue = classId.ToString();
+                comboBox_students_classes.SelectedValue = -1;
             }
             button_students_save.Text = "Save";
         }
 
         private void PopulateStudentPanel()
         {
+            System.Diagnostics.Debug.WriteLine("PopulateStudentPanel");
             teacher.classes = Class.Generate(teacher);
+            List<Class> classList = teacher.classes;
+            classList.Insert(0, Class.Empty);
+            comboBox_students_classes.DataSource = classList;
+
             List<Student> studentList = new List<Student>();
             studentList.AddRange(Student.GenerateNotEnrolled());
             studentList.AddRange(Student.GenerateIn(teacher.classes));
             listBox_students.DataSource = studentList;
-
-            comboBox_students_classes.DataSource = teacher.classes;
         }
 
         private void button_students_new_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("button_students_new_Click");
             listBox_students.ClearSelected();
             textBox_students_fName.Text = String.Empty;
             textBox_students_lName.Text = String.Empty;
@@ -401,16 +405,36 @@ namespace Teacher
 
         private void button_students_reset_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("button_students_reset_Click");
+            if (listBox_students.SelectedItem != null)
+            {
+                Student st = (Student)listBox_students.SelectedItem;
+                textBox_students_fName.Text = st.fName;
+                textBox_students_lName.Text = st.lName;
+                textBox_students_password.Text = String.Empty;
+                textBox_students_username.Text = st.username;
+                comboBox_students_classes.SelectedValue = (st.studentClass == null) ? -1 : st.studentClass.id;
+            }
+            else
+            {
+                textBox_students_fName.Text = String.Empty;
+                textBox_students_lName.Text = String.Empty;
+                textBox_students_password.Text = String.Empty;
+                textBox_students_username.Text = String.Empty;
+                comboBox_students_classes.SelectedValue = -1;
+            }
 
         }
 
         private void button_students_delete_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("button_students_delete_Click");
 
         }
 
         private void button_students_save_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("button_students_save_Click");
 
         }
 

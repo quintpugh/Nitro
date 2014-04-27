@@ -37,6 +37,22 @@
             this.button_menu_exercises = new System.Windows.Forms.Button();
             this.button_menu_classes = new System.Windows.Forms.Button();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.panel_students = new System.Windows.Forms.Panel();
+            this.button_students_save = new System.Windows.Forms.Button();
+            this.button_students_delete = new System.Windows.Forms.Button();
+            this.button_students_reset = new System.Windows.Forms.Button();
+            this.button_students_new = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox_students_classes = new System.Windows.Forms.ComboBox();
+            this.textBox_students_password = new System.Windows.Forms.TextBox();
+            this.textBox_students_username = new System.Windows.Forms.TextBox();
+            this.textBox_students_lName = new System.Windows.Forms.TextBox();
+            this.textBox_students_fName = new System.Windows.Forms.TextBox();
+            this.listBox_students = new System.Windows.Forms.ListBox();
             this.panel_exercises = new System.Windows.Forms.Panel();
             this.button_exercises_save = new System.Windows.Forms.Button();
             this.button_exercises_delete = new System.Windows.Forms.Button();
@@ -68,22 +84,6 @@
             this.listBox_classes_exercisesIn = new System.Windows.Forms.ListBox();
             this.listBox_classes_exercisesNotIn = new System.Windows.Forms.ListBox();
             this.listBox_classes = new System.Windows.Forms.ListBox();
-            this.panel_students = new System.Windows.Forms.Panel();
-            this.button_students_save = new System.Windows.Forms.Button();
-            this.button_students_delete = new System.Windows.Forms.Button();
-            this.button_students_reset = new System.Windows.Forms.Button();
-            this.button_students_new = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_students_classes = new System.Windows.Forms.ComboBox();
-            this.textBox_students_password = new System.Windows.Forms.TextBox();
-            this.textBox_students_username = new System.Windows.Forms.TextBox();
-            this.textBox_students_lName = new System.Windows.Forms.TextBox();
-            this.textBox_students_fName = new System.Windows.Forms.TextBox();
-            this.listBox_students = new System.Windows.Forms.ListBox();
             this.panel_account = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -98,13 +98,13 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panel_menu.SuspendLayout();
             this.panel_main.SuspendLayout();
+            this.panel_students.SuspendLayout();
             this.panel_exercises.SuspendLayout();
             this.panel_classes.SuspendLayout();
             this.tabs_classes.SuspendLayout();
             this.tab_classes_students.SuspendLayout();
             this.tab_classes_enrollment.SuspendLayout();
             this.tab_classes_exercises.SuspendLayout();
-            this.panel_students.SuspendLayout();
             this.panel_account.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,6 +185,161 @@
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(778, 495);
             this.panel_main.TabIndex = 1;
+            // 
+            // panel_students
+            // 
+            this.panel_students.Controls.Add(this.button_students_save);
+            this.panel_students.Controls.Add(this.button_students_delete);
+            this.panel_students.Controls.Add(this.button_students_reset);
+            this.panel_students.Controls.Add(this.button_students_new);
+            this.panel_students.Controls.Add(this.label7);
+            this.panel_students.Controls.Add(this.label6);
+            this.panel_students.Controls.Add(this.label5);
+            this.panel_students.Controls.Add(this.label4);
+            this.panel_students.Controls.Add(this.label3);
+            this.panel_students.Controls.Add(this.comboBox_students_classes);
+            this.panel_students.Controls.Add(this.textBox_students_password);
+            this.panel_students.Controls.Add(this.textBox_students_username);
+            this.panel_students.Controls.Add(this.textBox_students_lName);
+            this.panel_students.Controls.Add(this.textBox_students_fName);
+            this.panel_students.Controls.Add(this.listBox_students);
+            this.panel_students.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_students.Location = new System.Drawing.Point(0, 0);
+            this.panel_students.Name = "panel_students";
+            this.panel_students.Size = new System.Drawing.Size(778, 495);
+            this.panel_students.TabIndex = 9;
+            this.panel_students.Visible = false;
+            // 
+            // button_students_save
+            // 
+            this.button_students_save.Location = new System.Drawing.Point(696, 466);
+            this.button_students_save.Name = "button_students_save";
+            this.button_students_save.Size = new System.Drawing.Size(75, 23);
+            this.button_students_save.TabIndex = 14;
+            this.button_students_save.Text = "Save";
+            this.button_students_save.UseVisualStyleBackColor = true;
+            this.button_students_save.Click += new System.EventHandler(this.button_students_save_Click);
+            // 
+            // button_students_delete
+            // 
+            this.button_students_delete.Location = new System.Drawing.Point(615, 466);
+            this.button_students_delete.Name = "button_students_delete";
+            this.button_students_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_students_delete.TabIndex = 13;
+            this.button_students_delete.Text = "Delete";
+            this.button_students_delete.UseVisualStyleBackColor = true;
+            this.button_students_delete.Click += new System.EventHandler(this.button_students_delete_Click);
+            // 
+            // button_students_reset
+            // 
+            this.button_students_reset.Location = new System.Drawing.Point(534, 466);
+            this.button_students_reset.Name = "button_students_reset";
+            this.button_students_reset.Size = new System.Drawing.Size(75, 23);
+            this.button_students_reset.TabIndex = 12;
+            this.button_students_reset.Text = "Reset";
+            this.button_students_reset.UseVisualStyleBackColor = true;
+            this.button_students_reset.Click += new System.EventHandler(this.button_students_reset_Click);
+            // 
+            // button_students_new
+            // 
+            this.button_students_new.Location = new System.Drawing.Point(326, 462);
+            this.button_students_new.Name = "button_students_new";
+            this.button_students_new.Size = new System.Drawing.Size(75, 23);
+            this.button_students_new.TabIndex = 11;
+            this.button_students_new.Text = "New";
+            this.button_students_new.UseVisualStyleBackColor = true;
+            this.button_students_new.Click += new System.EventHandler(this.button_students_new_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(439, 264);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Class:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(418, 237);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Password:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(416, 211);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Username:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(413, 185);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Last Name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(414, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "First Name:";
+            // 
+            // comboBox_students_classes
+            // 
+            this.comboBox_students_classes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_students_classes.FormattingEnabled = true;
+            this.comboBox_students_classes.Location = new System.Drawing.Point(480, 261);
+            this.comboBox_students_classes.Name = "comboBox_students_classes";
+            this.comboBox_students_classes.Size = new System.Drawing.Size(221, 21);
+            this.comboBox_students_classes.TabIndex = 5;
+            // 
+            // textBox_students_password
+            // 
+            this.textBox_students_password.Location = new System.Drawing.Point(480, 234);
+            this.textBox_students_password.Name = "textBox_students_password";
+            this.textBox_students_password.Size = new System.Drawing.Size(221, 20);
+            this.textBox_students_password.TabIndex = 4;
+            // 
+            // textBox_students_username
+            // 
+            this.textBox_students_username.Location = new System.Drawing.Point(480, 208);
+            this.textBox_students_username.Name = "textBox_students_username";
+            this.textBox_students_username.Size = new System.Drawing.Size(221, 20);
+            this.textBox_students_username.TabIndex = 3;
+            // 
+            // textBox_students_lName
+            // 
+            this.textBox_students_lName.Location = new System.Drawing.Point(480, 182);
+            this.textBox_students_lName.Name = "textBox_students_lName";
+            this.textBox_students_lName.Size = new System.Drawing.Size(221, 20);
+            this.textBox_students_lName.TabIndex = 2;
+            // 
+            // textBox_students_fName
+            // 
+            this.textBox_students_fName.Location = new System.Drawing.Point(480, 156);
+            this.textBox_students_fName.Name = "textBox_students_fName";
+            this.textBox_students_fName.Size = new System.Drawing.Size(221, 20);
+            this.textBox_students_fName.TabIndex = 1;
+            // 
+            // listBox_students
+            // 
+            this.listBox_students.FormattingEnabled = true;
+            this.listBox_students.Location = new System.Drawing.Point(4, 4);
+            this.listBox_students.MultiColumn = true;
+            this.listBox_students.Name = "listBox_students";
+            this.listBox_students.Size = new System.Drawing.Size(316, 485);
+            this.listBox_students.TabIndex = 0;
             // 
             // panel_exercises
             // 
@@ -504,160 +659,6 @@
             this.listBox_classes.Size = new System.Drawing.Size(120, 485);
             this.listBox_classes.TabIndex = 0;
             // 
-            // panel_students
-            // 
-            this.panel_students.Controls.Add(this.button_students_save);
-            this.panel_students.Controls.Add(this.button_students_delete);
-            this.panel_students.Controls.Add(this.button_students_reset);
-            this.panel_students.Controls.Add(this.button_students_new);
-            this.panel_students.Controls.Add(this.label7);
-            this.panel_students.Controls.Add(this.label6);
-            this.panel_students.Controls.Add(this.label5);
-            this.panel_students.Controls.Add(this.label4);
-            this.panel_students.Controls.Add(this.label3);
-            this.panel_students.Controls.Add(this.comboBox_students_classes);
-            this.panel_students.Controls.Add(this.textBox_students_password);
-            this.panel_students.Controls.Add(this.textBox_students_username);
-            this.panel_students.Controls.Add(this.textBox_students_lName);
-            this.panel_students.Controls.Add(this.textBox_students_fName);
-            this.panel_students.Controls.Add(this.listBox_students);
-            this.panel_students.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_students.Location = new System.Drawing.Point(0, 0);
-            this.panel_students.Name = "panel_students";
-            this.panel_students.Size = new System.Drawing.Size(778, 495);
-            this.panel_students.TabIndex = 9;
-            this.panel_students.Visible = false;
-            // 
-            // button_students_save
-            // 
-            this.button_students_save.Location = new System.Drawing.Point(696, 466);
-            this.button_students_save.Name = "button_students_save";
-            this.button_students_save.Size = new System.Drawing.Size(75, 23);
-            this.button_students_save.TabIndex = 14;
-            this.button_students_save.Text = "Save";
-            this.button_students_save.UseVisualStyleBackColor = true;
-            this.button_students_save.Click += new System.EventHandler(this.button_students_save_Click);
-            // 
-            // button_students_delete
-            // 
-            this.button_students_delete.Location = new System.Drawing.Point(615, 466);
-            this.button_students_delete.Name = "button_students_delete";
-            this.button_students_delete.Size = new System.Drawing.Size(75, 23);
-            this.button_students_delete.TabIndex = 13;
-            this.button_students_delete.Text = "Delete";
-            this.button_students_delete.UseVisualStyleBackColor = true;
-            this.button_students_delete.Click += new System.EventHandler(this.button_students_delete_Click);
-            // 
-            // button_students_reset
-            // 
-            this.button_students_reset.Location = new System.Drawing.Point(534, 466);
-            this.button_students_reset.Name = "button_students_reset";
-            this.button_students_reset.Size = new System.Drawing.Size(75, 23);
-            this.button_students_reset.TabIndex = 12;
-            this.button_students_reset.Text = "Reset";
-            this.button_students_reset.UseVisualStyleBackColor = true;
-            this.button_students_reset.Click += new System.EventHandler(this.button_students_reset_Click);
-            // 
-            // button_students_new
-            // 
-            this.button_students_new.Location = new System.Drawing.Point(326, 462);
-            this.button_students_new.Name = "button_students_new";
-            this.button_students_new.Size = new System.Drawing.Size(75, 23);
-            this.button_students_new.TabIndex = 11;
-            this.button_students_new.Text = "New";
-            this.button_students_new.UseVisualStyleBackColor = true;
-            this.button_students_new.Click += new System.EventHandler(this.button_students_new_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(439, 264);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Class:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(418, 237);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Password:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(416, 211);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Username:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(413, 185);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Last Name:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(414, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "First Name:";
-            // 
-            // comboBox_students_classes
-            // 
-            this.comboBox_students_classes.FormattingEnabled = true;
-            this.comboBox_students_classes.Location = new System.Drawing.Point(480, 261);
-            this.comboBox_students_classes.Name = "comboBox_students_classes";
-            this.comboBox_students_classes.Size = new System.Drawing.Size(221, 21);
-            this.comboBox_students_classes.TabIndex = 5;
-            // 
-            // textBox_students_password
-            // 
-            this.textBox_students_password.Location = new System.Drawing.Point(480, 234);
-            this.textBox_students_password.Name = "textBox_students_password";
-            this.textBox_students_password.Size = new System.Drawing.Size(221, 20);
-            this.textBox_students_password.TabIndex = 4;
-            // 
-            // textBox_students_username
-            // 
-            this.textBox_students_username.Location = new System.Drawing.Point(480, 208);
-            this.textBox_students_username.Name = "textBox_students_username";
-            this.textBox_students_username.Size = new System.Drawing.Size(221, 20);
-            this.textBox_students_username.TabIndex = 3;
-            // 
-            // textBox_students_lName
-            // 
-            this.textBox_students_lName.Location = new System.Drawing.Point(480, 182);
-            this.textBox_students_lName.Name = "textBox_students_lName";
-            this.textBox_students_lName.Size = new System.Drawing.Size(221, 20);
-            this.textBox_students_lName.TabIndex = 2;
-            // 
-            // textBox_students_fName
-            // 
-            this.textBox_students_fName.Location = new System.Drawing.Point(480, 156);
-            this.textBox_students_fName.Name = "textBox_students_fName";
-            this.textBox_students_fName.Size = new System.Drawing.Size(221, 20);
-            this.textBox_students_fName.TabIndex = 1;
-            // 
-            // listBox_students
-            // 
-            this.listBox_students.FormattingEnabled = true;
-            this.listBox_students.Location = new System.Drawing.Point(4, 4);
-            this.listBox_students.MultiColumn = true;
-            this.listBox_students.Name = "listBox_students";
-            this.listBox_students.Size = new System.Drawing.Size(316, 485);
-            this.listBox_students.TabIndex = 0;
-            // 
             // panel_account
             // 
             this.panel_account.Controls.Add(this.button2);
@@ -772,6 +773,8 @@
             this.Text = "TeacherInterface";
             this.panel_menu.ResumeLayout(false);
             this.panel_main.ResumeLayout(false);
+            this.panel_students.ResumeLayout(false);
+            this.panel_students.PerformLayout();
             this.panel_exercises.ResumeLayout(false);
             this.panel_exercises.PerformLayout();
             this.panel_classes.ResumeLayout(false);
@@ -779,8 +782,6 @@
             this.tab_classes_students.ResumeLayout(false);
             this.tab_classes_enrollment.ResumeLayout(false);
             this.tab_classes_exercises.ResumeLayout(false);
-            this.panel_students.ResumeLayout(false);
-            this.panel_students.PerformLayout();
             this.panel_account.ResumeLayout(false);
             this.panel_account.PerformLayout();
             this.ResumeLayout(false);

@@ -37,5 +37,13 @@ namespace Teacher
             rdr.Close();
             return list;
         }
+
+        public static Class Empty
+        {
+            get
+            {
+                return new Class(-1, String.Empty, null);
+            }
+        }
     }
 }
