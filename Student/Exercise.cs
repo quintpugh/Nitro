@@ -9,7 +9,7 @@ namespace Student
 {
     class Exercise
     {
-        private int id;
+        public int id;
         public String name { get; set; }
         public String text { get; set; }
 
@@ -22,35 +22,25 @@ namespace Student
 
         public static List<Exercise> ToBePerformed(Student s)
         {
-            // USE THIS ONE!!!!
-//            select e.*
-//from exercise as e,
-//    (select ceRefined.exerciseId
-//    from
-//        (select *
-//        from class_exercises as ce
-//        where ce.classId = '1') as ceRefined,
-//        (select *
-//        from student_performance
-//        where studentUsername = 'rhowatt') as refinedStuPerf
-//    where ceRefined.exerciseId != refinedStuPerf.exerciseId) as exercisesLeft
-//where e.id = exercisesLeft.exerciseId;
             MySqlDataReader reader = MySQL_Manager.MySqlManager.Instance.ExecuteReader
-                 (@"select classExercises.id, classExercises.name, classExercises.text
-                    from
-                        (select e.id, e.name, e.text
-                        from exercise as e,
-                        (
-                            select *
+                 (@"select e.*
+                    from exercise as e,
+                        (select exercises_in_class.exerciseId
+                        from
+
+                            (select ce.exerciseId
                             from class_exercises as ce
-                            where ce.classId = " + s.classId + @"
-                        ) as ce
-                        where e.id = ce.exerciseId)
-                        as classExercises, student_performance as sp
-                    where classExercises.id != sp.exerciseId;");
+                            where ce.classId = '"+s.classId+@"') as exercises_in_class
+
+                            where exercises_in_class.exerciseId not in 
+                            (select sp.exerciseId
+                            from student_performance as sp
+                            where studentUsername = '"+s.username+@"')
+                     ) as exercisesLeftToBePerformed
+                     where e.id = exercisesLeftToBePerformed.exerciseId;");
             List<Exercise> list = new List<Exercise>();
 
-
+            
             while (reader.Read())
             {
                 int id = Convert.ToInt32(reader["id"]);

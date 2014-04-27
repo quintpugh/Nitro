@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Student
 {
@@ -23,7 +24,8 @@ namespace Student
 
         public bool Add()
         {
-            return false;
+            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery 
+                ("insert into student_performance (studentUsername, exerciseId, errorCount, time) values ('" + student.username + "', '" + exId + "', '" + errorCount + "', '" + time + "')");
         }
     }
 }

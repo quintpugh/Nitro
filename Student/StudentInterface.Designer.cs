@@ -41,9 +41,12 @@
             this.Label_ExerciseTimeToComplete = new System.Windows.Forms.Label();
             this.Label_ExerciseErrorCount = new System.Windows.Forms.Label();
             this.Label_ExerciseNameResults = new System.Windows.Forms.Label();
+            this.Panel_NoExercise = new System.Windows.Forms.Panel();
+            this.Label_NoExercise = new System.Windows.Forms.Label();
             this.Panel_StartExercise.SuspendLayout();
             this.Panel_PerformExercise.SuspendLayout();
             this.Panel_ExerciseResult.SuspendLayout();
+            this.Panel_NoExercise.SuspendLayout();
             this.SuspendLayout();
             // 
             // ListBox_ExerciseList
@@ -183,11 +186,32 @@
             this.Label_ExerciseNameResults.TabIndex = 0;
             this.Label_ExerciseNameResults.Text = "Exercise Name:";
             // 
+            // Panel_NoExercise
+            // 
+            this.Panel_NoExercise.Controls.Add(this.Label_NoExercise);
+            this.Panel_NoExercise.Location = new System.Drawing.Point(183, 80);
+            this.Panel_NoExercise.Name = "Panel_NoExercise";
+            this.Panel_NoExercise.Size = new System.Drawing.Size(637, 450);
+            this.Panel_NoExercise.TabIndex = 4;
+            this.Panel_NoExercise.Visible = false;
+            // 
+            // Label_NoExercise
+            // 
+            this.Label_NoExercise.AutoSize = true;
+            this.Label_NoExercise.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_NoExercise.Location = new System.Drawing.Point(181, 173);
+            this.Label_NoExercise.Name = "Label_NoExercise";
+            this.Label_NoExercise.Size = new System.Drawing.Size(288, 74);
+            this.Label_NoExercise.TabIndex = 0;
+            this.Label_NoExercise.Text = "You have no more \r\n      exercises!";
+            // 
             // StudentInterface
             // 
+            this.AcceptButton = this.Button_Start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 542);
+            this.Controls.Add(this.Panel_NoExercise);
             this.Controls.Add(this.Panel_ExerciseResult);
             this.Controls.Add(this.Panel_PerformExercise);
             this.Controls.Add(this.Panel_StartExercise);
@@ -199,6 +223,8 @@
             this.Panel_PerformExercise.ResumeLayout(false);
             this.Panel_ExerciseResult.ResumeLayout(false);
             this.Panel_ExerciseResult.PerformLayout();
+            this.Panel_NoExercise.ResumeLayout(false);
+            this.Panel_NoExercise.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +245,7 @@
         private System.Windows.Forms.Label Label_ExerciseErrorCount;
         private System.Windows.Forms.Label Label_ExerciseNameResults;
         private System.Windows.Forms.Button Button_ExcerciseResultsNextExercise;
+        private System.Windows.Forms.Panel Panel_NoExercise;
+        private System.Windows.Forms.Label Label_NoExercise;
     }
 }

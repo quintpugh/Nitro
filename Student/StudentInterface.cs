@@ -32,9 +32,16 @@ namespace Student
             ListBox_ExerciseList.DataSource = exercises;
             ListBox_ExerciseList.DisplayMember = "name";
             ListBox_ExerciseList.ValueMember = "text";
-            Label_Exercises.Text = exercises.Count().ToString();
-            ListBox_ExerciseList.SetSelected(0, true);
 
+            if (exercises.Count() < 1)
+            {
+                Panel_NoExercise.Visible = true;
+                Panel_StartExercise.Visible = false;
+            }
+            else
+            {
+                ListBox_ExerciseList.SetSelected(0, true);
+            }
             // use exercises to populate ExerciseList
 
         } 
@@ -49,6 +56,7 @@ namespace Student
             Textbox_InputText.Enabled = true;
             Textbox_InputText.ResetText();
             Textbox_InputText.Focus();
+            exercisePerforming = exercises.ElementAt(ListBox_ExerciseList.SelectedIndex);
             this.AcceptButton = null;
         }
 
@@ -73,15 +81,23 @@ namespace Student
                 }
 
                 //If the current word should be done, add a space and move cursor
+                int x = 1;
                 if (Textbox_ExerciseText.Text.ElementAtOrDefault(start + 1) == ' ' && Textbox_InputText.TextLength >= prevTextLength)
                 {
-                    Textbox_InputText.AppendText(" ");
-                    Textbox_InputText.Select(start + 2, 0);
+                    while (Textbox_ExerciseText.Text.ElementAtOrDefault(start + x) == ' ')
+                    {
+                        Textbox_InputText.AppendText(" ");
+                        Textbox_InputText.Select(start + (x + 1), 0);
+                        x++;
+                    }
                 }
                 else if (Textbox_ExerciseText.Text.ElementAtOrDefault(start + 1) == '\n' && Textbox_InputText.TextLength >= prevTextLength)
                 {
-                    Textbox_InputText.AppendText("\n");
-                    Textbox_InputText.Select(start + 2, 0);
+                    while (Textbox_ExerciseText.Text.ElementAtOrDefault(start + x) == '\n')
+                    {
+                        Textbox_InputText.AppendText("\n");
+                        Textbox_InputText.Select(start + (x + 1), 0);
+                    }
                 }
                 prevTextLength = Textbox_InputText.TextLength;
 
@@ -106,6 +122,8 @@ namespace Student
             }
             errCount += Math.Abs(Textbox_ExerciseText.TextLength - Textbox_InputText.TextLength);
 
+            ExerciseResult result = new ExerciseResult(student, exercisePerforming.id, errCount, Convert.ToInt32(Math.Round(compTime)));
+            result.Add();
             Textbox_InputText.Select(0, 0);
             Panel_PerformExercise.Visible = false;
 
@@ -121,16 +139,25 @@ namespace Student
         private void Button_ExcerciseResultsNextExercise_Click(object sender, EventArgs e)
         {
             int prevIndex = ListBox_ExerciseList.SelectedIndex;
+  
+            if (exercises.Count > 0)
+            {
+                exercises.RemoveAt(prevIndex);
+                ListBox_ExerciseList.SelectedIndex = -1;
+                ListBox_ExerciseList.DataSource = null;
+                ListBox_ExerciseList.DataSource = exercises;
+                ListBox_ExerciseList.SelectedIndex = prevIndex < exercises.Count ? prevIndex : prevIndex - 1;
+                ListBox_ExerciseList.DisplayMember = "name";
+                ListBox_ExerciseList.ValueMember = "text";
+                ListBox_ExerciseList.Enabled = true;
+                this.AcceptButton = Button_Start;
+            }
 
-            //exercises.RemoveAt(prevIndex);
-            ListBox_ExerciseList.SelectedIndex = -1;
-            /*ListBox_ExerciseList.DataSource = null;
-            ListBox_ExerciseList.DataSource = exercises;
-            ListBox_ExerciseList.SelectedIndex = prevIndex < exercises.Count ? prevIndex : prevIndex - 1;
-            ListBox_ExerciseList.DisplayMember = "name";
-            ListBox_ExerciseList.ValueMember = "text";*/
-            ListBox_ExerciseList.Enabled = true;
-            this.AcceptButton = Button_Start;
+            if (exercises.Count < 1)
+            {
+                Panel_NoExercise.Visible = true;
+                Panel_ExerciseResult.Visible = false;
+            }
         }
 
         private void ListBox_ExerciseList_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,6 +169,7 @@ namespace Student
                 Textbox_InputText.Enabled = false;
                 Panel_ExerciseResult.Visible = false;
                 Panel_StartExercise.Visible = true;
+                this.AcceptButton = Button_Start;
             }
         }
 
