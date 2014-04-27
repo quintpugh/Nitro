@@ -29,6 +29,8 @@ namespace Login
                 {
                     case ("Student"):
                         Student.StudentInterface studentInterface = new Student.StudentInterface(tb_username.Text);
+                        this.Hide();
+                        studentInterface.FormClosing += FormClosing;
                         studentInterface.Show();
                         break;
                     case ("Teacher"):
@@ -47,6 +49,12 @@ namespace Login
             {
                 lbl_loginError.Text = "Invalid Username or Password.";
             }
+        }
+
+        private void FormClosing(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("closing!");
+            this.Show();
         }
     }
 }
