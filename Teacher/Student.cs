@@ -80,18 +80,25 @@ namespace Teacher
             return list;
         }
 
-        public static bool AddToClass(String studentUsername, Class c)
+        public bool AddToClass(Class c)
         {
-            String str = "update student set classId='" + c.id + "' where username='" + studentUsername + "'";
+            String str = "update student set classId='" + c.id + "' where username='" + this.username + "'";
             bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
             return ret;
         }
 
-        public static bool RemoveFromClass(String studentUsername)
+        public bool RemoveFromClass()
         {
-            String str = "update student set classId=null where username='" + studentUsername + "'";
+            String str = "update student set classId=null where username='" + this.username + "'";
             bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
             return ret;
+        }
+
+        public int GetClassId()
+        {
+            String str = "select s.classId from student as s where s.username='" + this.username + "'";
+            Object obj = MySQL_Manager.MySqlManager.Instance.ExecuteScalar(str);
+            return (obj == null) ? -1 : Convert.ToInt32(obj);
         }
     }
 }

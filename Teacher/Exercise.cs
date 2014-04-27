@@ -21,6 +21,14 @@ namespace Teacher
             this.teacher = t;
         }
 
+        public Exercise(String name, String text, Teacher t)
+        {
+            this.id = -1;
+            this.name = name;
+            this.text = text;
+            this.teacher = t;
+        }
+
         public static List<Exercise> Generate(Teacher t)
         {
             String str = "select * from exercise as e where e.owner='" + t.username + "'";
@@ -95,9 +103,16 @@ namespace Teacher
             return Convert.ToString(ret);
         }
 
-        public bool Update(int id, String name, String text, Teacher t)
+        public bool Add()
         {
-            String str = "update exercise set name='" + name + "', text='" + text + "' where id='" + id + "'";
+            String str = "insert into exercise(name, text, owner) values ('" + this.name + "', '" + this.text + "', '" + teacher.username + "')";
+            bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
+            return ret;
+        }
+
+        public bool Update( String name, String text)
+        {
+            String str = "update exercise set name='" + name + "', text='" + text + "' where id='" + this.id + "'";
             bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
             return ret;
         }
