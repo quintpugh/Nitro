@@ -20,7 +20,7 @@ namespace Login
             loginHandler = new LoginHandler();
         }
 
-        private void bt_login_Click(object sender, EventArgs e)
+        private void button_login_Click(object sender, EventArgs e)
         {
             lbl_loginError.Text = String.Empty;
             if (loginHandler.IsValidUser(tb_username.Text, tb_password.Text, cmbBox_userType.Text))

@@ -60,6 +60,11 @@
     <Compile Include="Class.cs" />
     <Compile Include="Exercise.cs" />
     <Compile Include="ExerciseResult.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,9 +82,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherInterface.resx">
       <DependentUpon>TeacherInterface.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\Keyboard_White_Arrow_Left.png" />
+    <Content Include="images\Keyboard_White_Arrow_Right.png" />
+    <Content Include="images\Keyboard_White_X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

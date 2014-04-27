@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherInterface));
             this.panel_menu = new System.Windows.Forms.Panel();
             this.button_menu_logout = new System.Windows.Forms.Button();
             this.button_menu_account = new System.Windows.Forms.Button();
@@ -38,8 +40,15 @@
             this.panel_classes = new System.Windows.Forms.Panel();
             this.tabs_classes = new System.Windows.Forms.TabControl();
             this.tab_classes_students = new System.Windows.Forms.TabPage();
+            this.listView_classes_students_results = new System.Windows.Forms.ListView();
+            this.col_results_exName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_results_errorCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_results_time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listBox_classes_students = new System.Windows.Forms.ListBox();
             this.tab_classes_enrollment = new System.Windows.Forms.TabPage();
+            this.button_classes_enrollmentRemoveAll = new System.Windows.Forms.Button();
+            this.button_classes_enrollmentRight = new System.Windows.Forms.Button();
+            this.button_classes_enrollmentLeft = new System.Windows.Forms.Button();
             this.listBox_classes_studentsEnrolled = new System.Windows.Forms.ListBox();
             this.listBox_classes_studentsNotEnrolled = new System.Windows.Forms.ListBox();
             this.tab_classes_exercises = new System.Windows.Forms.TabPage();
@@ -83,10 +92,10 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.listView_classes_students_results = new System.Windows.Forms.ListView();
-            this.col_results_exName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.col_results_time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.col_results_errorCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.button_classes_exercisesRemoveAll = new System.Windows.Forms.Button();
+            this.button_classes_exercisesRight = new System.Windows.Forms.Button();
+            this.button_classes_exercisesLeft = new System.Windows.Forms.Button();
             this.panel_menu.SuspendLayout();
             this.panel_main.SuspendLayout();
             this.panel_classes.SuspendLayout();
@@ -168,8 +177,8 @@
             // 
             // panel_main
             // 
-            this.panel_main.Controls.Add(this.panel_classes);
             this.panel_main.Controls.Add(this.panel_exercises);
+            this.panel_main.Controls.Add(this.panel_classes);
             this.panel_main.Controls.Add(this.panel_students);
             this.panel_main.Controls.Add(this.panel_account);
             this.panel_main.Location = new System.Drawing.Point(159, 12);
@@ -191,8 +200,8 @@
             // tabs_classes
             // 
             this.tabs_classes.Controls.Add(this.tab_classes_students);
-            this.tabs_classes.Controls.Add(this.tab_classes_exercises);
             this.tabs_classes.Controls.Add(this.tab_classes_enrollment);
+            this.tabs_classes.Controls.Add(this.tab_classes_exercises);
             this.tabs_classes.Location = new System.Drawing.Point(129, 3);
             this.tabs_classes.Name = "tabs_classes";
             this.tabs_classes.SelectedIndex = 0;
@@ -211,6 +220,37 @@
             this.tab_classes_students.Text = "Students";
             this.tab_classes_students.UseVisualStyleBackColor = true;
             // 
+            // listView_classes_students_results
+            // 
+            this.listView_classes_students_results.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.col_results_exName,
+            this.col_results_errorCount,
+            this.col_results_time});
+            this.listView_classes_students_results.FullRowSelect = true;
+            this.listView_classes_students_results.Location = new System.Drawing.Point(190, 6);
+            this.listView_classes_students_results.Name = "listView_classes_students_results";
+            this.listView_classes_students_results.Size = new System.Drawing.Size(442, 446);
+            this.listView_classes_students_results.TabIndex = 3;
+            this.listView_classes_students_results.UseCompatibleStateImageBehavior = false;
+            this.listView_classes_students_results.View = System.Windows.Forms.View.Details;
+            // 
+            // col_results_exName
+            // 
+            this.col_results_exName.Text = "Exercise";
+            this.col_results_exName.Width = 160;
+            // 
+            // col_results_errorCount
+            // 
+            this.col_results_errorCount.DisplayIndex = 2;
+            this.col_results_errorCount.Text = "Error Count";
+            this.col_results_errorCount.Width = 132;
+            // 
+            // col_results_time
+            // 
+            this.col_results_time.DisplayIndex = 1;
+            this.col_results_time.Text = "Time";
+            this.col_results_time.Width = 141;
+            // 
             // listBox_classes_students
             // 
             this.listBox_classes_students.FormattingEnabled = true;
@@ -221,6 +261,9 @@
             // 
             // tab_classes_enrollment
             // 
+            this.tab_classes_enrollment.Controls.Add(this.button_classes_enrollmentRemoveAll);
+            this.tab_classes_enrollment.Controls.Add(this.button_classes_enrollmentRight);
+            this.tab_classes_enrollment.Controls.Add(this.button_classes_enrollmentLeft);
             this.tab_classes_enrollment.Controls.Add(this.listBox_classes_studentsEnrolled);
             this.tab_classes_enrollment.Controls.Add(this.listBox_classes_studentsNotEnrolled);
             this.tab_classes_enrollment.Location = new System.Drawing.Point(4, 22);
@@ -231,11 +274,48 @@
             this.tab_classes_enrollment.Text = "Enrollment";
             this.tab_classes_enrollment.UseVisualStyleBackColor = true;
             // 
+            // button_classes_enrollmentRemoveAll
+            // 
+            this.button_classes_enrollmentRemoveAll.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_classes_enrollmentRemoveAll.Image = ((System.Drawing.Image)(resources.GetObject("button_classes_enrollmentRemoveAll.Image")));
+            this.button_classes_enrollmentRemoveAll.Location = new System.Drawing.Point(289, 392);
+            this.button_classes_enrollmentRemoveAll.Name = "button_classes_enrollmentRemoveAll";
+            this.button_classes_enrollmentRemoveAll.Size = new System.Drawing.Size(60, 60);
+            this.button_classes_enrollmentRemoveAll.TabIndex = 4;
+            this.toolTip.SetToolTip(this.button_classes_enrollmentRemoveAll, "Remove All Enrolled Students");
+            this.button_classes_enrollmentRemoveAll.UseVisualStyleBackColor = true;
+            this.button_classes_enrollmentRemoveAll.Click += new System.EventHandler(this.button_classes_enrollmentRemoveAll_Click);
+            // 
+            // button_classes_enrollmentRight
+            // 
+            this.button_classes_enrollmentRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_classes_enrollmentRight.Image = ((System.Drawing.Image)(resources.GetObject("button_classes_enrollmentRight.Image")));
+            this.button_classes_enrollmentRight.Location = new System.Drawing.Point(286, 142);
+            this.button_classes_enrollmentRight.Name = "button_classes_enrollmentRight";
+            this.button_classes_enrollmentRight.Size = new System.Drawing.Size(60, 60);
+            this.button_classes_enrollmentRight.TabIndex = 3;
+            this.toolTip.SetToolTip(this.button_classes_enrollmentRight, "Enroll Selected Student");
+            this.button_classes_enrollmentRight.UseVisualStyleBackColor = true;
+            this.button_classes_enrollmentRight.Click += new System.EventHandler(this.button_classes_enrollmentRight_Click);
+            // 
+            // button_classes_enrollmentLeft
+            // 
+            this.button_classes_enrollmentLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_classes_enrollmentLeft.Image = ((System.Drawing.Image)(resources.GetObject("button_classes_enrollmentLeft.Image")));
+            this.button_classes_enrollmentLeft.Location = new System.Drawing.Point(286, 64);
+            this.button_classes_enrollmentLeft.Name = "button_classes_enrollmentLeft";
+            this.button_classes_enrollmentLeft.Size = new System.Drawing.Size(60, 60);
+            this.button_classes_enrollmentLeft.TabIndex = 2;
+            this.toolTip.SetToolTip(this.button_classes_enrollmentLeft, "Withdraw Selected Student");
+            this.button_classes_enrollmentLeft.UseVisualStyleBackColor = true;
+            this.button_classes_enrollmentLeft.Click += new System.EventHandler(this.button_classes_enrollmentLeft_Click);
+            // 
             // listBox_classes_studentsEnrolled
             // 
             this.listBox_classes_studentsEnrolled.FormattingEnabled = true;
             this.listBox_classes_studentsEnrolled.Location = new System.Drawing.Point(375, 6);
             this.listBox_classes_studentsEnrolled.Name = "listBox_classes_studentsEnrolled";
+            this.listBox_classes_studentsEnrolled.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox_classes_studentsEnrolled.Size = new System.Drawing.Size(257, 446);
             this.listBox_classes_studentsEnrolled.TabIndex = 1;
             // 
@@ -244,11 +324,15 @@
             this.listBox_classes_studentsNotEnrolled.FormattingEnabled = true;
             this.listBox_classes_studentsNotEnrolled.Location = new System.Drawing.Point(6, 6);
             this.listBox_classes_studentsNotEnrolled.Name = "listBox_classes_studentsNotEnrolled";
+            this.listBox_classes_studentsNotEnrolled.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox_classes_studentsNotEnrolled.Size = new System.Drawing.Size(257, 446);
             this.listBox_classes_studentsNotEnrolled.TabIndex = 0;
             // 
             // tab_classes_exercises
             // 
+            this.tab_classes_exercises.Controls.Add(this.button_classes_exercisesRemoveAll);
+            this.tab_classes_exercises.Controls.Add(this.button_classes_exercisesRight);
+            this.tab_classes_exercises.Controls.Add(this.button_classes_exercisesLeft);
             this.tab_classes_exercises.Controls.Add(this.listBox_classes_exercisesIn);
             this.tab_classes_exercises.Controls.Add(this.listBox_classes_exercisesNotIn);
             this.tab_classes_exercises.Location = new System.Drawing.Point(4, 22);
@@ -264,6 +348,7 @@
             this.listBox_classes_exercisesIn.FormattingEnabled = true;
             this.listBox_classes_exercisesIn.Location = new System.Drawing.Point(375, 6);
             this.listBox_classes_exercisesIn.Name = "listBox_classes_exercisesIn";
+            this.listBox_classes_exercisesIn.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox_classes_exercisesIn.Size = new System.Drawing.Size(257, 446);
             this.listBox_classes_exercisesIn.TabIndex = 3;
             // 
@@ -272,6 +357,7 @@
             this.listBox_classes_exercisesNotIn.FormattingEnabled = true;
             this.listBox_classes_exercisesNotIn.Location = new System.Drawing.Point(6, 6);
             this.listBox_classes_exercisesNotIn.Name = "listBox_classes_exercisesNotIn";
+            this.listBox_classes_exercisesNotIn.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox_classes_exercisesNotIn.Size = new System.Drawing.Size(257, 446);
             this.listBox_classes_exercisesNotIn.TabIndex = 2;
             // 
@@ -632,33 +718,41 @@
             this.textBox5.Size = new System.Drawing.Size(166, 20);
             this.textBox5.TabIndex = 0;
             // 
-            // listView_classes_students_results
+            // button_classes_exercisesRemoveAll
             // 
-            this.listView_classes_students_results.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.col_results_exName,
-            this.col_results_errorCount,
-            this.col_results_time});
-            this.listView_classes_students_results.FullRowSelect = true;
-            this.listView_classes_students_results.Location = new System.Drawing.Point(190, 6);
-            this.listView_classes_students_results.Name = "listView_classes_students_results";
-            this.listView_classes_students_results.Size = new System.Drawing.Size(442, 446);
-            this.listView_classes_students_results.TabIndex = 3;
-            this.listView_classes_students_results.UseCompatibleStateImageBehavior = false;
-            this.listView_classes_students_results.View = System.Windows.Forms.View.Details;
+            this.button_classes_exercisesRemoveAll.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_classes_exercisesRemoveAll.Image = ((System.Drawing.Image)(resources.GetObject("button_classes_exercisesRemoveAll.Image")));
+            this.button_classes_exercisesRemoveAll.Location = new System.Drawing.Point(289, 392);
+            this.button_classes_exercisesRemoveAll.Name = "button_classes_exercisesRemoveAll";
+            this.button_classes_exercisesRemoveAll.Size = new System.Drawing.Size(60, 60);
+            this.button_classes_exercisesRemoveAll.TabIndex = 7;
+            this.toolTip.SetToolTip(this.button_classes_exercisesRemoveAll, "Remove All Selected Exercises");
+            this.button_classes_exercisesRemoveAll.UseVisualStyleBackColor = true;
+            this.button_classes_exercisesRemoveAll.Click += new System.EventHandler(this.button_classes_exercisesRemoveAll_Click);
             // 
-            // col_results_exName
+            // button_classes_exercisesRight
             // 
-            this.col_results_exName.Text = "Exercise";
+            this.button_classes_exercisesRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_classes_exercisesRight.Image = ((System.Drawing.Image)(resources.GetObject("button_classes_exercisesRight.Image")));
+            this.button_classes_exercisesRight.Location = new System.Drawing.Point(286, 142);
+            this.button_classes_exercisesRight.Name = "button_classes_exercisesRight";
+            this.button_classes_exercisesRight.Size = new System.Drawing.Size(60, 60);
+            this.button_classes_exercisesRight.TabIndex = 6;
+            this.toolTip.SetToolTip(this.button_classes_exercisesRight, "Add Selected Exercises");
+            this.button_classes_exercisesRight.UseVisualStyleBackColor = true;
+            this.button_classes_exercisesRight.Click += new System.EventHandler(this.button_classes_exercisesRight_Click);
             // 
-            // col_results_time
+            // button_classes_exercisesLeft
             // 
-            this.col_results_time.DisplayIndex = 1;
-            this.col_results_time.Text = "Time";
-            // 
-            // col_results_errorCount
-            // 
-            this.col_results_errorCount.DisplayIndex = 2;
-            this.col_results_errorCount.Text = "Error Count";
+            this.button_classes_exercisesLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_classes_exercisesLeft.Image = ((System.Drawing.Image)(resources.GetObject("button_classes_exercisesLeft.Image")));
+            this.button_classes_exercisesLeft.Location = new System.Drawing.Point(286, 64);
+            this.button_classes_exercisesLeft.Name = "button_classes_exercisesLeft";
+            this.button_classes_exercisesLeft.Size = new System.Drawing.Size(60, 60);
+            this.button_classes_exercisesLeft.TabIndex = 5;
+            this.toolTip.SetToolTip(this.button_classes_exercisesLeft, "Remove Selected Exercises");
+            this.button_classes_exercisesLeft.UseVisualStyleBackColor = true;
+            this.button_classes_exercisesLeft.Click += new System.EventHandler(this.button_classes_exercisesLeft_Click);
             // 
             // TeacherInterface
             // 
@@ -747,6 +841,13 @@
         private System.Windows.Forms.ColumnHeader col_results_exName;
         private System.Windows.Forms.ColumnHeader col_results_errorCount;
         private System.Windows.Forms.ColumnHeader col_results_time;
+        private System.Windows.Forms.Button button_classes_enrollmentRight;
+        private System.Windows.Forms.Button button_classes_enrollmentLeft;
+        private System.Windows.Forms.Button button_classes_enrollmentRemoveAll;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button button_classes_exercisesRemoveAll;
+        private System.Windows.Forms.Button button_classes_exercisesRight;
+        private System.Windows.Forms.Button button_classes_exercisesLeft;
 
     }
 }
