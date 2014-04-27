@@ -10,42 +10,59 @@ using System.Windows.Forms;
 
 namespace Login
 {
+    /// <summary>Class that handles the Login Interface
+    /// This class is associated with the Login Module and handles all interface interactions
+    /// It contains various textboxes that a user must enter information to authenticate further into the system.
+    /// Authenitication begins once the "Login" button has been clicked.
+    /// </summary>
     public partial class LoginInterface : Form
     {
         private LoginHandler loginHandler;
+
+        /// <summary>Constructor method of the Login Interface
+        /// The constructor method of the interface, which initalizes the components needed for the system.
+        /// Also sets the default index for the "User Type" combobox to Students.
+        /// </summary>
         public LoginInterface()
         {
             InitializeComponent();
-            cmbBox_userType.SelectedIndex = 0;
+            comboBox_userType.SelectedIndex = 0;
             loginHandler = new LoginHandler();
         }
 
+        /// <summary>Event-based method that handles Login button click.
+        /// This method handles the event when the Login button is clicked.
+        /// After the event is activated, the method uses the LoginHandler class to determine if the login information is correctly 
+        /// entered for the respective user type. It then loads the respective module and passes the username.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_login_Click(object sender, EventArgs e)
         {
-            lbl_loginError.Text = String.Empty;
-            if (loginHandler.IsValidUser(tb_username.Text, tb_password.Text, cmbBox_userType.Text))
+            label_loginError.Text = String.Empty;
+            if (loginHandler.IsValidUser(textBox_username.Text, textbox_password.Text, comboBox_userType.Text))
             {
-                switch (cmbBox_userType.Text)
+                switch (comboBox_userType.Text)
                 {
-                    case ("Student"):
-                        Student.StudentInterface studentInterface = new Student.StudentInterface(tb_username.Text);
-                        tb_username.Focus();
+                    case ("Student"): // student authentication
+                        Student.StudentInterface studentInterface = new Student.StudentInterface(textBox_username.Text);
+                        textBox_username.Focus();
                         this.Hide();
                         this.Owner = studentInterface;
                         studentInterface.FormClosing += SubFormClosing;
                         studentInterface.Show();
                         break;
-                    case ("Teacher"):
-                        Teacher.TeacherInterface teacherInterface = new Teacher.TeacherInterface(tb_username.Text);
-                        tb_username.Focus();
+                    case ("Teacher"): // teacher authentication
+                        Teacher.TeacherInterface teacherInterface = new Teacher.TeacherInterface(textBox_username.Text);
+                        textBox_username.Focus();
                         this.Hide();
                         this.Owner = teacherInterface;
                         teacherInterface.FormClosing += SubFormClosing;
                         teacherInterface.Show();
                         break;
-                    case ("Database Administrator"):
-                        Dba.DbaInterface dbaInterface = new Dba.DbaInterface(tb_username.Text);
-                        tb_username.Focus();
+                    case ("Database Administrator"): // database administrator authentication
+                        Dba.DbaInterface dbaInterface = new Dba.DbaInterface(textBox_username.Text);
+                        textBox_username.Focus();
                         this.Hide();
                         this.Owner = dbaInterface;
                         dbaInterface.FormClosing += SubFormClosing;
@@ -54,15 +71,21 @@ namespace Login
                     default:
                         throw new Exception("How did you get a user that doesn't exist?");
                 }
-                tb_username.ResetText();
-                tb_password.ResetText();
+                textBox_username.ResetText();
+                textbox_password.ResetText();
             }
             else
             {
-                lbl_loginError.Text = "Invalid Username or Password.";
+                label_loginError.Text = "Invalid Username or Password.";
             }
         }
 
+        /// <summary>Event method that handles when another module (Student, Teacher, Dba) closes
+        /// This method handles the event when another module is closed through a logout button. Once this event is encountered
+        /// it reloads the Login Module and displays the Login Interface.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SubFormClosing(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("closing!");
