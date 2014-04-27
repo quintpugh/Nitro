@@ -197,5 +197,11 @@ namespace Student
                 }
             }
         }
+
+        private void Button_Logout_Click(object sender, EventArgs e)
+        {
+            this.RemoveOwnedForm(this.OwnedForms.ElementAt(0));
+            this.Close();
+        }
     }
 }

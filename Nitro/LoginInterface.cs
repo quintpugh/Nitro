@@ -30,7 +30,8 @@ namespace Login
                     case ("Student"):
                         Student.StudentInterface studentInterface = new Student.StudentInterface(tb_username.Text);
                         this.Hide();
-                        studentInterface.FormClosing += FormClosing;
+                        this.Owner = studentInterface;
+                        studentInterface.FormClosing += SubFormClosing;
                         studentInterface.Show();
                         break;
                     case ("Teacher"):
@@ -44,6 +45,8 @@ namespace Login
                     default:
                         throw new Exception("How did you get a user that doesn't exist?");
                 }
+                tb_username.ResetText();
+                tb_password.ResetText();
             }
             else
             {
@@ -51,7 +54,7 @@ namespace Login
             }
         }
 
-        private void FormClosing(object sender, EventArgs e)
+        private void SubFormClosing(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("closing!");
             this.Show();
