@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbaClass.cs" />
+    <Compile Include="Class.cs" />
     <Compile Include="Dba.cs" />
     <Compile Include="DbaInterface.cs">
       <SubType>Form</SubType>

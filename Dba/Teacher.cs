@@ -9,10 +9,11 @@ namespace Dba
 {
     class Teacher
     {
-        public String username;
-        private String fName;
-        private String lName;
-        private String password;
+        public String username {get; set;}
+        public String fName {get; set;}
+        public String lName { get; set; }
+        public String password;
+        public static Teacher Empty { get { return new Teacher("", "", "", ""); } }
 
         public String fullName { get { return fName + " " + lName; } }
 
@@ -39,19 +40,19 @@ namespace Dba
 
         public bool Delete()
         {
-            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("delete from Teacher where username = " + username); 
+            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("delete from Teacher where username = '" + username + "'"); 
         }
 
         public bool Add()
         {
-            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into teacher (username, password, lName, fName) values (" + username + ", " + password + ", " + fName + ", " + lName + ")");
+            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into teacher (username, password, lName, fName) values ('" + username + "', '" + password + "', '" + fName + "', '" + lName + "')");
         }
 
         public bool Update(String password, String f, String l)
         {
             return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery
                 (@"update teacher
-                    set password = " + password + ", fName = " + f + ", lName " + l + " where username = " + username);
+                    set password = '" + password + "', fName = '" + f + "', lName = '" + l + "' where username = '" + username + "'");
         }
     }
 }
