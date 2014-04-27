@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Teacher
 {
+    /// <summary>
+    /// Represents a Class that the currently authenticated Teacher is the instructor of.
+    /// </summary>
     public class Class
     {
         public int id { get; set; }
@@ -14,6 +17,12 @@ namespace Teacher
         public List<Student> students;
         public List<Exercise> exercises;
 
+        /// <summary>
+        /// Class constructor
+        /// </summary>
+        /// <param name="id">The unique ID of the class</param>
+        /// <param name="name">The name of the class</param>
+        /// <param name="t">The Teacher that 'owns' the class</param>
         public Class(int id, String name, Teacher t)
         {
             this.id = id;
@@ -21,6 +30,11 @@ namespace Teacher
             this.teacher = t;
         }
 
+        /// <summary>
+        /// Generate a List of Classes that a given Teacher is an instructor of
+        /// </summary>
+        /// <param name="t">The Teacher in question</param>
+        /// <returns>A List of Classes that Teacher t is an instructor of</returns>
         public static List<Class> Generate(Teacher t)
         {
             String str = "select * from class as c where c.teacherUsername='" + t.username + "'";
@@ -38,6 +52,9 @@ namespace Teacher
             return list;
         }
 
+        /// <summary>
+        /// Represents an empty class with an ID of '-1', no name, and no Teacher
+        /// </summary>
         public static Class Empty
         {
             get

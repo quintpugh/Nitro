@@ -293,13 +293,13 @@ namespace Teacher
             textBox_exercises_name.Text = ex.name;
             textBox_exercises_text.Text = ex.text;
             button_exercises_save.Text = "Save";
+            button_exercises_delete.Enabled = true;
         }
 
         private void PopulateExerciseList()
         {
             teacher.exercises = Exercise.Generate(teacher);
             listBox_exercises.DataSource = teacher.exercises;
-            label_exercises_error.Text = String.Empty;
         }
 
         private void button_exercises_new_Click(object sender, EventArgs e)
@@ -308,6 +308,7 @@ namespace Teacher
             textBox_exercises_text.Text = String.Empty;
             listBox_exercises.ClearSelected();
             button_exercises_save.Text = "Add";
+            button_exercises_delete.Enabled = false;
         }
 
         private void button_exercises_reset_Click(object sender, EventArgs e)
@@ -323,7 +324,6 @@ namespace Teacher
                 textBox_exercises_name.Text = String.Empty;
                 textBox_exercises_text.Text = String.Empty;
             }
-            label_exercises_error.Text = String.Empty;
         }
 
         private void button_exercises_delete_Click(object sender, EventArgs e)
@@ -337,7 +337,7 @@ namespace Teacher
         {
             if(textBox_exercises_name.Text.Length == 0 || textBox_exercises_text.Text.Length == 0)
             {
-                label_exercises_error.Text = "Both fields required!";
+                MessageBox.Show("Both fields required!");
                 return;
             }
             if (listBox_exercises.SelectedItem != null)
@@ -383,8 +383,8 @@ namespace Teacher
                 comboBox_students_classes.SelectedValue = -1;
             }
             button_students_save.Text = "Save";
+            button_students_delete.Enabled = true;
             textBox_students_username.Enabled = false;
-            label_students_error.Text = String.Empty;
         }
 
         private void PopulateStudentPanel()
@@ -421,6 +421,7 @@ namespace Teacher
             textBox_students_password.Text = String.Empty;
             textBox_students_username.Text = String.Empty;
             button_students_save.Text = "Add";
+            button_students_delete.Enabled = false;
             textBox_students_username.Enabled = true;
             comboBox_students_classes.SelectedValue = -1;
 
@@ -446,16 +447,11 @@ namespace Teacher
                 textBox_students_username.Text = String.Empty;
                 comboBox_students_classes.SelectedValue = -1;
             }
-            label_students_error.Text = String.Empty;
         }
 
         private void button_students_delete_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("button_students_delete_Click");
-            if (listBox_students.SelectedItem == null)
-            {
-                return;
-            }
             Student st = (Student)listBox_students.SelectedItem;
             st.Delete();
             PopulateStudentList();
@@ -467,13 +463,13 @@ namespace Teacher
             
             if(textBox_students_fName.Text.Length == 0 || textBox_students_lName.Text.Length == 0 || textBox_students_username.Text.Length == 0)
             {
-                label_students_error.Text = "First Name, Last Name, Username, and Password fields are required.";
+                MessageBox.Show("First Name, Last Name, Username, and Password fields are required.");
                 return;
             }
 
             if(!PasswordMeetsRequirements(textBox_students_password.Text))
             {
-                label_students_error.Text = "Entered password do not meet minimum requirements\n1 upper case letter, 1 lower case letter, 1 digit, and legth of at least 8.";
+                MessageBox.Show("Entered password do not meet minimum requirements: 1 upper case letter, 1 lower case letter, 1 digit, and length of at least 8.");
                 return;
             }
             Class c = (Class)comboBox_students_classes.SelectedItem;
@@ -486,7 +482,7 @@ namespace Teacher
                 Student st = new Student(textBox_students_username.Text, textBox_students_password.Text, textBox_students_fName.Text, textBox_students_lName.Text, c);
                 if(!st.Add())
                 {
-                    label_students_error.Text = "Error adding student.  Check that the username supplied is not already in use.";
+                    MessageBox.Show("Error adding student.  Check that the username supplied is not already in use.");
                 }
             }
             else
@@ -494,7 +490,7 @@ namespace Teacher
                 Student st = (Student)listBox_students.SelectedItem;
                 if (!st.Update(textBox_students_password.Text, textBox_students_fName.Text, textBox_students_lName.Text, c))
                 {
-                    label_students_error.Text = "Error updating student.";
+                    MessageBox.Show("Error updating student.");
                 }
             }
             PopulateStudentList();
@@ -510,14 +506,12 @@ namespace Teacher
                 return;
             }
             System.Diagnostics.Debug.WriteLine("account panel visible changed");
-            label_account_error.Text = String.Empty;
             textBox_account_fName.Text = teacher.fName;
             textBox_account_lName.Text = teacher.lName;
         }
 
         private void button_account_reset_Click(object sender, EventArgs e)
         {
-            label_account_error.Text = String.Empty;
             textBox_account_fName.Text = teacher.fName;
             textBox_account_lName.Text = teacher.lName;
             textBox_account_password.Text = String.Empty;
@@ -526,12 +520,9 @@ namespace Teacher
 
         private void button_account_save_Click(object sender, EventArgs e)
         {
-            label_account_error.Text = String.Empty;
-
             if (textBox_account_fName.Text.Length == 0 || textBox_account_lName.Text.Length == 0)
             {
-                label_account_error.ForeColor = Color.Red;
-                label_account_error.Text = "First Name, Last Name, and Passwords are required fields.";
+                MessageBox.Show("First Name, Last Name, and Passwords are required fields.");
                 return;
             }
 
@@ -540,23 +531,19 @@ namespace Teacher
                 if (PasswordMeetsRequirements(textBox_account_password.Text))
                 {
                     teacher.Update(textBox_account_password.Text, textBox_account_fName.Text, textBox_account_lName.Text);
-                    label_account_error.ForeColor = Color.Green;
-                    label_account_error.Text = "Save successful!";
                     textBox_account_password.Text = String.Empty;
                     textBox_account_confirmPassword.Text = String.Empty;
                 }
                 else
                 {
-                    label_account_error.ForeColor = Color.Red;
-                    label_account_error.Text = "Entered passwords do not meet minimum requirements\n1 upper case letter, 1 lower case letter, 1 digit, and legth of at least 8.";
+                    MessageBox.Show("Entered passwords do not meet minimum requirements: 1 upper case letter, 1 lower case letter, 1 digit, and length of at least 8.");
                     textBox_account_password.Text = String.Empty;
                     textBox_account_confirmPassword.Text = String.Empty;
                 }
             }
             else
             {
-                label_account_error.ForeColor = Color.Red;
-                label_account_error.Text = "Entered passwords do not match.";
+                MessageBox.Show("Entered passwords do not match.");
                 textBox_account_password.Text = String.Empty;
                 textBox_account_confirmPassword.Text = String.Empty;
             }
