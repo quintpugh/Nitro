@@ -43,6 +43,7 @@
             this.Label_ExerciseNameResults = new System.Windows.Forms.Label();
             this.Panel_NoExercise = new System.Windows.Forms.Panel();
             this.Label_NoExercise = new System.Windows.Forms.Label();
+            this.Button_Logout = new System.Windows.Forms.Button();
             this.Panel_StartExercise.SuspendLayout();
             this.Panel_PerformExercise.SuspendLayout();
             this.Panel_ExerciseResult.SuspendLayout();
@@ -205,18 +206,32 @@
             this.Label_NoExercise.TabIndex = 0;
             this.Label_NoExercise.Text = "You have no more \r\n      exercises!";
             // 
+            // Button_Logout
+            // 
+            this.Button_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Logout.Location = new System.Drawing.Point(12, 483);
+            this.Button_Logout.Name = "Button_Logout";
+            this.Button_Logout.Size = new System.Drawing.Size(121, 47);
+            this.Button_Logout.TabIndex = 5;
+            this.Button_Logout.Text = "Logout";
+            this.Button_Logout.UseVisualStyleBackColor = true;
+            this.Button_Logout.Click += new System.EventHandler(this.Button_Logout_Click);
+            // 
             // StudentInterface
             // 
             this.AcceptButton = this.Button_Start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 542);
+            this.Controls.Add(this.Button_Logout);
             this.Controls.Add(this.Panel_NoExercise);
             this.Controls.Add(this.Panel_ExerciseResult);
             this.Controls.Add(this.Panel_PerformExercise);
             this.Controls.Add(this.Panel_StartExercise);
             this.Controls.Add(this.Label_Exercises);
             this.Controls.Add(this.ListBox_ExerciseList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "StudentInterface";
             this.Text = "Student";
             this.Panel_StartExercise.ResumeLayout(false);
@@ -247,5 +262,6 @@
         private System.Windows.Forms.Button Button_ExcerciseResultsNextExercise;
         private System.Windows.Forms.Panel Panel_NoExercise;
         private System.Windows.Forms.Label Label_NoExercise;
+        private System.Windows.Forms.Button Button_Logout;
     }
 }
