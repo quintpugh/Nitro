@@ -85,17 +85,19 @@
             this.listBox_classes_exercisesNotIn = new System.Windows.Forms.ListBox();
             this.listBox_classes = new System.Windows.Forms.ListBox();
             this.panel_account = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_account_save = new System.Windows.Forms.Button();
+            this.button_account_reset = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox_account_confirmPassword = new System.Windows.Forms.TextBox();
+            this.textBox_account_password = new System.Windows.Forms.TextBox();
+            this.textBox_account_lName = new System.Windows.Forms.TextBox();
+            this.textBox_account_fName = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label_students_error = new System.Windows.Forms.Label();
+            this.label_account_error = new System.Windows.Forms.Label();
             this.panel_menu.SuspendLayout();
             this.panel_main.SuspendLayout();
             this.panel_students.SuspendLayout();
@@ -178,9 +180,9 @@
             // panel_main
             // 
             this.panel_main.Controls.Add(this.panel_students);
+            this.panel_main.Controls.Add(this.panel_account);
             this.panel_main.Controls.Add(this.panel_exercises);
             this.panel_main.Controls.Add(this.panel_classes);
-            this.panel_main.Controls.Add(this.panel_account);
             this.panel_main.Location = new System.Drawing.Point(159, 12);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(778, 495);
@@ -188,6 +190,7 @@
             // 
             // panel_students
             // 
+            this.panel_students.Controls.Add(this.label_students_error);
             this.panel_students.Controls.Add(this.button_students_save);
             this.panel_students.Controls.Add(this.button_students_delete);
             this.panel_students.Controls.Add(this.button_students_reset);
@@ -661,16 +664,17 @@
             // 
             // panel_account
             // 
-            this.panel_account.Controls.Add(this.button2);
-            this.panel_account.Controls.Add(this.button1);
+            this.panel_account.Controls.Add(this.label_account_error);
+            this.panel_account.Controls.Add(this.button_account_save);
+            this.panel_account.Controls.Add(this.button_account_reset);
             this.panel_account.Controls.Add(this.label11);
             this.panel_account.Controls.Add(this.label10);
             this.panel_account.Controls.Add(this.label9);
             this.panel_account.Controls.Add(this.label8);
-            this.panel_account.Controls.Add(this.textBox8);
-            this.panel_account.Controls.Add(this.textBox7);
-            this.panel_account.Controls.Add(this.textBox6);
-            this.panel_account.Controls.Add(this.textBox5);
+            this.panel_account.Controls.Add(this.textBox_account_confirmPassword);
+            this.panel_account.Controls.Add(this.textBox_account_password);
+            this.panel_account.Controls.Add(this.textBox_account_lName);
+            this.panel_account.Controls.Add(this.textBox_account_fName);
             this.panel_account.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_account.Location = new System.Drawing.Point(0, 0);
             this.panel_account.Name = "panel_account";
@@ -678,23 +682,25 @@
             this.panel_account.TabIndex = 4;
             this.panel_account.Visible = false;
             // 
-            // button2
+            // button_account_save
             // 
-            this.button2.Location = new System.Drawing.Point(399, 237);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_account_save.Location = new System.Drawing.Point(399, 237);
+            this.button_account_save.Name = "button_account_save";
+            this.button_account_save.Size = new System.Drawing.Size(75, 23);
+            this.button_account_save.TabIndex = 9;
+            this.button_account_save.Text = "Save";
+            this.button_account_save.UseVisualStyleBackColor = true;
+            this.button_account_save.Click += new System.EventHandler(this.button_account_save_Click);
             // 
-            // button1
+            // button_account_reset
             // 
-            this.button1.Location = new System.Drawing.Point(308, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_account_reset.Location = new System.Drawing.Point(308, 237);
+            this.button_account_reset.Name = "button_account_reset";
+            this.button_account_reset.Size = new System.Drawing.Size(75, 23);
+            this.button_account_reset.TabIndex = 8;
+            this.button_account_reset.Text = "Reset";
+            this.button_account_reset.UseVisualStyleBackColor = true;
+            this.button_account_reset.Click += new System.EventHandler(this.button_account_reset_Click);
             // 
             // label11
             // 
@@ -732,35 +738,55 @@
             this.label8.TabIndex = 4;
             this.label8.Text = "First Name:";
             // 
-            // textBox8
+            // textBox_account_confirmPassword
             // 
-            this.textBox8.Location = new System.Drawing.Point(308, 211);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.PasswordChar = '*';
-            this.textBox8.Size = new System.Drawing.Size(166, 20);
-            this.textBox8.TabIndex = 3;
+            this.textBox_account_confirmPassword.Location = new System.Drawing.Point(308, 211);
+            this.textBox_account_confirmPassword.Name = "textBox_account_confirmPassword";
+            this.textBox_account_confirmPassword.PasswordChar = '*';
+            this.textBox_account_confirmPassword.Size = new System.Drawing.Size(166, 20);
+            this.textBox_account_confirmPassword.TabIndex = 3;
+            this.textBox_account_confirmPassword.UseSystemPasswordChar = true;
             // 
-            // textBox7
+            // textBox_account_password
             // 
-            this.textBox7.Location = new System.Drawing.Point(308, 185);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.PasswordChar = '*';
-            this.textBox7.Size = new System.Drawing.Size(166, 20);
-            this.textBox7.TabIndex = 2;
+            this.textBox_account_password.Location = new System.Drawing.Point(308, 185);
+            this.textBox_account_password.Name = "textBox_account_password";
+            this.textBox_account_password.PasswordChar = '*';
+            this.textBox_account_password.Size = new System.Drawing.Size(166, 20);
+            this.textBox_account_password.TabIndex = 2;
+            this.textBox_account_password.UseSystemPasswordChar = true;
             // 
-            // textBox6
+            // textBox_account_lName
             // 
-            this.textBox6.Location = new System.Drawing.Point(308, 159);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(166, 20);
-            this.textBox6.TabIndex = 1;
+            this.textBox_account_lName.Location = new System.Drawing.Point(308, 159);
+            this.textBox_account_lName.Name = "textBox_account_lName";
+            this.textBox_account_lName.Size = new System.Drawing.Size(166, 20);
+            this.textBox_account_lName.TabIndex = 1;
             // 
-            // textBox5
+            // textBox_account_fName
             // 
-            this.textBox5.Location = new System.Drawing.Point(308, 133);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(166, 20);
-            this.textBox5.TabIndex = 0;
+            this.textBox_account_fName.Location = new System.Drawing.Point(308, 133);
+            this.textBox_account_fName.Name = "textBox_account_fName";
+            this.textBox_account_fName.Size = new System.Drawing.Size(166, 20);
+            this.textBox_account_fName.TabIndex = 0;
+            // 
+            // label_students_error
+            // 
+            this.label_students_error.AutoSize = true;
+            this.label_students_error.ForeColor = System.Drawing.Color.Red;
+            this.label_students_error.Location = new System.Drawing.Point(326, 297);
+            this.label_students_error.Name = "label_students_error";
+            this.label_students_error.Size = new System.Drawing.Size(0, 13);
+            this.label_students_error.TabIndex = 2;
+            // 
+            // label_account_error
+            // 
+            this.label_account_error.AutoSize = true;
+            this.label_account_error.ForeColor = System.Drawing.Color.Red;
+            this.label_account_error.Location = new System.Drawing.Point(211, 276);
+            this.label_account_error.Name = "label_account_error";
+            this.label_account_error.Size = new System.Drawing.Size(0, 13);
+            this.label_account_error.TabIndex = 10;
             // 
             // TeacherInterface
             // 
@@ -810,16 +836,16 @@
         private System.Windows.Forms.ListBox listBox_classes_exercisesNotIn;
         private System.Windows.Forms.ListBox listBox_classes;
         private System.Windows.Forms.Panel panel_account;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_account_save;
+        private System.Windows.Forms.Button button_account_reset;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_account_confirmPassword;
+        private System.Windows.Forms.TextBox textBox_account_password;
+        private System.Windows.Forms.TextBox textBox_account_lName;
+        private System.Windows.Forms.TextBox textBox_account_fName;
         private System.Windows.Forms.Panel panel_students;
         private System.Windows.Forms.Button button_students_save;
         private System.Windows.Forms.Button button_students_delete;
@@ -856,6 +882,8 @@
         private System.Windows.Forms.Button button_classes_exercisesRemoveAll;
         private System.Windows.Forms.Button button_classes_exercisesRight;
         private System.Windows.Forms.Button button_classes_exercisesLeft;
+        private System.Windows.Forms.Label label_students_error;
+        private System.Windows.Forms.Label label_account_error;
 
     }
 }

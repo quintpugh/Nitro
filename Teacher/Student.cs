@@ -100,5 +100,42 @@ namespace Teacher
             Object obj = MySQL_Manager.MySqlManager.Instance.ExecuteScalar(str);
             return (obj == null) ? -1 : Convert.ToInt32(obj);
         }
+
+        public bool Add()
+        {
+            String str;
+            if (this.studentClass != null)
+            {
+                str = "insert into student (username, password, fName, lName, classId) values ('" + this.username + "', '" + this.password + "', '" + this.fName + "', '" + this.lName + "', '" + this.studentClass.id + "')";
+            }
+            else
+            {
+                str = "insert into student (username, password, fName, lName) values ('" + this.username + "', '" + this.password + "', '" + this.fName + "', '" + this.lName + "')";
+            }
+            bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
+            return ret;
+        }
+
+        public bool Update(String pWord, String fName, String lName, Class c)
+        {
+            String str;
+            if (c != null)
+            {
+                str = "update student set password='" + pWord + "', fName='" + fName + "', lName='" + lName + "', classId='" + c.id + "' where username='" + this.username + "'";
+            }
+            else
+            {
+                str = "update student set password='" + pWord + "', fName='" + fName + "', lName='" + lName + "', classId=null where username='" + this.username + "'";
+            }
+            bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
+            return ret;
+        }
+
+        public bool Delete()
+        {
+            String str = "delete from student where username='" + this.username + "'";
+            bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
+            return ret;
+        }
     }
 }
