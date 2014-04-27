@@ -16,7 +16,7 @@ namespace Dba
 
         public DbaUser(String uName)
         {
-            MySqlDataReader reader = MySQL_Manager.MySqlManager.Instance.ExecuteReader("select *from dba as d where d.username = " + uName);
+            MySqlDataReader reader = MySQL_Manager.MySqlManager.Instance.ExecuteReader("select *from dba as d where d.username = '" + uName + "'");
 
             while (reader.Read())
             {
@@ -25,6 +25,7 @@ namespace Dba
                 fName = reader["fName"].ToString();
                 lName = reader["lName"].ToString();
             }
+            reader.Close();
         }
 
         public bool Update(String p, String f, String l)

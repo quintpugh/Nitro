@@ -8,28 +8,28 @@ using MySql.Data.MySqlClient;
 
 namespace Dba
 {
-    class DbaClass
+    class Class
     {
-        private int id;
+        public int id;
         public String name { get; set; }
         public String teacher;
 
-        public DbaClass(int id, String n, String t)
+        public Class(int id, String n, String t)
         {
             this.id = id;
             name = n;
             teacher = t;
         }
 
-        public static List<DbaClass> Generate()
+        public static List<Class> Generate()
         {
             MySqlDataReader reader = MySQL_Manager.MySqlManager.Instance.ExecuteReader("select * from class");
 
-            List<DbaClass> list = new List<DbaClass>();
+            List<Class> list = new List<Class>();
 
             while(reader.Read())
             {
-                list.Add(new DbaClass(Convert.ToInt32(reader["id"]), reader["name"].ToString(), reader["teacherUsername"].ToString()));
+                list.Add(new Class(Convert.ToInt32(reader["id"]), reader["name"].ToString(), reader["teacherUsername"].ToString()));
             }
             reader.Close();
             return list;
@@ -37,11 +37,11 @@ namespace Dba
 
         public bool Delete()
         {
-            int studentEnrollmentCount = Convert.ToInt32(MySQL_Manager.MySqlManager.Instance.ExecuteScalar ("select count(*) from student as s where s.classId = " + id));
+            int studentEnrollmentCount = Convert.ToInt32(MySQL_Manager.MySqlManager.Instance.ExecuteScalar ("select count(*) from student as s where s.id = " + id));
 
             if (studentEnrollmentCount == 0 && teacher == "")
             {
-                MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("delete from class where classId = " + id);
+                MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("delete from class where id = " + id);
                 return true;
             }
             else
@@ -54,17 +54,17 @@ namespace Dba
         {
             if (teacher != "")
             {
-               return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into class (name, teacherUsername) values (" + name + ", " + teacher + ")");
+               return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into class (name, teacherUsername) values ('" + name + "', '" + teacher + "')");
             }
             else
             {
-               return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into class (name) values (" + name + ")");
+               return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("insert into class (name) values ('" + name + "')");
             }
         }
 
         public bool Update(int id, String name, String teacher)
         {
-            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("update class set name = " + name + ", teacherUsername = " + teacher + " where id = " + id); 
+            return MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery("update class set name = '" + name + "', teacherUsername = '" + teacher + "' where id = '" + id + "'"); 
         }
     }
 }
