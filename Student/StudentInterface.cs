@@ -22,7 +22,7 @@ namespace Student
         {
             InitializeComponent();
             this.student = new Student(uName);
-            Label_Welcome.Text = "Welcome, " + student.fName + "!";
+            label_welcome.Text = "Welcome, " + student.fName + "!";
             PopulateExerciseList();
         }
 
@@ -30,177 +30,178 @@ namespace Student
         {
 
             exercises = Exercise.ToBePerformed(student);
-            ListBox_ExerciseList.DataSource = exercises;
-            ListBox_ExerciseList.DisplayMember = "name";
-            ListBox_ExerciseList.ValueMember = "text";
+            listBox_exercisesList.DataSource = exercises;
+            listBox_exercisesList.DisplayMember = "name";
+            listBox_exercisesList.ValueMember = "text";
 
             if (exercises.Count() < 1)
             {
-                Panel_NoExercise.Visible = true;
-                Panel_StartExercise.Visible = false;
+                panel_noExercise.Visible = true;
+                panel_startExercise.Visible = false;
             }
             else
             {
-                ListBox_ExerciseList.SetSelected(0, true);
+                listBox_exercisesList.SetSelected(0, true);
             }
             // use exercises to populate ExerciseList
 
-        } 
+        }
 
-        private void ButtonStart_Click(object sender, EventArgs e)
+        private void button_startExercise_start_Click(object sender, EventArgs e)
         {
             startTime = DateTime.Now;
             prevTextLength = 0;
-            Panel_PerformExercise.Visible = true;
-            Panel_StartExercise.Visible = false;
-            ListBox_ExerciseList.Enabled = false;
-            Textbox_InputText.Enabled = true;
-            Textbox_InputText.ResetText();
-            Textbox_InputText.Focus();
-            exercisePerforming = exercises.ElementAt(ListBox_ExerciseList.SelectedIndex);
+            panel_performExercise.Visible = true;
+            panel_startExercise.Visible = false;
+            listBox_exercisesList.Enabled = false;
+            textBox_performExercise_inputText.Enabled = true;
+            textBox_performExercise_inputText.ResetText();
+            textBox_performExercise_inputText.Focus();
+            exercisePerforming = exercises.ElementAt(listBox_exercisesList.SelectedIndex);
             this.AcceptButton = null;
         }
 
-        private void Textbox_InputText_TextChanged(object sender, EventArgs e)
+        private void textBox_performExercise_inputText_TextChanged(object sender, EventArgs e)
         {
-            int start = Textbox_InputText.TextLength - 1;
+            int start = textBox_performExercise_inputText.TextLength - 1;
 
-            if (Textbox_InputText.TextLength > 0)
+            if (textBox_performExercise_inputText.TextLength > 0)
             {
 
-                if (Textbox_InputText.Text.ElementAtOrDefault(start) != Textbox_ExerciseText.Text.ElementAtOrDefault(start))
+                if (textBox_performExercise_inputText.Text.ElementAtOrDefault(start) != textBox_performExercise_exerciseText.Text.ElementAtOrDefault(start))
                 {
-                    Textbox_InputText.Select(start, 1);
-                    Textbox_InputText.SelectionColor = Color.Red;
-                    Textbox_InputText.Select(start + 1, 0);
+                    textBox_performExercise_inputText.Select(start, 1);
+                    textBox_performExercise_inputText.SelectionColor = Color.Red;
+                    textBox_performExercise_inputText.Select(start + 1, 0);
                 }
                 else
                 {
-                    Textbox_InputText.Select(start, 1);
-                    Textbox_InputText.SelectionColor = Color.Green;
-                    Textbox_InputText.Select(start + 1, 0);
+                    textBox_performExercise_inputText.Select(start, 1);
+                    textBox_performExercise_inputText.SelectionColor = Color.Green;
+                    textBox_performExercise_inputText.Select(start + 1, 0);
                 }
 
                 //If the current word should be done, add a space and move cursor
                 int x = 1;
-                if (Textbox_ExerciseText.Text.ElementAtOrDefault(start + 1) == ' ' && Textbox_InputText.TextLength >= prevTextLength)
+                if (textBox_performExercise_exerciseText.Text.ElementAtOrDefault(start + 1) == ' ' && textBox_performExercise_inputText.TextLength >= prevTextLength)
                 {
-                    while (Textbox_ExerciseText.Text.ElementAtOrDefault(start + x) == ' ')
+                    while (textBox_performExercise_exerciseText.Text.ElementAtOrDefault(start + x) == ' ')
                     {
-                        Textbox_InputText.AppendText(" ");
-                        Textbox_InputText.Select(start + (x + 1), 0);
+                        textBox_performExercise_inputText.AppendText(" ");
+                        textBox_performExercise_inputText.Select(start + (x + 1), 0);
                         x++;
                     }
                 }
-                else if (Textbox_ExerciseText.Text.ElementAtOrDefault(start + 1) == '\n' && Textbox_InputText.TextLength >= prevTextLength)
+                else if (textBox_performExercise_exerciseText.Text.ElementAtOrDefault(start + 1) == '\n' && textBox_performExercise_inputText.TextLength >= prevTextLength)
                 {
-                    while (Textbox_ExerciseText.Text.ElementAtOrDefault(start + x) == '\n')
+                    while (textBox_performExercise_exerciseText.Text.ElementAtOrDefault(start + x) == '\n')
                     {
-                        Textbox_InputText.AppendText("\n");
-                        Textbox_InputText.Select(start + (x + 1), 0);
+                        textBox_performExercise_inputText.AppendText("\n");
+                        textBox_performExercise_inputText.Select(start + (x + 1), 0);
                     }
                 }
-                prevTextLength = Textbox_InputText.TextLength;
+                prevTextLength = textBox_performExercise_inputText.TextLength;
 
-                Button_PerformExerciseSubmit.Enabled = (Textbox_InputText.TextLength / (float)Textbox_ExerciseText.TextLength >= .9);
-                this.AcceptButton = Button_PerformExerciseSubmit.Enabled ? Button_PerformExerciseSubmit : null;
+                button_performExercise_submit.Enabled = (textBox_performExercise_inputText.TextLength / (float)textBox_performExercise_exerciseText.TextLength >= .9);
+                this.AcceptButton = button_performExercise_submit.Enabled ? button_performExercise_submit : null;
 
             }
         }
 
-        private void Button_PerformExerciseSubmit_Click(object sender, EventArgs e)
+        private void button_performExercise_submit_Click(object sender, EventArgs e)
         {
             int errCount = 0;
             double compTime = (DateTime.Now - startTime).TotalSeconds;
 
-            for (int i = 0; i < Textbox_InputText.TextLength; i++)
+            for (int i = 0; i < textBox_performExercise_inputText.TextLength; i++)
             {
-                Textbox_InputText.Select(i, 1);
-                if (Textbox_InputText.SelectionColor == Color.Red && !Textbox_InputText.SelectedText.Equals(" "))
+                textBox_performExercise_inputText.Select(i, 1);
+                if (textBox_performExercise_inputText.SelectionColor == Color.Red && !textBox_performExercise_inputText.SelectedText.Equals(" "))
                 {
                     errCount++;
                 }
             }
-            errCount += Math.Abs(Textbox_ExerciseText.TextLength - Textbox_InputText.TextLength);
+            errCount += Math.Abs(textBox_performExercise_exerciseText.TextLength - textBox_performExercise_inputText.TextLength);
 
             ExerciseResult result = new ExerciseResult(student, exercisePerforming.id, errCount, Convert.ToInt32(Math.Round(compTime)));
             result.Add();
-            Textbox_InputText.Select(0, 0);
-            Panel_PerformExercise.Visible = false;
+            textBox_performExercise_inputText.Select(0, 0);
+            panel_performExercise.Visible = false;
 
-            Label_ExerciseErrorCount.Text = "Error Count: " + errCount;
-            Label_ExerciseNameResults.Text = "Exercise Name: " + ListBox_ExerciseList.Text;
-            Label_ExerciseTimeToComplete.Text = String.Format("Time to Complete: {0:f1} seconds", compTime);
+            label_exerciseResults_errorCount.Text = "Error Count: " + errCount;
+            label_exerciseResults_exerciseName.Text = "Exercise Name: " + listBox_exercisesList.Text;
+            label_exceriseResults_timeToComplete.Text = String.Format("Time to Complete: {0:f1} seconds", compTime);
 
-            Panel_ExerciseResult.Visible = true;
-            Button_PerformExerciseSubmit.Enabled = false;
-            this.AcceptButton = Button_ExcerciseResultsNextExercise;
+            panel_exerciseResult.Visible = true;
+            button_performExercise_submit.Enabled = false;
+            this.AcceptButton = button_exerciseResults_nextExercise;
         }
 
-        private void Button_ExcerciseResultsNextExercise_Click(object sender, EventArgs e)
+        private void button_exerciseResults_nextExercise_Click(object sender, EventArgs e)
         {
-            int prevIndex = ListBox_ExerciseList.SelectedIndex;
+            int prevIndex = listBox_exercisesList.SelectedIndex;
   
             if (exercises.Count > 0)
             {
                 exercises.RemoveAt(prevIndex);
-                ListBox_ExerciseList.SelectedIndex = -1;
-                ListBox_ExerciseList.DataSource = null;
-                ListBox_ExerciseList.DataSource = exercises;
-                ListBox_ExerciseList.SelectedIndex = prevIndex < exercises.Count ? prevIndex : prevIndex - 1;
-                ListBox_ExerciseList.DisplayMember = "name";
-                ListBox_ExerciseList.ValueMember = "text";
-                ListBox_ExerciseList.Enabled = true;
-                this.AcceptButton = Button_Start;
-                Button_Start.Focus();
+                listBox_exercisesList.SelectedIndex = -1;
+                listBox_exercisesList.DataSource = null;
+                listBox_exercisesList.DataSource = exercises;
+                listBox_exercisesList.SelectedIndex = prevIndex < exercises.Count ? prevIndex : prevIndex - 1;
+                listBox_exercisesList.DisplayMember = "name";
+                listBox_exercisesList.ValueMember = "text";
+                listBox_exercisesList.Enabled = true;
+                this.AcceptButton = button_startExercise_start;
+                button_startExercise_start.Focus();
             }
 
             if (exercises.Count < 1)
             {
-                Panel_NoExercise.Visible = true;
-                Panel_ExerciseResult.Visible = false;
+                panel_noExercise.Visible = true;
+                panel_exerciseResult.Visible = false;
             }
         }
 
-        private void ListBox_ExerciseList_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox_exercisesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ListBox_ExerciseList.SelectedIndex >= 0)
+            if (listBox_exercisesList.SelectedIndex >= 0)
             {
-                Textbox_ExerciseText.Text = ListBox_ExerciseList.SelectedValue.ToString();
-                Textbox_InputText.ResetText();
-                Textbox_InputText.Enabled = false;
-                Panel_ExerciseResult.Visible = false;
-                Panel_StartExercise.Visible = true;
-                this.AcceptButton = Button_Start;
+                textBox_performExercise_exerciseText.Text = listBox_exercisesList.SelectedValue.ToString();
+                textBox_performExercise_inputText.ResetText();
+                textBox_performExercise_inputText.Enabled = false;
+                panel_exerciseResult.Visible = false;
+                panel_startExercise.Visible = true;
+                this.AcceptButton = button_startExercise_start;
             }
         }
 
-        private void Textbox_InputText_KeyDown(object sender, KeyEventArgs e)
+        private void textBox_performExercise_inputText_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
             {
                 e.SuppressKeyPress = true;
                 //Check if the last character typed was a space, then find where the next word should be in the exercise
                 //and go fill in spaces until we get there.
-                if (Textbox_InputText.Text.ElementAtOrDefault(Textbox_InputText.TextLength - 1) != ' ')
+                if (textBox_performExercise_inputText.Text.ElementAtOrDefault(textBox_performExercise_inputText.TextLength - 1) != ' ')
                 {
-                    int start = Textbox_ExerciseText.Text.IndexOf(' ', Textbox_InputText.TextLength);
-                    int diff = start - Textbox_InputText.TextLength;
-                    Textbox_InputText.AppendText(new String(' ', diff));
+                    //int start = Textbox_InputText.TextLength > Textbox_ExerciseText.TextLength ? -1 : Textbox_ExerciseText.Text.IndexOf(' ', Textbox_InputText.TextLength);
+                    int start = textBox_performExercise_exerciseText.Text.LastIndexOf(' ') >= textBox_performExercise_inputText.TextLength - 1 ? textBox_performExercise_exerciseText.Text.IndexOf(' ', textBox_performExercise_inputText.TextLength) : textBox_performExercise_exerciseText.TextLength;
+                    int diff = textBox_performExercise_inputText.TextLength > textBox_performExercise_exerciseText.TextLength ? 0 : start - textBox_performExercise_inputText.TextLength;
+                     textBox_performExercise_inputText.AppendText(new String(' ', diff));
                 }
             }
             else if (e.KeyCode == Keys.Back)
             {
 
-                if (Textbox_InputText.Text.ElementAtOrDefault(Textbox_InputText.TextLength - 1) == ' ' ||
-                    Textbox_InputText.Text.ElementAtOrDefault(Textbox_InputText.TextLength - 1) == '\n')
+                if (textBox_performExercise_inputText.Text.ElementAtOrDefault(textBox_performExercise_inputText.TextLength - 1) == ' ' ||
+                    textBox_performExercise_inputText.Text.ElementAtOrDefault(textBox_performExercise_inputText.TextLength - 1) == '\n')
                 {
                     SendKeys.Send("{BS}"); //Send the backspace key again because it's easier
                 }
             }
         }
 
-        private void Button_Logout_Click(object sender, EventArgs e)
+        private void button_menu_logout_Click(object sender, EventArgs e)
         {
             this.RemoveOwnedForm(this.OwnedForms.ElementAt(0));
             this.Close();

@@ -28,232 +28,232 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ListBox_ExerciseList = new System.Windows.Forms.ListBox();
-            this.Label_Exercises = new System.Windows.Forms.Label();
-            this.Panel_StartExercise = new System.Windows.Forms.Panel();
-            this.Button_Start = new System.Windows.Forms.Button();
-            this.Panel_PerformExercise = new System.Windows.Forms.Panel();
-            this.Button_PerformExerciseSubmit = new System.Windows.Forms.Button();
-            this.Textbox_InputText = new System.Windows.Forms.RichTextBox();
-            this.Textbox_ExerciseText = new System.Windows.Forms.RichTextBox();
-            this.Panel_ExerciseResult = new System.Windows.Forms.Panel();
-            this.Button_ExcerciseResultsNextExercise = new System.Windows.Forms.Button();
-            this.Label_ExerciseTimeToComplete = new System.Windows.Forms.Label();
-            this.Label_ExerciseErrorCount = new System.Windows.Forms.Label();
-            this.Label_ExerciseNameResults = new System.Windows.Forms.Label();
-            this.Panel_NoExercise = new System.Windows.Forms.Panel();
-            this.Label_NoExercise = new System.Windows.Forms.Label();
-            this.Button_Logout = new System.Windows.Forms.Button();
-            this.Label_Welcome = new System.Windows.Forms.Label();
-            this.Panel_StartExercise.SuspendLayout();
-            this.Panel_PerformExercise.SuspendLayout();
-            this.Panel_ExerciseResult.SuspendLayout();
-            this.Panel_NoExercise.SuspendLayout();
+            this.listBox_exercisesList = new System.Windows.Forms.ListBox();
+            this.label_exercisesList = new System.Windows.Forms.Label();
+            this.panel_startExercise = new System.Windows.Forms.Panel();
+            this.button_startExercise_start = new System.Windows.Forms.Button();
+            this.panel_performExercise = new System.Windows.Forms.Panel();
+            this.button_performExercise_submit = new System.Windows.Forms.Button();
+            this.textBox_performExercise_inputText = new System.Windows.Forms.RichTextBox();
+            this.textBox_performExercise_exerciseText = new System.Windows.Forms.RichTextBox();
+            this.panel_exerciseResult = new System.Windows.Forms.Panel();
+            this.button_exerciseResults_nextExercise = new System.Windows.Forms.Button();
+            this.label_exceriseResults_timeToComplete = new System.Windows.Forms.Label();
+            this.label_exerciseResults_errorCount = new System.Windows.Forms.Label();
+            this.label_exerciseResults_exerciseName = new System.Windows.Forms.Label();
+            this.panel_noExercise = new System.Windows.Forms.Panel();
+            this.label_noExercises = new System.Windows.Forms.Label();
+            this.button_menu_logout = new System.Windows.Forms.Button();
+            this.label_welcome = new System.Windows.Forms.Label();
+            this.panel_startExercise.SuspendLayout();
+            this.panel_performExercise.SuspendLayout();
+            this.panel_exerciseResult.SuspendLayout();
+            this.panel_noExercise.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ListBox_ExerciseList
+            // listBox_exercisesList
             // 
-            this.ListBox_ExerciseList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListBox_ExerciseList.FormattingEnabled = true;
-            this.ListBox_ExerciseList.ItemHeight = 25;
-            this.ListBox_ExerciseList.Location = new System.Drawing.Point(12, 80);
-            this.ListBox_ExerciseList.Name = "ListBox_ExerciseList";
-            this.ListBox_ExerciseList.Size = new System.Drawing.Size(165, 204);
-            this.ListBox_ExerciseList.TabIndex = 0;
-            this.ListBox_ExerciseList.SelectedIndexChanged += new System.EventHandler(this.ListBox_ExerciseList_SelectedIndexChanged);
+            this.listBox_exercisesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_exercisesList.FormattingEnabled = true;
+            this.listBox_exercisesList.ItemHeight = 25;
+            this.listBox_exercisesList.Location = new System.Drawing.Point(12, 80);
+            this.listBox_exercisesList.Name = "listBox_exercisesList";
+            this.listBox_exercisesList.Size = new System.Drawing.Size(165, 204);
+            this.listBox_exercisesList.TabIndex = 0;
+            this.listBox_exercisesList.SelectedIndexChanged += new System.EventHandler(this.listBox_exercisesList_SelectedIndexChanged);
             // 
-            // Label_Exercises
+            // label_exercisesList
             // 
-            this.Label_Exercises.AutoSize = true;
-            this.Label_Exercises.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Exercises.Location = new System.Drawing.Point(12, 52);
-            this.Label_Exercises.Name = "Label_Exercises";
-            this.Label_Exercises.Size = new System.Drawing.Size(106, 25);
-            this.Label_Exercises.TabIndex = 1;
-            this.Label_Exercises.Text = "Exercises";
+            this.label_exercisesList.AutoSize = true;
+            this.label_exercisesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_exercisesList.Location = new System.Drawing.Point(12, 52);
+            this.label_exercisesList.Name = "label_exercisesList";
+            this.label_exercisesList.Size = new System.Drawing.Size(106, 25);
+            this.label_exercisesList.TabIndex = 1;
+            this.label_exercisesList.Text = "Exercises";
             // 
-            // Panel_StartExercise
+            // panel_startExercise
             // 
-            this.Panel_StartExercise.Controls.Add(this.Button_Start);
-            this.Panel_StartExercise.Location = new System.Drawing.Point(183, 80);
-            this.Panel_StartExercise.Name = "Panel_StartExercise";
-            this.Panel_StartExercise.Size = new System.Drawing.Size(637, 450);
-            this.Panel_StartExercise.TabIndex = 2;
+            this.panel_startExercise.Controls.Add(this.button_startExercise_start);
+            this.panel_startExercise.Location = new System.Drawing.Point(183, 80);
+            this.panel_startExercise.Name = "panel_startExercise";
+            this.panel_startExercise.Size = new System.Drawing.Size(637, 450);
+            this.panel_startExercise.TabIndex = 2;
             // 
-            // Button_Start
+            // button_startExercise_start
             // 
-            this.Button_Start.BackColor = System.Drawing.Color.LawnGreen;
-            this.Button_Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Start.Location = new System.Drawing.Point(163, 138);
-            this.Button_Start.Name = "Button_Start";
-            this.Button_Start.Size = new System.Drawing.Size(318, 166);
-            this.Button_Start.TabIndex = 0;
-            this.Button_Start.Text = "Start";
-            this.Button_Start.UseVisualStyleBackColor = false;
-            this.Button_Start.Click += new System.EventHandler(this.ButtonStart_Click);
+            this.button_startExercise_start.BackColor = System.Drawing.Color.LawnGreen;
+            this.button_startExercise_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_startExercise_start.Location = new System.Drawing.Point(163, 138);
+            this.button_startExercise_start.Name = "button_startExercise_start";
+            this.button_startExercise_start.Size = new System.Drawing.Size(318, 166);
+            this.button_startExercise_start.TabIndex = 0;
+            this.button_startExercise_start.Text = "Start";
+            this.button_startExercise_start.UseVisualStyleBackColor = false;
+            this.button_startExercise_start.Click += new System.EventHandler(this.button_startExercise_start_Click);
             // 
-            // Panel_PerformExercise
+            // panel_performExercise
             // 
-            this.Panel_PerformExercise.Controls.Add(this.Button_PerformExerciseSubmit);
-            this.Panel_PerformExercise.Controls.Add(this.Textbox_InputText);
-            this.Panel_PerformExercise.Controls.Add(this.Textbox_ExerciseText);
-            this.Panel_PerformExercise.Location = new System.Drawing.Point(183, 80);
-            this.Panel_PerformExercise.Name = "Panel_PerformExercise";
-            this.Panel_PerformExercise.Size = new System.Drawing.Size(637, 450);
-            this.Panel_PerformExercise.TabIndex = 1;
-            this.Panel_PerformExercise.Visible = false;
+            this.panel_performExercise.Controls.Add(this.button_performExercise_submit);
+            this.panel_performExercise.Controls.Add(this.textBox_performExercise_inputText);
+            this.panel_performExercise.Controls.Add(this.textBox_performExercise_exerciseText);
+            this.panel_performExercise.Location = new System.Drawing.Point(183, 80);
+            this.panel_performExercise.Name = "panel_performExercise";
+            this.panel_performExercise.Size = new System.Drawing.Size(637, 450);
+            this.panel_performExercise.TabIndex = 1;
+            this.panel_performExercise.Visible = false;
             // 
-            // Button_PerformExerciseSubmit
+            // button_performExercise_submit
             // 
-            this.Button_PerformExerciseSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_PerformExerciseSubmit.Location = new System.Drawing.Point(264, 382);
-            this.Button_PerformExerciseSubmit.Name = "Button_PerformExerciseSubmit";
-            this.Button_PerformExerciseSubmit.Size = new System.Drawing.Size(108, 49);
-            this.Button_PerformExerciseSubmit.TabIndex = 2;
-            this.Button_PerformExerciseSubmit.Text = "Submit";
-            this.Button_PerformExerciseSubmit.UseVisualStyleBackColor = true;
-            this.Button_PerformExerciseSubmit.Click += new System.EventHandler(this.Button_PerformExerciseSubmit_Click);
+            this.button_performExercise_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_performExercise_submit.Location = new System.Drawing.Point(264, 382);
+            this.button_performExercise_submit.Name = "button_performExercise_submit";
+            this.button_performExercise_submit.Size = new System.Drawing.Size(108, 49);
+            this.button_performExercise_submit.TabIndex = 2;
+            this.button_performExercise_submit.Text = "Submit";
+            this.button_performExercise_submit.UseVisualStyleBackColor = true;
+            this.button_performExercise_submit.Click += new System.EventHandler(this.button_performExercise_submit_Click);
             // 
-            // Textbox_InputText
+            // textBox_performExercise_inputText
             // 
-            this.Textbox_InputText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Textbox_InputText.Location = new System.Drawing.Point(3, 201);
-            this.Textbox_InputText.Name = "Textbox_InputText";
-            this.Textbox_InputText.ShortcutsEnabled = false;
-            this.Textbox_InputText.Size = new System.Drawing.Size(631, 165);
-            this.Textbox_InputText.TabIndex = 1;
-            this.Textbox_InputText.Text = "";
-            this.Textbox_InputText.TextChanged += new System.EventHandler(this.Textbox_InputText_TextChanged);
-            this.Textbox_InputText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textbox_InputText_KeyDown);
+            this.textBox_performExercise_inputText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_performExercise_inputText.Location = new System.Drawing.Point(3, 201);
+            this.textBox_performExercise_inputText.Name = "textBox_performExercise_inputText";
+            this.textBox_performExercise_inputText.ShortcutsEnabled = false;
+            this.textBox_performExercise_inputText.Size = new System.Drawing.Size(631, 165);
+            this.textBox_performExercise_inputText.TabIndex = 1;
+            this.textBox_performExercise_inputText.Text = "";
+            this.textBox_performExercise_inputText.TextChanged += new System.EventHandler(this.textBox_performExercise_inputText_TextChanged);
+            this.textBox_performExercise_inputText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_performExercise_inputText_KeyDown);
             // 
-            // Textbox_ExerciseText
+            // textBox_performExercise_exerciseText
             // 
-            this.Textbox_ExerciseText.Enabled = false;
-            this.Textbox_ExerciseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Textbox_ExerciseText.Location = new System.Drawing.Point(3, 3);
-            this.Textbox_ExerciseText.Name = "Textbox_ExerciseText";
-            this.Textbox_ExerciseText.Size = new System.Drawing.Size(631, 175);
-            this.Textbox_ExerciseText.TabIndex = 0;
-            this.Textbox_ExerciseText.Text = "";
+            this.textBox_performExercise_exerciseText.Enabled = false;
+            this.textBox_performExercise_exerciseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_performExercise_exerciseText.Location = new System.Drawing.Point(3, 3);
+            this.textBox_performExercise_exerciseText.Name = "textBox_performExercise_exerciseText";
+            this.textBox_performExercise_exerciseText.Size = new System.Drawing.Size(631, 175);
+            this.textBox_performExercise_exerciseText.TabIndex = 0;
+            this.textBox_performExercise_exerciseText.Text = "";
             // 
-            // Panel_ExerciseResult
+            // panel_exerciseResult
             // 
-            this.Panel_ExerciseResult.Controls.Add(this.Button_ExcerciseResultsNextExercise);
-            this.Panel_ExerciseResult.Controls.Add(this.Label_ExerciseTimeToComplete);
-            this.Panel_ExerciseResult.Controls.Add(this.Label_ExerciseErrorCount);
-            this.Panel_ExerciseResult.Controls.Add(this.Label_ExerciseNameResults);
-            this.Panel_ExerciseResult.Location = new System.Drawing.Point(183, 80);
-            this.Panel_ExerciseResult.Name = "Panel_ExerciseResult";
-            this.Panel_ExerciseResult.Size = new System.Drawing.Size(637, 450);
-            this.Panel_ExerciseResult.TabIndex = 3;
-            this.Panel_ExerciseResult.Visible = false;
+            this.panel_exerciseResult.Controls.Add(this.button_exerciseResults_nextExercise);
+            this.panel_exerciseResult.Controls.Add(this.label_exceriseResults_timeToComplete);
+            this.panel_exerciseResult.Controls.Add(this.label_exerciseResults_errorCount);
+            this.panel_exerciseResult.Controls.Add(this.label_exerciseResults_exerciseName);
+            this.panel_exerciseResult.Location = new System.Drawing.Point(183, 80);
+            this.panel_exerciseResult.Name = "panel_exerciseResult";
+            this.panel_exerciseResult.Size = new System.Drawing.Size(637, 450);
+            this.panel_exerciseResult.TabIndex = 3;
+            this.panel_exerciseResult.Visible = false;
             // 
-            // Button_ExcerciseResultsNextExercise
+            // button_exerciseResults_nextExercise
             // 
-            this.Button_ExcerciseResultsNextExercise.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_ExcerciseResultsNextExercise.Location = new System.Drawing.Point(204, 250);
-            this.Button_ExcerciseResultsNextExercise.Name = "Button_ExcerciseResultsNextExercise";
-            this.Button_ExcerciseResultsNextExercise.Size = new System.Drawing.Size(217, 72);
-            this.Button_ExcerciseResultsNextExercise.TabIndex = 3;
-            this.Button_ExcerciseResultsNextExercise.Text = "Next Exercise";
-            this.Button_ExcerciseResultsNextExercise.UseVisualStyleBackColor = true;
-            this.Button_ExcerciseResultsNextExercise.Click += new System.EventHandler(this.Button_ExcerciseResultsNextExercise_Click);
+            this.button_exerciseResults_nextExercise.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_exerciseResults_nextExercise.Location = new System.Drawing.Point(204, 250);
+            this.button_exerciseResults_nextExercise.Name = "button_exerciseResults_nextExercise";
+            this.button_exerciseResults_nextExercise.Size = new System.Drawing.Size(217, 72);
+            this.button_exerciseResults_nextExercise.TabIndex = 3;
+            this.button_exerciseResults_nextExercise.Text = "Next Exercise";
+            this.button_exerciseResults_nextExercise.UseVisualStyleBackColor = true;
+            this.button_exerciseResults_nextExercise.Click += new System.EventHandler(this.button_exerciseResults_nextExercise_Click);
             // 
-            // Label_ExerciseTimeToComplete
+            // label_exceriseResults_timeToComplete
             // 
-            this.Label_ExerciseTimeToComplete.AutoSize = true;
-            this.Label_ExerciseTimeToComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ExerciseTimeToComplete.Location = new System.Drawing.Point(63, 110);
-            this.Label_ExerciseTimeToComplete.Name = "Label_ExerciseTimeToComplete";
-            this.Label_ExerciseTimeToComplete.Size = new System.Drawing.Size(186, 25);
-            this.Label_ExerciseTimeToComplete.TabIndex = 2;
-            this.Label_ExerciseTimeToComplete.Text = "Time to Complete:";
+            this.label_exceriseResults_timeToComplete.AutoSize = true;
+            this.label_exceriseResults_timeToComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_exceriseResults_timeToComplete.Location = new System.Drawing.Point(63, 110);
+            this.label_exceriseResults_timeToComplete.Name = "label_exceriseResults_timeToComplete";
+            this.label_exceriseResults_timeToComplete.Size = new System.Drawing.Size(186, 25);
+            this.label_exceriseResults_timeToComplete.TabIndex = 2;
+            this.label_exceriseResults_timeToComplete.Text = "Time to Complete:";
             // 
-            // Label_ExerciseErrorCount
+            // label_exerciseResults_errorCount
             // 
-            this.Label_ExerciseErrorCount.AutoSize = true;
-            this.Label_ExerciseErrorCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ExerciseErrorCount.Location = new System.Drawing.Point(121, 73);
-            this.Label_ExerciseErrorCount.Name = "Label_ExerciseErrorCount";
-            this.Label_ExerciseErrorCount.Size = new System.Drawing.Size(128, 25);
-            this.Label_ExerciseErrorCount.TabIndex = 1;
-            this.Label_ExerciseErrorCount.Text = "Error Count:";
+            this.label_exerciseResults_errorCount.AutoSize = true;
+            this.label_exerciseResults_errorCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_exerciseResults_errorCount.Location = new System.Drawing.Point(121, 73);
+            this.label_exerciseResults_errorCount.Name = "label_exerciseResults_errorCount";
+            this.label_exerciseResults_errorCount.Size = new System.Drawing.Size(128, 25);
+            this.label_exerciseResults_errorCount.TabIndex = 1;
+            this.label_exerciseResults_errorCount.Text = "Error Count:";
             // 
-            // Label_ExerciseNameResults
+            // label_exerciseResults_exerciseName
             // 
-            this.Label_ExerciseNameResults.AutoSize = true;
-            this.Label_ExerciseNameResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_ExerciseNameResults.Location = new System.Drawing.Point(86, 37);
-            this.Label_ExerciseNameResults.Name = "Label_ExerciseNameResults";
-            this.Label_ExerciseNameResults.Size = new System.Drawing.Size(163, 25);
-            this.Label_ExerciseNameResults.TabIndex = 0;
-            this.Label_ExerciseNameResults.Text = "Exercise Name:";
+            this.label_exerciseResults_exerciseName.AutoSize = true;
+            this.label_exerciseResults_exerciseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_exerciseResults_exerciseName.Location = new System.Drawing.Point(86, 37);
+            this.label_exerciseResults_exerciseName.Name = "label_exerciseResults_exerciseName";
+            this.label_exerciseResults_exerciseName.Size = new System.Drawing.Size(163, 25);
+            this.label_exerciseResults_exerciseName.TabIndex = 0;
+            this.label_exerciseResults_exerciseName.Text = "Exercise Name:";
             // 
-            // Panel_NoExercise
+            // panel_noExercise
             // 
-            this.Panel_NoExercise.Controls.Add(this.Label_NoExercise);
-            this.Panel_NoExercise.Location = new System.Drawing.Point(183, 80);
-            this.Panel_NoExercise.Name = "Panel_NoExercise";
-            this.Panel_NoExercise.Size = new System.Drawing.Size(637, 450);
-            this.Panel_NoExercise.TabIndex = 4;
-            this.Panel_NoExercise.Visible = false;
+            this.panel_noExercise.Controls.Add(this.label_noExercises);
+            this.panel_noExercise.Location = new System.Drawing.Point(183, 80);
+            this.panel_noExercise.Name = "panel_noExercise";
+            this.panel_noExercise.Size = new System.Drawing.Size(637, 450);
+            this.panel_noExercise.TabIndex = 4;
+            this.panel_noExercise.Visible = false;
             // 
-            // Label_NoExercise
+            // label_noExercises
             // 
-            this.Label_NoExercise.AutoSize = true;
-            this.Label_NoExercise.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_NoExercise.Location = new System.Drawing.Point(181, 173);
-            this.Label_NoExercise.Name = "Label_NoExercise";
-            this.Label_NoExercise.Size = new System.Drawing.Size(288, 74);
-            this.Label_NoExercise.TabIndex = 0;
-            this.Label_NoExercise.Text = "You have no more \r\n      exercises!";
+            this.label_noExercises.AutoSize = true;
+            this.label_noExercises.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_noExercises.Location = new System.Drawing.Point(181, 173);
+            this.label_noExercises.Name = "label_noExercises";
+            this.label_noExercises.Size = new System.Drawing.Size(288, 74);
+            this.label_noExercises.TabIndex = 0;
+            this.label_noExercises.Text = "You have no more \r\n      exercises!";
             // 
-            // Button_Logout
+            // button_menu_logout
             // 
-            this.Button_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Logout.Location = new System.Drawing.Point(12, 483);
-            this.Button_Logout.Name = "Button_Logout";
-            this.Button_Logout.Size = new System.Drawing.Size(121, 47);
-            this.Button_Logout.TabIndex = 5;
-            this.Button_Logout.Text = "Logout";
-            this.Button_Logout.UseVisualStyleBackColor = true;
-            this.Button_Logout.Click += new System.EventHandler(this.Button_Logout_Click);
+            this.button_menu_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_menu_logout.Location = new System.Drawing.Point(12, 483);
+            this.button_menu_logout.Name = "button_menu_logout";
+            this.button_menu_logout.Size = new System.Drawing.Size(121, 47);
+            this.button_menu_logout.TabIndex = 5;
+            this.button_menu_logout.Text = "Logout";
+            this.button_menu_logout.UseVisualStyleBackColor = true;
+            this.button_menu_logout.Click += new System.EventHandler(this.button_menu_logout_Click);
             // 
-            // Label_Welcome
+            // label_welcome
             // 
-            this.Label_Welcome.AutoSize = true;
-            this.Label_Welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Welcome.ForeColor = System.Drawing.Color.LimeGreen;
-            this.Label_Welcome.Location = new System.Drawing.Point(445, 20);
-            this.Label_Welcome.Name = "Label_Welcome";
-            this.Label_Welcome.Size = new System.Drawing.Size(159, 37);
-            this.Label_Welcome.TabIndex = 6;
-            this.Label_Welcome.Text = "Welcome!";
+            this.label_welcome.AutoSize = true;
+            this.label_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_welcome.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label_welcome.Location = new System.Drawing.Point(445, 20);
+            this.label_welcome.Name = "label_welcome";
+            this.label_welcome.Size = new System.Drawing.Size(159, 37);
+            this.label_welcome.TabIndex = 6;
+            this.label_welcome.Text = "Welcome!";
             // 
             // StudentInterface
             // 
-            this.AcceptButton = this.Button_Start;
+            this.AcceptButton = this.button_startExercise_start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 542);
-            this.Controls.Add(this.Label_Welcome);
-            this.Controls.Add(this.Button_Logout);
-            this.Controls.Add(this.Panel_NoExercise);
-            this.Controls.Add(this.Panel_ExerciseResult);
-            this.Controls.Add(this.Panel_PerformExercise);
-            this.Controls.Add(this.Panel_StartExercise);
-            this.Controls.Add(this.Label_Exercises);
-            this.Controls.Add(this.ListBox_ExerciseList);
+            this.Controls.Add(this.label_welcome);
+            this.Controls.Add(this.button_menu_logout);
+            this.Controls.Add(this.panel_noExercise);
+            this.Controls.Add(this.panel_exerciseResult);
+            this.Controls.Add(this.panel_performExercise);
+            this.Controls.Add(this.panel_startExercise);
+            this.Controls.Add(this.label_exercisesList);
+            this.Controls.Add(this.listBox_exercisesList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "StudentInterface";
             this.Text = "Student";
-            this.Panel_StartExercise.ResumeLayout(false);
-            this.Panel_PerformExercise.ResumeLayout(false);
-            this.Panel_ExerciseResult.ResumeLayout(false);
-            this.Panel_ExerciseResult.PerformLayout();
-            this.Panel_NoExercise.ResumeLayout(false);
-            this.Panel_NoExercise.PerformLayout();
+            this.panel_startExercise.ResumeLayout(false);
+            this.panel_performExercise.ResumeLayout(false);
+            this.panel_exerciseResult.ResumeLayout(false);
+            this.panel_exerciseResult.PerformLayout();
+            this.panel_noExercise.ResumeLayout(false);
+            this.panel_noExercise.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,22 +261,22 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox ListBox_ExerciseList;
-        private System.Windows.Forms.Label Label_Exercises;
-        private System.Windows.Forms.Panel Panel_StartExercise;
-        private System.Windows.Forms.Button Button_Start;
-        private System.Windows.Forms.Panel Panel_PerformExercise;
-        private System.Windows.Forms.Button Button_PerformExerciseSubmit;
-        private System.Windows.Forms.RichTextBox Textbox_InputText;
-        private System.Windows.Forms.RichTextBox Textbox_ExerciseText;
-        private System.Windows.Forms.Panel Panel_ExerciseResult;
-        private System.Windows.Forms.Label Label_ExerciseTimeToComplete;
-        private System.Windows.Forms.Label Label_ExerciseErrorCount;
-        private System.Windows.Forms.Label Label_ExerciseNameResults;
-        private System.Windows.Forms.Button Button_ExcerciseResultsNextExercise;
-        private System.Windows.Forms.Panel Panel_NoExercise;
-        private System.Windows.Forms.Label Label_NoExercise;
-        private System.Windows.Forms.Button Button_Logout;
-        private System.Windows.Forms.Label Label_Welcome;
+        private System.Windows.Forms.ListBox listBox_exercisesList;
+        private System.Windows.Forms.Label label_exercisesList;
+        private System.Windows.Forms.Panel panel_startExercise;
+        private System.Windows.Forms.Button button_startExercise_start;
+        private System.Windows.Forms.Panel panel_performExercise;
+        private System.Windows.Forms.Button button_performExercise_submit;
+        private System.Windows.Forms.RichTextBox textBox_performExercise_inputText;
+        private System.Windows.Forms.RichTextBox textBox_performExercise_exerciseText;
+        private System.Windows.Forms.Panel panel_exerciseResult;
+        private System.Windows.Forms.Label label_exceriseResults_timeToComplete;
+        private System.Windows.Forms.Label label_exerciseResults_errorCount;
+        private System.Windows.Forms.Label label_exerciseResults_exerciseName;
+        private System.Windows.Forms.Button button_exerciseResults_nextExercise;
+        private System.Windows.Forms.Panel panel_noExercise;
+        private System.Windows.Forms.Label label_noExercises;
+        private System.Windows.Forms.Button button_menu_logout;
+        private System.Windows.Forms.Label label_welcome;
     }
 }
