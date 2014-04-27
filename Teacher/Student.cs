@@ -50,5 +50,48 @@ namespace Teacher
             rdr.Close();
             return list;
         }
+
+        public static List<Student> GenerateIn(List<Class> classList)
+        {
+            List<Student> list = new List<Student>();
+            foreach(Class cls in classList)
+            {
+                list.AddRange(Student.GenerateIn(cls));
+            }
+
+            return list;
+        }
+
+        public static List<Student> GenerateNotEnrolled()
+        {
+            String str = "select * from student as s where s.classId is null";
+            MySqlDataReader rdr = MySQL_Manager.MySqlManager.Instance.ExecuteReader(str);
+            if (rdr == null)
+            {
+                throw new Exception("ERROR: FAILED TO GET STUDENT DATA");
+            }
+
+            List<Student> list = new List<Student>();
+            while(rdr.Read())
+            {
+                list.Add(new Student(rdr["username"].ToString(), rdr["password"].ToString(), rdr["fName"].ToString(), rdr["lName"].ToString(), null));
+            }
+            rdr.Close();
+            return list;
+        }
+
+        public static bool AddToClass(String studentUsername, Class c)
+        {
+            String str = "update student set classId='" + c.id + "' where username='" + studentUsername + "'";
+            bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
+            return ret;
+        }
+
+        public static bool RemoveFromClass(String studentUsername)
+        {
+            String str = "update student set classId=null where username='" + studentUsername + "'";
+            bool ret = MySQL_Manager.MySqlManager.Instance.ExecuteNonQuery(str);
+            return ret;
+        }
     }
 }

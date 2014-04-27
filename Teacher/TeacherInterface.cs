@@ -30,12 +30,22 @@ namespace Teacher
             this.listBox_classes.SelectedIndexChanged += new System.EventHandler(this.listBox_classes_SelectedIndexChanged);
             this.tabs_classes.SelectedIndexChanged += new System.EventHandler(this.tabs_classes_SelectedIndexChanged);
             this.listBox_classes_students.SelectedIndexChanged += new System.EventHandler(this.listBox_classes_students_SelectedIndexChanged);
-            
+            this.listBox_exercises.SelectedIndexChanged += new System.EventHandler(this.listBox_exercise_SelectedIndexChanged);
 
             listBox_classes.DisplayMember = "name";
             listBox_classes.ValueMember = "id";
             listBox_classes_students.DisplayMember = "FullName";
             listBox_classes_students.ValueMember = "username";
+            listBox_classes_studentsEnrolled.DisplayMember = "FullName";
+            listBox_classes_studentsEnrolled.ValueMember = "username";
+            listBox_classes_studentsNotEnrolled.DisplayMember = "FullName";
+            listBox_classes_studentsNotEnrolled.ValueMember = "username";
+            listBox_classes_exercisesIn.DisplayMember = "name";
+            listBox_classes_exercisesIn.ValueMember = "id";
+            listBox_classes_exercisesNotIn.DisplayMember = "name";
+            listBox_classes_exercisesNotIn.ValueMember = "id";
+            listBox_exercises.DisplayMember = "name";
+            listBox_exercises.ValueMember = "id";
         }
         #region Menu Button Clicks
         private void button_menu_classes_Click(object sender, EventArgs e)
@@ -87,7 +97,8 @@ namespace Teacher
 
         }
         #endregion
-        
+
+        #region Classes
         private void panel_classes_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_classes.Visible)
@@ -138,6 +149,7 @@ namespace Teacher
             int c = listBox_classes.SelectedIndex;
             teacher.classes[c].students = Student.GenerateIn(teacher.classes[c]);
             listBox_classes_students.DataSource = teacher.classes[c].students;
+            listView_classes_students_results.Items.Clear();
         }
 
         private void listBox_classes_students_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,13 +171,104 @@ namespace Teacher
         private void PopulateClassesEnrollmentTab()
         {
             System.Diagnostics.Debug.WriteLine("populating enrollment tab");
+            int c = listBox_classes.SelectedIndex;
+            List<Student> notEnrolled = Student.GenerateNotEnrolled();
+            listBox_classes_studentsNotEnrolled.DataSource = notEnrolled;
+            List<Student> enrolled = Student.GenerateIn(teacher.classes[c]);
+            listBox_classes_studentsEnrolled.DataSource = enrolled;
+        }
+
+        private void button_classes_enrollmentLeft_Click(object sender, EventArgs e)
+        {
+            if (listBox_classes_studentsEnrolled.SelectedIndices.Count == 0)
+            {
+                return;
+            }
+            ListBox.SelectedObjectCollection col = listBox_classes_studentsEnrolled.SelectedItems;
+            foreach(Student student in col)
+            {
+                Student.RemoveFromClass(student.username);
+            }
+            PopulateClassesEnrollmentTab();
+        }
+
+        private void button_classes_enrollmentRight_Click(object sender, EventArgs e)
+        {
+            if (listBox_classes_studentsNotEnrolled.SelectedIndices.Count == 0)
+            {
+                return;
+            }
+            ListBox.SelectedObjectCollection col = listBox_classes_studentsNotEnrolled.SelectedItems;
+            foreach (Student student in col)
+            {
+                Student.AddToClass(student.username, teacher.classes[listBox_classes.SelectedIndex]);
+            }
+            PopulateClassesEnrollmentTab();
+        }
+
+        private void button_classes_enrollmentRemoveAll_Click(object sender, EventArgs e)
+        {
+            ListBox.ObjectCollection col = listBox_classes_studentsEnrolled.Items;
+            foreach (Student student in col)
+            {
+                Student.RemoveFromClass(student.username);
+            }
+            PopulateClassesEnrollmentTab();
         }
 
         private void PopulateClassesExercisesTab()
         {
             System.Diagnostics.Debug.WriteLine("populating exercises tab");
+            Class c = (Class)listBox_classes.SelectedItem;
+            List<Exercise> notInClass = Exercise.GenerateNotInClass(c);
+            listBox_classes_exercisesNotIn.DataSource = notInClass;
+            List<Exercise> inClass = Exercise.GenerateInClass(c);
+            listBox_classes_exercisesIn.DataSource = inClass;
         }
 
+        private void button_classes_exercisesLeft_Click(object sender, EventArgs e)
+        {
+            if (listBox_classes_exercisesIn.SelectedIndices.Count == 0)
+            {
+                return;
+            }
+            ListBox.SelectedObjectCollection col = listBox_classes_exercisesIn.SelectedItems;
+            Class c = (Class)listBox_classes.SelectedItem;
+            foreach (Exercise ex in col)
+            {
+                ex.RemoveFromClass(c);
+            }
+            PopulateClassesExercisesTab();
+        }
+
+        private void button_classes_exercisesRight_Click(object sender, EventArgs e)
+        {
+            if(listBox_classes_exercisesNotIn.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            ListBox.SelectedObjectCollection col = listBox_classes_exercisesNotIn.SelectedItems;
+            Class c = (Class)listBox_classes.SelectedItem;
+            foreach(Exercise ex in col)
+            {
+                ex.AddToClass(c);
+            }
+            PopulateClassesExercisesTab();
+        }
+
+        private void button_classes_exercisesRemoveAll_Click(object sender, EventArgs e)
+        {
+            ListBox.ObjectCollection col = listBox_classes_exercisesIn.Items;
+            Class c = (Class)listBox_classes.SelectedItem;
+            foreach(Exercise ex in col)
+            {
+                ex.RemoveFromClass(c);
+            }
+            PopulateClassesExercisesTab();
+        }
+        #endregion
+
+        #region Exercises
         private void panel_exercises_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_exercises.Visible)
@@ -173,8 +276,17 @@ namespace Teacher
                 return;
             }
             System.Diagnostics.Debug.WriteLine("exercises panel visible changed");
+            teacher.exercises = Exercise.Generate(teacher);
+            listBox_exercises.DataSource = teacher.exercises;
         }
 
+        private void listBox_exercise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("selected index changed to: " + listBox_classes.SelectedIndex);
+        }
+
+
+        #endregion
         private void panel_students_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_students.Visible)

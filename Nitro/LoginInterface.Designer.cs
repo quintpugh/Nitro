@@ -31,7 +31,7 @@
             this.cmbBox_userType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_username = new System.Windows.Forms.TextBox();
-            this.bt_login = new System.Windows.Forms.Button();
+            this.button_login = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_password = new System.Windows.Forms.TextBox();
@@ -72,16 +72,16 @@
             this.tb_username.Size = new System.Drawing.Size(257, 32);
             this.tb_username.TabIndex = 1;
             // 
-            // bt_login
+            // button_login
             // 
-            this.bt_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_login.Location = new System.Drawing.Point(145, 219);
-            this.bt_login.Name = "bt_login";
-            this.bt_login.Size = new System.Drawing.Size(95, 40);
-            this.bt_login.TabIndex = 3;
-            this.bt_login.Text = "Login";
-            this.bt_login.UseVisualStyleBackColor = true;
-            this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
+            this.button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_login.Location = new System.Drawing.Point(145, 219);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(95, 40);
+            this.button_login.TabIndex = 3;
+            this.button_login.Text = "Login";
+            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // label2
             // 
@@ -134,7 +134,7 @@
             // 
             // LoginInterface
             // 
-            this.AcceptButton = this.bt_login;
+            this.AcceptButton = this.button_login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 271);
@@ -143,7 +143,7 @@
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.bt_login);
+            this.Controls.Add(this.button_login);
             this.Controls.Add(this.tb_username);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbBox_userType);
@@ -159,7 +159,7 @@
         private System.Windows.Forms.ComboBox cmbBox_userType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_username;
-        private System.Windows.Forms.Button bt_login;
+        private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_password;
