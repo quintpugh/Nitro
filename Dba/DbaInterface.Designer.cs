@@ -226,7 +226,7 @@
             this.button_class_reset.TabIndex = 6;
             this.button_class_reset.Text = "Reset";
             this.button_class_reset.UseVisualStyleBackColor = true;
-            this.button_class_reset.Click += new System.EventHandler(this.button_class_Reset_Click);
+            this.button_class_reset.Click += new System.EventHandler(this.button_class_reset_Click);
             // 
             // textBox_class_name
             // 

@@ -57,7 +57,7 @@ namespace Dba
             teachers = Teacher.Generate();
         }
 
-        private void button_class_Reset_Click(object sender, EventArgs e)
+        private void button_class_reset_Click(object sender, EventArgs e)
         {
             if (listBox_class.SelectedIndex < 0)
             {
