@@ -27,7 +27,7 @@ namespace Dba
             PopulateClassList();
         }
 
-        private void Listbox_Class_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox_class_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox_class.SelectedIndex > -1)
             {
@@ -57,7 +57,7 @@ namespace Dba
             teachers = Teacher.Generate();
         }
 
-        private void Button_Class_Reset_Click(object sender, EventArgs e)
+        private void button_class_Reset_Click(object sender, EventArgs e)
         {
             if (listBox_class.SelectedIndex < 0)
             {
@@ -71,7 +71,7 @@ namespace Dba
             }
         }
 
-        private void Button_Class_New_Click(object sender, EventArgs e)
+        private void button_class_new_Click(object sender, EventArgs e)
         {
             textBox_class_name.Text = "";
             comboBox_class_teacher.SelectedValue = "";
@@ -80,7 +80,7 @@ namespace Dba
             button_class_delete.Enabled = false;
         }
 
-        private void Button_Class_Delete_Click(object sender, EventArgs e)
+        private void button_class_delete_Click(object sender, EventArgs e)
         {
             if (listBox_class.SelectedIndex > -1)
             {
@@ -99,7 +99,7 @@ namespace Dba
             }
         }
 
-        private void Button_Class_Save_Click(object sender, EventArgs e)
+        private void button_class_save_Click(object sender, EventArgs e)
         {
             if (listBox_class.SelectedIndex < 0)
             {
@@ -130,30 +130,30 @@ namespace Dba
             }
         }
 
-        private void Button_Menu_Class_Click(object sender, EventArgs e)
+        private void button_menu_class_Click(object sender, EventArgs e)
         {
             panel_class.Visible = true;
             panel_teacher.Visible = false;
             panel_dba.Visible = false;
-            panel_dba_account.Visible = false;
+            panel_account.Visible = false;
         }
 
-        private void Button_Menu_Teacher_Click(object sender, EventArgs e)
+        private void button_menu_teacher_Click(object sender, EventArgs e)
         {
             panel_class.Visible = false;
             panel_teacher.Visible = true;
             panel_dba.Visible = false;
-            panel_dba_account.Visible = false;
+            panel_account.Visible = false;
         }
 
-        private void Panel_Teacher_VisibleChanged(object sender, EventArgs e)
+        private void panel_teacher_VisibleChanged(object sender, EventArgs e)
         {
             PopulateTeacherList();
-            listBox_teacher_name.DataSource = teachers;
-            listBox_teacher_name.DisplayMember = "fullName";
+            listBox_teacher.DataSource = teachers;
+            listBox_teacher.DisplayMember = "fullName";
         }
 
-        private void Panel_Class_VisibleChanged(object sender, EventArgs e)
+        private void panel_class_VisibleChanged(object sender, EventArgs e)
         {
             PopulateTeacherList();
             teachers.Insert(0, Teacher.Empty);
@@ -166,11 +166,11 @@ namespace Dba
             listBox_class.DisplayMember = "name";
         }
 
-        private void ListBox_Teacher_Name_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox_teacher_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox_teacher_name.SelectedIndex > -1)
+            if (listBox_teacher.SelectedIndex > -1)
             {
-                Teacher t = teachers.ElementAt(listBox_teacher_name.SelectedIndex);
+                Teacher t = teachers.ElementAt(listBox_teacher.SelectedIndex);
                 textbox_teacher_fName.Text = t.fName;
                 textbox_teacher_lName.Text = t.lName;
                 textbox_teacher_username.Text = t.username;
@@ -191,14 +191,14 @@ namespace Dba
             }
         }
 
-        private void Button_Teacher_New_Click(object sender, EventArgs e)
+        private void button_teacher_new_Click(object sender, EventArgs e)
         {
-            listBox_teacher_name.SelectedIndex = -1;
+            listBox_teacher.SelectedIndex = -1;
         }
 
-        private void Button_Teacher_Reset_Click(object sender, EventArgs e)
+        private void button_teacher_reset_Click(object sender, EventArgs e)
         {
-            if (listBox_teacher_name.SelectedIndex < 0)
+            if (listBox_teacher.SelectedIndex < 0)
             {
                 textbox_teacher_fName.Text = "";
                 textbox_teacher_lName.Text = "";
@@ -207,7 +207,7 @@ namespace Dba
             }
             else
             {
-                Teacher t = teachers.ElementAt(listBox_teacher_name.SelectedIndex);
+                Teacher t = teachers.ElementAt(listBox_teacher.SelectedIndex);
                 textbox_teacher_fName.Text = t.fName;
                 textbox_teacher_lName.Text = t.lName;
                 textbox_teacher_username.Text = t.username;
@@ -215,16 +215,16 @@ namespace Dba
             }
         }
 
-        private void Button_Teacher_Delete_Click(object sender, EventArgs e)
+        private void button_teacher_delete_Click(object sender, EventArgs e)
         {
-            if (listBox_teacher_name.SelectedIndex > -1)
+            if (listBox_teacher.SelectedIndex > -1)
             {
-                if (teachers.ElementAt(listBox_teacher_name.SelectedIndex).Delete())
+                if (teachers.ElementAt(listBox_teacher.SelectedIndex).Delete())
                 {
-                    listBox_teacher_name.SelectedIndex = -1;
+                    listBox_teacher.SelectedIndex = -1;
                     PopulateTeacherList();
-                    listBox_teacher_name.DataSource = teachers;
-                    listBox_teacher_name.DisplayMember = "fullName";
+                    listBox_teacher.DataSource = teachers;
+                    listBox_teacher.DisplayMember = "fullName";
                 }
                 else
                 {
@@ -233,7 +233,7 @@ namespace Dba
             }
         }
 
-        private void Button_Teacher_Save_Click(object sender, EventArgs e)
+        private void button_teacher_save_Click(object sender, EventArgs e)
         {
             if (textbox_teacher_fName.Text.Equals("") || textbox_teacher_lName.Text.Equals("") || textbox_teacher_username.Text.Equals("") || textbox_teacher_password.Text.Equals(""))
             {
@@ -247,7 +247,7 @@ namespace Dba
                 }
                 else
                 {
-                    if (listBox_teacher_name.SelectedIndex < 0)
+                    if (listBox_teacher.SelectedIndex < 0)
                     {
                         Teacher t = new Teacher(textbox_teacher_username.Text, textbox_teacher_password.Text, textbox_teacher_fName.Text, textbox_teacher_lName.Text);
                         if (!t.Add())
@@ -257,13 +257,13 @@ namespace Dba
                         else
                         {
                             PopulateTeacherList();
-                            listBox_teacher_name.DataSource = teachers;
-                            listBox_teacher_name.DisplayMember = "fullName";
+                            listBox_teacher.DataSource = teachers;
+                            listBox_teacher.DisplayMember = "fullName";
                         }
                     }
                     else
                     {
-                        Teacher t = teachers.ElementAt(listBox_teacher_name.SelectedIndex);
+                        Teacher t = teachers.ElementAt(listBox_teacher.SelectedIndex);
 
                         if (!t.Update(textbox_teacher_password.Text, textbox_teacher_fName.Text, textbox_teacher_lName.Text))
                         {
@@ -272,8 +272,8 @@ namespace Dba
                         else
                         {
                             PopulateTeacherList();
-                            listBox_teacher_name.DataSource = teachers;
-                            listBox_teacher_name.DisplayMember = "fullName";
+                            listBox_teacher.DataSource = teachers;
+                            listBox_teacher.DisplayMember = "fullName";
                         }
                     }
                 }
@@ -281,7 +281,7 @@ namespace Dba
             textbox_teacher_password.Text = "";
         }
 
-        private void Listbox_Dba_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox_dba_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox_dba.SelectedIndex < 0)
             {
@@ -307,7 +307,7 @@ namespace Dba
             }
         }
 
-        private void Panel_Dba_VisibleChanged(object sender, EventArgs e)
+        private void panel_dba_VisibleChanged(object sender, EventArgs e)
         {
             dbas = Dba.Generate();
             for (int i = 0; i < dbas.Count;i++)
@@ -322,20 +322,20 @@ namespace Dba
             listBox_dba.DisplayMember = "fullName";
         }
 
-        private void Button_Menu_Dba_Click(object sender, EventArgs e)
+        private void button_menu_dba_Click(object sender, EventArgs e)
         {
             panel_class.Visible = false;
             panel_teacher.Visible = false;
             panel_dba.Visible = true;
-            panel_dba_account.Visible = false;
+            panel_account.Visible = false;
         }
 
-        private void Button_Dba_New_Click(object sender, EventArgs e)
+        private void button_dba_new_Click(object sender, EventArgs e)
         {
             listBox_dba.SelectedIndex = -1;
         }
 
-        private void Button_Dba_Save_Click(object sender, EventArgs e)
+        private void button_dba_save_Click(object sender, EventArgs e)
         {
             if (textbox_dba_fName.Text.Equals("") || textBox_account_lName.Text.Equals("") || textbox_dba_username.Text.Equals("") || textbox_dba_password.Text.Equals(""))
             {
@@ -400,7 +400,7 @@ namespace Dba
             textbox_dba_password.Text = "";
         }
 
-        private void Button_Dba_Reset_Click(object sender, EventArgs e)
+        private void button_dba_reset_Click(object sender, EventArgs e)
         {
             if (listBox_dba.SelectedIndex < 0)
             {
@@ -419,7 +419,7 @@ namespace Dba
             }
         }
 
-        private void Button_Dba_Delete_Click(object sender, EventArgs e)
+        private void button_dba_delete_Click(object sender, EventArgs e)
         {
             if (listBox_dba.SelectedIndex > -1)
             {
@@ -445,10 +445,10 @@ namespace Dba
             panel_class.Visible = false;
             panel_teacher.Visible = false;
             panel_dba.Visible = false;
-            panel_dba_account.Visible = true;
+            panel_account.Visible = true;
         }
 
-        private void Panel_Dba_Account_VisibleChanged(object sender, EventArgs e)
+        private void panel_account_VisibleChanged(object sender, EventArgs e)
         {
             textBox_account_fName.Text = dba.fName;
             textBox_account_lName.Text = dba.lName;
