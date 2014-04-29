@@ -65,10 +65,10 @@
             this.button_dba_save = new System.Windows.Forms.Button();
             this.button_dba_delete = new System.Windows.Forms.Button();
             this.button_dba_reset = new System.Windows.Forms.Button();
-            this.textbox_dba_password = new System.Windows.Forms.TextBox();
-            this.textbox_dba_username = new System.Windows.Forms.TextBox();
-            this.textbox_dba_lName = new System.Windows.Forms.TextBox();
-            this.textbox_dba_fName = new System.Windows.Forms.TextBox();
+            this.textBox_dba_password = new System.Windows.Forms.TextBox();
+            this.textBox_dba_username = new System.Windows.Forms.TextBox();
+            this.textBox_dba_lName = new System.Windows.Forms.TextBox();
+            this.textBox_dba_fName = new System.Windows.Forms.TextBox();
             this.label_dba_password = new System.Windows.Forms.Label();
             this.label_dba_username = new System.Windows.Forms.Label();
             this.label_dba_lName = new System.Windows.Forms.Label();
@@ -426,10 +426,10 @@
             this.panel_dba.Controls.Add(this.button_dba_save);
             this.panel_dba.Controls.Add(this.button_dba_delete);
             this.panel_dba.Controls.Add(this.button_dba_reset);
-            this.panel_dba.Controls.Add(this.textbox_dba_password);
-            this.panel_dba.Controls.Add(this.textbox_dba_username);
-            this.panel_dba.Controls.Add(this.textbox_dba_lName);
-            this.panel_dba.Controls.Add(this.textbox_dba_fName);
+            this.panel_dba.Controls.Add(this.textBox_dba_password);
+            this.panel_dba.Controls.Add(this.textBox_dba_username);
+            this.panel_dba.Controls.Add(this.textBox_dba_lName);
+            this.panel_dba.Controls.Add(this.textBox_dba_fName);
             this.panel_dba.Controls.Add(this.label_dba_password);
             this.panel_dba.Controls.Add(this.label_dba_username);
             this.panel_dba.Controls.Add(this.label_dba_lName);
@@ -486,31 +486,31 @@
             // 
             // textbox_dba_password
             // 
-            this.textbox_dba_password.Location = new System.Drawing.Point(338, 235);
-            this.textbox_dba_password.Name = "textbox_dba_password";
-            this.textbox_dba_password.Size = new System.Drawing.Size(191, 20);
-            this.textbox_dba_password.TabIndex = 23;
+            this.textBox_dba_password.Location = new System.Drawing.Point(338, 235);
+            this.textBox_dba_password.Name = "textbox_dba_password";
+            this.textBox_dba_password.Size = new System.Drawing.Size(191, 20);
+            this.textBox_dba_password.TabIndex = 23;
             // 
             // textbox_dba_username
             // 
-            this.textbox_dba_username.Location = new System.Drawing.Point(338, 209);
-            this.textbox_dba_username.Name = "textbox_dba_username";
-            this.textbox_dba_username.Size = new System.Drawing.Size(191, 20);
-            this.textbox_dba_username.TabIndex = 22;
+            this.textBox_dba_username.Location = new System.Drawing.Point(338, 209);
+            this.textBox_dba_username.Name = "textbox_dba_username";
+            this.textBox_dba_username.Size = new System.Drawing.Size(191, 20);
+            this.textBox_dba_username.TabIndex = 22;
             // 
             // textbox_dba_lName
             // 
-            this.textbox_dba_lName.Location = new System.Drawing.Point(338, 183);
-            this.textbox_dba_lName.Name = "textbox_dba_lName";
-            this.textbox_dba_lName.Size = new System.Drawing.Size(191, 20);
-            this.textbox_dba_lName.TabIndex = 21;
+            this.textBox_dba_lName.Location = new System.Drawing.Point(338, 183);
+            this.textBox_dba_lName.Name = "textbox_dba_lName";
+            this.textBox_dba_lName.Size = new System.Drawing.Size(191, 20);
+            this.textBox_dba_lName.TabIndex = 21;
             // 
             // textbox_dba_fName
             // 
-            this.textbox_dba_fName.Location = new System.Drawing.Point(338, 159);
-            this.textbox_dba_fName.Name = "textbox_dba_fName";
-            this.textbox_dba_fName.Size = new System.Drawing.Size(191, 20);
-            this.textbox_dba_fName.TabIndex = 20;
+            this.textBox_dba_fName.Location = new System.Drawing.Point(338, 159);
+            this.textBox_dba_fName.Name = "textbox_dba_fName";
+            this.textBox_dba_fName.Size = new System.Drawing.Size(191, 20);
+            this.textBox_dba_fName.TabIndex = 20;
             // 
             // label_dba_password
             // 
@@ -750,10 +750,10 @@
         private System.Windows.Forms.Button button_dba_save;
         private System.Windows.Forms.Button button_dba_delete;
         private System.Windows.Forms.Button button_dba_reset;
-        private System.Windows.Forms.TextBox textbox_dba_password;
-        private System.Windows.Forms.TextBox textbox_dba_username;
-        private System.Windows.Forms.TextBox textbox_dba_lName;
-        private System.Windows.Forms.TextBox textbox_dba_fName;
+        private System.Windows.Forms.TextBox textBox_dba_password;
+        private System.Windows.Forms.TextBox textBox_dba_username;
+        private System.Windows.Forms.TextBox textBox_dba_lName;
+        private System.Windows.Forms.TextBox textBox_dba_fName;
         private System.Windows.Forms.Label label_dba_password;
         private System.Windows.Forms.Label label_dba_username;
         private System.Windows.Forms.Label label_dba_lName;

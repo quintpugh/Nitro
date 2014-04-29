@@ -94,7 +94,7 @@ namespace Dba
                 }
                 else
                 {
-                    MessageBox.Show("There are still students enrolled! Or there is still a teacher associated");
+                    MessageBox.Show("You cannot delete a class that still has a teacher or students in it.");
                 }
             }
         }
@@ -103,15 +103,15 @@ namespace Dba
         {
             if (listBox_class.SelectedIndex < 0)
             {
-                Class c = new Class(-1, textBox_class_name.Text, comboBox_class_teacher.SelectedValue.ToString());
+                Class c = new Class(-1, textBox_class_name.Text, null);
                 if (!c.Add())
                 {
-                    MessageBox.Show("Woah! Class was not able to added.");
+                    MessageBox.Show("Class was not able to be added.");
                 }
                 else
                 {
-                    listBox_class.DataSource = null;
                     PopulateClassList();
+                    listBox_class.DataSource = classes;
                 }
             }
             else
@@ -120,12 +120,12 @@ namespace Dba
 
                 if(!c.Update(c.id, textBox_class_name.Text, comboBox_class_teacher.SelectedValue.ToString()))
                 {
-                    MessageBox.Show("Woah! Could not update class.");
+                    MessageBox.Show("Class was not able to be updated.");
                 }
                 else
                 {
-                    listBox_class.DataSource = null;
                     PopulateClassList();
+                    listBox_class.DataSource = classes;
                 }
             }
         }
@@ -228,7 +228,7 @@ namespace Dba
                 }
                 else
                 {
-                    MessageBox.Show("Woah! This teacher still has classes.");
+                    MessageBox.Show("Teacher was not able to be deleted.");
                 }
             }
         }
@@ -252,7 +252,7 @@ namespace Dba
                         Teacher t = new Teacher(textbox_teacher_username.Text, textbox_teacher_password.Text, textbox_teacher_fName.Text, textbox_teacher_lName.Text);
                         if (!t.Add())
                         {
-                            MessageBox.Show("Woah! This teacher could not be added.");
+                            MessageBox.Show("Teacher was unable to be added.");
                         }
                         else
                         {
@@ -267,7 +267,7 @@ namespace Dba
 
                         if (!t.Update(textbox_teacher_password.Text, textbox_teacher_fName.Text, textbox_teacher_lName.Text))
                         {
-                            MessageBox.Show("Woah! Could not update teacher information.");
+                            MessageBox.Show("Teacher was unable to be updated.");
                         }
                         else
                         {
@@ -278,31 +278,30 @@ namespace Dba
                     }
                 }
             }
-            textbox_teacher_password.Text = "";
         }
 
         private void listBox_dba_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox_dba.SelectedIndex < 0)
             {
-                textbox_dba_fName.Text = "";
-                textbox_dba_lName.Text = "";
-                textbox_dba_username.Text = "";
-                textbox_dba_password.Text = "";
+                textBox_dba_fName.Text = "";
+                textBox_dba_lName.Text = "";
+                textBox_dba_username.Text = "";
+                textBox_dba_password.Text = "";
                 button_dba_delete.Enabled = false;
-                textbox_dba_username.Enabled = true;
+                textBox_dba_username.Enabled = true;
                 button_dba_save.Text = "Add";
             }
             else
             {
                 Dba d = dbas.ElementAt(listBox_dba.SelectedIndex);
 
-                textbox_dba_fName.Text = d.fName;
-                textbox_dba_lName.Text = d.lName;
-                textbox_dba_username.Text = d.username;
-                textbox_dba_password.Text = d.password;
+                textBox_dba_fName.Text = d.fName;
+                textBox_dba_lName.Text = d.lName;
+                textBox_dba_username.Text = d.username;
+                textBox_dba_password.Text = d.password;
                 button_dba_delete.Enabled = true;
-                textbox_dba_username.Enabled = false;
+                textBox_dba_username.Enabled = false;
                 button_dba_save.Text = "Save";
             }
         }
@@ -337,13 +336,13 @@ namespace Dba
 
         private void button_dba_save_Click(object sender, EventArgs e)
         {
-            if (textbox_dba_fName.Text.Equals("") || textBox_account_lName.Text.Equals("") || textbox_dba_username.Text.Equals("") || textbox_dba_password.Text.Equals(""))
+            if (textBox_dba_fName.Text.Equals("") || textBox_account_lName.Text.Equals("") || textBox_dba_username.Text.Equals("") || textBox_dba_password.Text.Equals(""))
             {
                 MessageBox.Show("Please fill in all fields.");
             }
             else
             {
-                if (!PasswordMeetsRequirements(textbox_dba_password.Text))
+                if (!PasswordMeetsRequirements(textBox_dba_password.Text))
                 {
                     MessageBox.Show("Entered passwords do not meet minimum requirements\n1 upper case letter, 1 lower case letter, 1 digit, and legth of at least 8.");
                 }
@@ -351,11 +350,11 @@ namespace Dba
                 {
                     if (listBox_dba.SelectedIndex < 0)
                     {
-                        Dba d = new Dba(textbox_dba_username.Text, textbox_dba_password.Text, textbox_dba_fName.Text, textbox_dba_lName.Text);
+                        Dba d = new Dba(textBox_dba_username.Text, textBox_dba_password.Text, textBox_dba_fName.Text, textBox_dba_lName.Text);
 
                         if (!d.Add())
                         {
-                            MessageBox.Show("Woah! Could not add this DBA.");
+                            MessageBox.Show("Database administrator could not be added.");
                         }
                         else
                         {
@@ -376,9 +375,9 @@ namespace Dba
                     {
                         Dba d = dbas.ElementAt(listBox_dba.SelectedIndex);
 
-                        if (!d.Update(textbox_dba_password.Text, textbox_dba_fName.Text, textbox_dba_lName.Text))
+                        if (!d.Update(textBox_dba_password.Text, textBox_dba_fName.Text, textBox_dba_lName.Text))
                         {
-                            MessageBox.Show("Woah! Could not update this DBA.");
+                            MessageBox.Show("Database administrator could not be updated.");
                         }
                         else
                         {
@@ -397,25 +396,24 @@ namespace Dba
                     }
                 }
             }
-            textbox_dba_password.Text = "";
         }
 
         private void button_dba_reset_Click(object sender, EventArgs e)
         {
             if (listBox_dba.SelectedIndex < 0)
             {
-                textbox_dba_fName.Text = "";
-                textbox_dba_lName.Text = "";
-                textbox_dba_username.Text = "";
-                textbox_dba_password.Text = "";
+                textBox_dba_fName.Text = "";
+                textBox_dba_lName.Text = "";
+                textBox_dba_username.Text = "";
+                textBox_dba_password.Text = "";
             }
             else
             {
                 Dba d = dbas.ElementAt(listBox_dba.SelectedIndex);
 
-                textbox_dba_fName.Text = d.fName;
-                textbox_dba_lName.Text = d.lName;
-                textbox_dba_password.Text = d.password;
+                textBox_dba_fName.Text = d.fName;
+                textBox_dba_lName.Text = d.lName;
+                textBox_dba_password.Text = d.password;
             }
         }
 
@@ -478,7 +476,7 @@ namespace Dba
                     {
                         if (!dba.Update(textBox_account_password.Text, textBox_account_fName.Text, textBox_account_lName.Text))
                         {
-                            MessageBox.Show("Woah! Could not update account information.");
+                            MessageBox.Show("Account information could not be updated.");
                         }
                     }
                 }
