@@ -336,7 +336,7 @@ namespace Dba
 
         private void button_dba_save_Click(object sender, EventArgs e)
         {
-            if (textBox_dba_fName.Text.Equals("") || textBox_account_lName.Text.Equals("") || textBox_dba_username.Text.Equals("") || textBox_dba_password.Text.Equals(""))
+            if (textBox_dba_fName.Text.Equals("") || textBox_dba_lName.Text.Equals("") || textBox_dba_username.Text.Equals("") || textBox_dba_password.Text.Equals(""))
             {
                 MessageBox.Show("Please fill in all fields.");
             }
