@@ -484,31 +484,31 @@
             this.button_dba_reset.UseVisualStyleBackColor = true;
             this.button_dba_reset.Click += new System.EventHandler(this.button_dba_reset_Click);
             // 
-            // textbox_dba_password
+            // textBox_dba_password
             // 
             this.textBox_dba_password.Location = new System.Drawing.Point(338, 235);
-            this.textBox_dba_password.Name = "textbox_dba_password";
+            this.textBox_dba_password.Name = "textBox_dba_password";
             this.textBox_dba_password.Size = new System.Drawing.Size(191, 20);
             this.textBox_dba_password.TabIndex = 23;
             // 
-            // textbox_dba_username
+            // textBox_dba_username
             // 
             this.textBox_dba_username.Location = new System.Drawing.Point(338, 209);
-            this.textBox_dba_username.Name = "textbox_dba_username";
+            this.textBox_dba_username.Name = "textBox_dba_username";
             this.textBox_dba_username.Size = new System.Drawing.Size(191, 20);
             this.textBox_dba_username.TabIndex = 22;
             // 
-            // textbox_dba_lName
+            // textBox_dba_lName
             // 
             this.textBox_dba_lName.Location = new System.Drawing.Point(338, 183);
-            this.textBox_dba_lName.Name = "textbox_dba_lName";
+            this.textBox_dba_lName.Name = "textBox_dba_lName";
             this.textBox_dba_lName.Size = new System.Drawing.Size(191, 20);
             this.textBox_dba_lName.TabIndex = 21;
             // 
-            // textbox_dba_fName
+            // textBox_dba_fName
             // 
             this.textBox_dba_fName.Location = new System.Drawing.Point(338, 159);
-            this.textBox_dba_fName.Name = "textbox_dba_fName";
+            this.textBox_dba_fName.Name = "textBox_dba_fName";
             this.textBox_dba_fName.Size = new System.Drawing.Size(191, 20);
             this.textBox_dba_fName.TabIndex = 20;
             // 
