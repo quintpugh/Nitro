@@ -10,9 +10,17 @@ using System.Windows.Forms;
 
 namespace Teacher
 {
+    /// <summary>
+    /// The logic of the the Teacher Interface
+    /// </summary>
     public partial class TeacherInterface : Form
     {
         Teacher teacher;
+        
+        /// <summary>
+        /// Constructor for the class.
+        /// </summary>
+        /// <param name="username">A String that is the username of the Teacher logging into the application.</param>
         public TeacherInterface(String username)
         {
             teacher = new Teacher(username);
@@ -20,7 +28,11 @@ namespace Teacher
             CustomInit();
             panel_classes.Visible = true;
         }
-
+        #region Utilities
+        /// <summary>
+        /// Custom interface component initialization that add new event
+        /// callbacks to enable a more powerful event driven application.
+        /// </summary>
         private void CustomInit()
         {
             this.panel_account.VisibleChanged += new System.EventHandler(this.panel_account_VisibleChanged);
@@ -52,7 +64,35 @@ namespace Teacher
             comboBox_students_classes.DisplayMember = "name";
             comboBox_students_classes.ValueMember = "id";
         }
+
+        /// <summary>
+        /// Utility function that verifies is an entered password meets
+        /// requirements set by the system specification.
+        /// </summary>
+        /// <param name="pWord">The password in question</param>
+        /// <returns>True if the password meets the requirements, false otherwise</returns>
+        private bool PasswordMeetsRequirements(String pWord)
+        {
+            bool upper = false;
+            bool lower = false;
+            bool digit = false;
+            if(pWord.Length >= 8)
+            {
+                for (int i = 0; i < pWord.Length; i++)
+                {
+                    if (Char.IsUpper(pWord[i])) upper = true;
+                    else if (Char.IsLower(pWord[i])) lower = true;
+                    else if (Char.IsDigit(pWord[i])) digit = true;
+                }
+            }
+            return upper && lower && digit;
+        }
+        #endregion
+        
         #region Menu Button Clicks
+        /// <summary>
+        /// Callback that occurs when the menu button "Classes" is hit.
+        /// </summary>
         private void button_menu_classes_Click(object sender, EventArgs e)
         {
             if(!panel_classes.Visible)
@@ -64,6 +104,9 @@ namespace Teacher
             panel_account.Visible = false;
         }
 
+        /// <summary>
+        /// Callback that occurs when the menu button "Exercises" is hit.
+        /// </summary>
         private void button_menu_exercises_Click(object sender, EventArgs e)
         {
             if (!panel_exercises.Visible)
@@ -75,6 +118,9 @@ namespace Teacher
             panel_account.Visible = false;
         }
 
+        /// <summary>
+        /// Callback that occurs when the menu button "Students" is hit.
+        /// </summary>
         private void button_menu_students_Click(object sender, EventArgs e)
         {
             if (!panel_students.Visible)
@@ -86,6 +132,9 @@ namespace Teacher
             panel_account.Visible = false;
         }
 
+        /// <summary>
+        /// Callback that occurs when the menu button "My Account" is hit.
+        /// </summary>
         private void button_menu_account_Click(object sender, EventArgs e)
         {
             if (!panel_account.Visible)
@@ -97,6 +146,9 @@ namespace Teacher
             panel_students.Visible = false;
         }
 
+        /// <summary>
+        /// Callback that occurs when the menu button "Logout" is hit.
+        /// </summary>
         private void button_menu_logout_Click(object sender, EventArgs e)
         {
             this.RemoveOwnedForm(this.OwnedForms.ElementAt(0));
@@ -105,6 +157,9 @@ namespace Teacher
         #endregion
 
         #region Classes
+        /// <summary>
+        /// Callback that occurs when the the class panel visibility is changed.
+        /// </summary>
         private void panel_classes_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_classes.Visible)
@@ -116,6 +171,10 @@ namespace Teacher
             listBox_classes.DataSource = teacher.classes;
         }
 
+        /// <summary>
+        /// Callback that occurs when a teacher selects a different class in the "Classes" listbox.
+        /// It then populates various tabs based on what tab is currently selected.
+        /// </summary>
         private void listBox_classes_SelectedIndexChanged(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("selected index changed to: " + listBox_classes.SelectedIndex);
@@ -133,6 +192,10 @@ namespace Teacher
             }
         }
 
+        /// <summary>
+        /// Callback that occurs when the tabs for Classes (students, enrollement, exercises) is changed.
+        /// It then populates the newly selected tab.
+        /// </summary>
         private void tabs_classes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(tabs_classes.SelectedTab == tab_classes_students)
@@ -149,6 +212,9 @@ namespace Teacher
             }
         }
         
+        /// <summary>
+        /// Populates the Students tab in classes which includes getting the data for a new class.
+        /// </summary>
         private void PopulateClassesStudentsTab()
         {
             System.Diagnostics.Debug.WriteLine("populating students tab");
@@ -158,6 +224,10 @@ namespace Teacher
             listView_classes_students_results.Items.Clear();
         }
 
+        /// <summary>
+        /// Callback that occurs when the selected inside of the Students tab of Classes panel changes.
+        /// This function fetches the results of the selected students and populates the table to show the results.
+        /// </summary>
         private void listBox_classes_students_SelectedIndexChanged(object sender, EventArgs e)
         {
             listView_classes_students_results.Items.Clear();
@@ -174,6 +244,11 @@ namespace Teacher
             }
         }
 
+        /// <summary>
+        /// Populates the enrollment information of a tab which includes getting the data of
+        /// what students are enrolled in the Class in question and what students aren't
+        /// enrolled in a class at all.
+        /// </summary>
         private void PopulateClassesEnrollmentTab()
         {
             System.Diagnostics.Debug.WriteLine("populating enrollment tab");
@@ -184,6 +259,12 @@ namespace Teacher
             listBox_classes_studentsEnrolled.DataSource = enrolled;
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the left arrow in the enrollment tab.
+        /// What this does is takes exercises from the 'Exercises In...' box on the right and moves them
+        /// the the 'Exercises Not In...' box.  This removes the selected exercises from the class so
+        /// that they are no longer assigned to the class.
+        /// </summary>
         private void button_classes_enrollmentLeft_Click(object sender, EventArgs e)
         {
             if (listBox_classes_studentsEnrolled.SelectedIndices.Count == 0)
@@ -198,6 +279,12 @@ namespace Teacher
             PopulateClassesEnrollmentTab();
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the right arrow in the enrollment tab.
+        /// What this does is takes exercises from the 'Exercises Note In...' box on the left and moves them
+        /// the the 'Exercises In...' box.  This adds the selected exercises to the class so
+        /// that they are now assigned to the class for students to perform.
+        /// </summary>
         private void button_classes_enrollmentRight_Click(object sender, EventArgs e)
         {
             if (listBox_classes_studentsNotEnrolled.SelectedIndices.Count == 0)
@@ -212,6 +299,10 @@ namespace Teacher
             PopulateClassesEnrollmentTab();
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the 'X' button.  This un-assigns all of the exercises
+        /// from a class that are currently assigned to the selected class.
+        /// </summary>
         private void button_classes_enrollmentRemoveAll_Click(object sender, EventArgs e)
         {
             ListBox.ObjectCollection col = listBox_classes_studentsEnrolled.Items;
@@ -222,6 +313,10 @@ namespace Teacher
             PopulateClassesEnrollmentTab();
         }
 
+        /// <summary>
+        /// Populates with boxes that include the Exercises assigned to a class and those exercises
+        /// not assigned to the class.
+        /// </summary>
         private void PopulateClassesExercisesTab()
         {
             System.Diagnostics.Debug.WriteLine("populating exercises tab");
@@ -232,6 +327,12 @@ namespace Teacher
             listBox_classes_exercisesIn.DataSource = inClass;
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the left arrow in the exercises tab.
+        /// What this does is takes exercises from the 'Enrolled' box on the right and moves them
+        /// the the 'Not Enrolled' box.  This removes the selected students from the class so
+        /// that they are no longer enrolled in the class.
+        /// </summary>
         private void button_classes_exercisesLeft_Click(object sender, EventArgs e)
         {
             if (listBox_classes_exercisesIn.SelectedIndices.Count == 0)
@@ -247,6 +348,12 @@ namespace Teacher
             PopulateClassesExercisesTab();
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the left arrow in the enrollment tab.
+        /// What this does is takes students from the 'Enrolled' box on the right and moves them
+        /// the the 'Not Enrolled' box.  This removes the selected students from the class so
+        /// that they are no longer enrolled in the class.
+        /// </summary>
         private void button_classes_exercisesRight_Click(object sender, EventArgs e)
         {
             if(listBox_classes_exercisesNotIn.SelectedItems.Count == 0)
@@ -262,6 +369,10 @@ namespace Teacher
             PopulateClassesExercisesTab();
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clics on the 'X' button.  This un-assigneds all of the exercises
+        /// from a class that are currently assigned to the selected class.
+        /// </summary>
         private void button_classes_exercisesRemoveAll_Click(object sender, EventArgs e)
         {
             ListBox.ObjectCollection col = listBox_classes_exercisesIn.Items;
@@ -275,6 +386,9 @@ namespace Teacher
         #endregion
 
         #region Exercises
+        /// <summary>
+        /// Callback that occurs when the
+        /// </summary>
         private void panel_exercises_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_exercises.Visible)
@@ -284,7 +398,12 @@ namespace Teacher
             System.Diagnostics.Debug.WriteLine("exercises panel visible changed");
             PopulateExerciseList();
         }
-        
+
+        /// <summary>
+        /// Callback that occurs when the selected exercise in the exercise box of the exerice menu.  If an exercises was
+        /// selected, a series of textboxes are populated with the information of the selected exercise so that the
+        /// Teacher may edit the exercise.
+        /// </summary>
         private void listBox_exercise_SelectedIndexChanged(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("selected index changed to: " + listBox_classes.SelectedIndex);
@@ -296,12 +415,20 @@ namespace Teacher
             button_exercises_delete.Enabled = true;
         }
 
+        /// <summary>
+        /// Populates the exercise listbox with the exercises that a teacher has created.
+        /// </summary>
         private void PopulateExerciseList()
         {
             teacher.exercises = Exercise.Generate(teacher);
             listBox_exercises.DataSource = teacher.exercises;
         }
 
+        /// <summary>
+        /// Callback that occurs when the teacher clicks on the "New" button.
+        /// It removes any data entered in the exercise textboxes and allows a new exercise
+        /// to be inputted.
+        /// </summary>
         private void button_exercises_new_Click(object sender, EventArgs e)
         {
             textBox_exercises_name.Text = String.Empty;
@@ -311,6 +438,12 @@ namespace Teacher
             button_exercises_delete.Enabled = false;
         }
 
+        /// <summary>
+        /// Callback that occurs when the teacher clicks on the "Reset" button.
+        /// It resets the data of the exercise textboxes to either the original exercise data 
+        /// if one is selected or empties the textboxes if there isn't currently an exericse
+        /// selected (the Teacher recently clicked "New").
+        /// </summary>
         private void button_exercises_reset_Click(object sender, EventArgs e)
         {
             if (listBox_exercises.SelectedItem != null)
@@ -326,6 +459,10 @@ namespace Teacher
             }
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the "Delete" button.
+        /// It removes the exercise from the system if one is selected in the listbox.
+        /// </summary>
         private void button_exercises_delete_Click(object sender, EventArgs e)
         {
             Exercise ex = (Exercise)listBox_exercises.SelectedItem;
@@ -333,6 +470,11 @@ namespace Teacher
             PopulateExerciseList();
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the "Save" or "Add" button.
+        /// It adds a new exercise if the "New" button was recently clicked or updates an
+        /// existing exercise if one is selected in the exercise listbox.
+        /// </summary>
         private void button_exercises_save_Click(object sender, EventArgs e)
         {
             if(textBox_exercises_name.Text.Length == 0 || textBox_exercises_text.Text.Length == 0)
@@ -355,6 +497,9 @@ namespace Teacher
         #endregion
 
         #region Students
+        /// <summary>
+        /// Callback that occurs when the the student panel visibility is changed.
+        /// </summary>
         private void panel_students_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_students.Visible)
@@ -365,6 +510,11 @@ namespace Teacher
             PopulateStudentPanel();
         }
 
+        /// <summary>
+        /// Callback that occurs when the selected student in the student box of the student menu.  If a student was
+        /// selected, a series of textboxes are populated with the information of the selected student so that the
+        /// Teacher may edit it.
+        /// </summary>
         private void listBox_students_SelectedIndexChanged(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("listBox_students_SelectedIndexChanged");
@@ -387,6 +537,11 @@ namespace Teacher
             textBox_students_username.Enabled = false;
         }
 
+        /// <summary>
+        /// Populates the student listbox with the students that are either enrolled
+        /// in classes taught by the teacher or students not enrolled in a class
+        /// along with a list of classes that the teacher teaches.
+        /// </summary>
         private void PopulateStudentPanel()
         {
             System.Diagnostics.Debug.WriteLine("PopulateStudentPanel");
@@ -394,6 +549,10 @@ namespace Teacher
             PopulateStudentList();
         }
 
+        /// <summary>
+        /// Populates the student listbox with the students that are either enrolled
+        /// in classes taught by the teacher or students not enrolled in a class
+        /// </summary>
         private void PopulateStudentList()
         {
             System.Diagnostics.Debug.WriteLine("PopulateStudentList");
@@ -402,7 +561,9 @@ namespace Teacher
             studentList.AddRange(Student.GenerateIn(teacher.classes));
             listBox_students.DataSource = studentList;
         }
-
+        /// <summary>
+        /// Populates a list of classes that the teacher teaches.
+        /// </summary>
         private void PopulateStudentClassDropDown()
         {
             System.Diagnostics.Debug.WriteLine("PopulateStudentClassDropDown");
@@ -412,6 +573,11 @@ namespace Teacher
             comboBox_students_classes.DataSource = classList;
         }
 
+        /// <summary>
+        /// Callback that occurs when the teacher clicks on the "New" button.
+        /// It removes any data entered in the student textboxes and allows a new student
+        /// to be inputted.
+        /// </summary>
         private void button_students_new_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("button_students_new_Click");
@@ -427,6 +593,12 @@ namespace Teacher
 
         }
 
+        /// <summary>
+        /// Callback that occurs when the teacher clicks on the "Reset" button.
+        /// It resets the data of the student textboxes to either the original student data 
+        /// if one is selected or empties the textboxes if there isn't currently a student
+        /// selected (the Teacher recently clicked "New").
+        /// </summary>
         private void button_students_reset_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("button_students_reset_Click");
@@ -449,6 +621,10 @@ namespace Teacher
             }
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the "Delete" button.
+        /// It removes the student from the system if one is selected in the listbox.
+        /// </summary>
         private void button_students_delete_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("button_students_delete_Click");
@@ -457,6 +633,12 @@ namespace Teacher
             PopulateStudentList();
         }
 
+        /// <summary>
+        /// Callback that occurs when the Teacher clicks on the "Save" or "Add" button.
+        /// It adds a new student if the "New" button was recently clicked or updates an
+        /// existing student if one is selected in the student listbox.  It also handles minimum
+        /// requirements on student password.
+        /// </summary>
         private void button_students_save_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("button_students_save_Click");
@@ -499,6 +681,9 @@ namespace Teacher
         #endregion
 
         #region Account
+        /// <summary>
+        /// Callback that occurs when the the account panel visibility is changed.
+        /// </summary>
         private void panel_account_VisibleChanged(object sender, EventArgs e)
         {
             if (!panel_account.Visible)
@@ -510,6 +695,10 @@ namespace Teacher
             textBox_account_lName.Text = teacher.lName;
         }
 
+        /// <summary>
+        /// Callback that occurs when the "Rest" button is clicked.
+        /// It resets the data of the textboxes to Teacher's current personal data.
+        /// </summary>
         private void button_account_reset_Click(object sender, EventArgs e)
         {
             textBox_account_fName.Text = teacher.fName;
@@ -518,6 +707,11 @@ namespace Teacher
             textBox_account_confirmPassword.Text = String.Empty;
         }
 
+        /// <summary>
+        /// Callback that occurs when the "Save" button is clicked.
+        /// It saves the data in the textboxes as the Teacher's new personal data.
+        /// It also verifies that the new password meets minimum requirements.
+        /// </summary>
         private void button_account_save_Click(object sender, EventArgs e)
         {
             if (textBox_account_fName.Text.Length == 0 || textBox_account_lName.Text.Length == 0)
@@ -550,22 +744,5 @@ namespace Teacher
         }
 
         #endregion
-
-        private bool PasswordMeetsRequirements(String pWord)
-        {
-            bool upper = false;
-            bool lower = false;
-            bool digit = false;
-            if(pWord.Length >= 8)
-            {
-                for (int i = 0; i < pWord.Length; i++)
-                {
-                    if (Char.IsUpper(pWord[i])) upper = true;
-                    else if (Char.IsLower(pWord[i])) lower = true;
-                    else if (Char.IsDigit(pWord[i])) digit = true;
-                }
-            }
-            return upper && lower && digit;
-        }
     }
 }

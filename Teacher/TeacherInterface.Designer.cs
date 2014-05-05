@@ -1,5 +1,9 @@
 ﻿namespace Teacher
 {
+    /// <summary>
+    /// The definition of all of the components of the interface and their properties.
+    /// For the logic of the Teacher Interface, see the file 'TeacherInterface.cs'
+    /// </summary>
     partial class TeacherInterface
     {
         /// <summary>
@@ -37,18 +41,6 @@
             this.button_menu_exercises = new System.Windows.Forms.Button();
             this.button_menu_classes = new System.Windows.Forms.Button();
             this.panel_main = new System.Windows.Forms.Panel();
-            this.panel_exercises = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_exercises_text = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_exercises_name = new System.Windows.Forms.TextBox();
-            this.button_exercises_save = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button_exercises_delete = new System.Windows.Forms.Button();
-            this.button_exercises_reset = new System.Windows.Forms.Button();
-            this.button_exercises_new = new System.Windows.Forms.Button();
-            this.listBox_exercises = new System.Windows.Forms.ListBox();
             this.panel_students = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_students_username = new System.Windows.Forms.TextBox();
@@ -67,6 +59,18 @@
             this.button_students_reset = new System.Windows.Forms.Button();
             this.button_students_new = new System.Windows.Forms.Button();
             this.listBox_students = new System.Windows.Forms.ListBox();
+            this.panel_exercises = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_exercises_text = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_exercises_name = new System.Windows.Forms.TextBox();
+            this.button_exercises_save = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button_exercises_delete = new System.Windows.Forms.Button();
+            this.button_exercises_reset = new System.Windows.Forms.Button();
+            this.button_exercises_new = new System.Windows.Forms.Button();
+            this.listBox_exercises = new System.Windows.Forms.ListBox();
             this.panel_classes = new System.Windows.Forms.Panel();
             this.tabs_classes = new System.Windows.Forms.TabControl();
             this.tab_classes_students = new System.Windows.Forms.TabPage();
@@ -108,10 +112,10 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panel_menu.SuspendLayout();
             this.panel_main.SuspendLayout();
-            this.panel_exercises.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel_students.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel_exercises.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel_classes.SuspendLayout();
             this.tabs_classes.SuspendLayout();
             this.tab_classes_students.SuspendLayout();
@@ -189,132 +193,14 @@
             // 
             // panel_main
             // 
+            this.panel_main.Controls.Add(this.panel_classes);
             this.panel_main.Controls.Add(this.panel_students);
             this.panel_main.Controls.Add(this.panel_exercises);
-            this.panel_main.Controls.Add(this.panel_classes);
             this.panel_main.Controls.Add(this.panel_account);
             this.panel_main.Location = new System.Drawing.Point(159, 12);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(778, 495);
             this.panel_main.TabIndex = 1;
-            // 
-            // panel_exercises
-            // 
-            this.panel_exercises.Controls.Add(this.panel1);
-            this.panel_exercises.Controls.Add(this.button_exercises_save);
-            this.panel_exercises.Controls.Add(this.label13);
-            this.panel_exercises.Controls.Add(this.button_exercises_delete);
-            this.panel_exercises.Controls.Add(this.button_exercises_reset);
-            this.panel_exercises.Controls.Add(this.button_exercises_new);
-            this.panel_exercises.Controls.Add(this.listBox_exercises);
-            this.panel_exercises.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_exercises.Location = new System.Drawing.Point(0, 0);
-            this.panel_exercises.Name = "panel_exercises";
-            this.panel_exercises.Size = new System.Drawing.Size(778, 495);
-            this.panel_exercises.TabIndex = 2;
-            this.panel_exercises.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox_exercises_text);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox_exercises_name);
-            this.panel1.Location = new System.Drawing.Point(173, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 431);
-            this.panel1.TabIndex = 17;
-            // 
-            // textBox_exercises_text
-            // 
-            this.textBox_exercises_text.Location = new System.Drawing.Point(150, 85);
-            this.textBox_exercises_text.Multiline = true;
-            this.textBox_exercises_text.Name = "textBox_exercises_text";
-            this.textBox_exercises_text.Size = new System.Drawing.Size(308, 164);
-            this.textBox_exercises_text.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(106, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Name:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Text:";
-            // 
-            // textBox_exercises_name
-            // 
-            this.textBox_exercises_name.Location = new System.Drawing.Point(150, 60);
-            this.textBox_exercises_name.Name = "textBox_exercises_name";
-            this.textBox_exercises_name.Size = new System.Drawing.Size(308, 20);
-            this.textBox_exercises_name.TabIndex = 3;
-            // 
-            // button_exercises_save
-            // 
-            this.button_exercises_save.Location = new System.Drawing.Point(696, 465);
-            this.button_exercises_save.Name = "button_exercises_save";
-            this.button_exercises_save.Size = new System.Drawing.Size(75, 23);
-            this.button_exercises_save.TabIndex = 8;
-            this.button_exercises_save.Text = "Save";
-            this.button_exercises_save.UseVisualStyleBackColor = true;
-            this.button_exercises_save.Click += new System.EventHandler(this.button_exercises_save_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(48, 6);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 20);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Exercises";
-            // 
-            // button_exercises_delete
-            // 
-            this.button_exercises_delete.Location = new System.Drawing.Point(615, 465);
-            this.button_exercises_delete.Name = "button_exercises_delete";
-            this.button_exercises_delete.Size = new System.Drawing.Size(75, 23);
-            this.button_exercises_delete.TabIndex = 7;
-            this.button_exercises_delete.Text = "Delete";
-            this.button_exercises_delete.UseVisualStyleBackColor = true;
-            this.button_exercises_delete.Click += new System.EventHandler(this.button_exercises_delete_Click);
-            // 
-            // button_exercises_reset
-            // 
-            this.button_exercises_reset.Location = new System.Drawing.Point(534, 466);
-            this.button_exercises_reset.Name = "button_exercises_reset";
-            this.button_exercises_reset.Size = new System.Drawing.Size(75, 23);
-            this.button_exercises_reset.TabIndex = 6;
-            this.button_exercises_reset.Text = "Reset";
-            this.button_exercises_reset.UseVisualStyleBackColor = true;
-            this.button_exercises_reset.Click += new System.EventHandler(this.button_exercises_reset_Click);
-            // 
-            // button_exercises_new
-            // 
-            this.button_exercises_new.Location = new System.Drawing.Point(173, 465);
-            this.button_exercises_new.Name = "button_exercises_new";
-            this.button_exercises_new.Size = new System.Drawing.Size(75, 23);
-            this.button_exercises_new.TabIndex = 5;
-            this.button_exercises_new.Text = "New";
-            this.button_exercises_new.UseVisualStyleBackColor = true;
-            this.button_exercises_new.Click += new System.EventHandler(this.button_exercises_new_Click);
-            // 
-            // listBox_exercises
-            // 
-            this.listBox_exercises.FormattingEnabled = true;
-            this.listBox_exercises.Location = new System.Drawing.Point(3, 29);
-            this.listBox_exercises.Name = "listBox_exercises";
-            this.listBox_exercises.Size = new System.Drawing.Size(164, 459);
-            this.listBox_exercises.TabIndex = 0;
             // 
             // panel_students
             // 
@@ -488,6 +374,124 @@
             this.listBox_students.Name = "listBox_students";
             this.listBox_students.Size = new System.Drawing.Size(166, 459);
             this.listBox_students.TabIndex = 0;
+            // 
+            // panel_exercises
+            // 
+            this.panel_exercises.Controls.Add(this.panel1);
+            this.panel_exercises.Controls.Add(this.button_exercises_save);
+            this.panel_exercises.Controls.Add(this.label13);
+            this.panel_exercises.Controls.Add(this.button_exercises_delete);
+            this.panel_exercises.Controls.Add(this.button_exercises_reset);
+            this.panel_exercises.Controls.Add(this.button_exercises_new);
+            this.panel_exercises.Controls.Add(this.listBox_exercises);
+            this.panel_exercises.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_exercises.Location = new System.Drawing.Point(0, 0);
+            this.panel_exercises.Name = "panel_exercises";
+            this.panel_exercises.Size = new System.Drawing.Size(778, 495);
+            this.panel_exercises.TabIndex = 2;
+            this.panel_exercises.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox_exercises_text);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBox_exercises_name);
+            this.panel1.Location = new System.Drawing.Point(173, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(602, 431);
+            this.panel1.TabIndex = 17;
+            // 
+            // textBox_exercises_text
+            // 
+            this.textBox_exercises_text.Location = new System.Drawing.Point(150, 85);
+            this.textBox_exercises_text.Multiline = true;
+            this.textBox_exercises_text.Name = "textBox_exercises_text";
+            this.textBox_exercises_text.Size = new System.Drawing.Size(308, 164);
+            this.textBox_exercises_text.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(106, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(113, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Text:";
+            // 
+            // textBox_exercises_name
+            // 
+            this.textBox_exercises_name.Location = new System.Drawing.Point(150, 60);
+            this.textBox_exercises_name.Name = "textBox_exercises_name";
+            this.textBox_exercises_name.Size = new System.Drawing.Size(308, 20);
+            this.textBox_exercises_name.TabIndex = 3;
+            // 
+            // button_exercises_save
+            // 
+            this.button_exercises_save.Location = new System.Drawing.Point(696, 465);
+            this.button_exercises_save.Name = "button_exercises_save";
+            this.button_exercises_save.Size = new System.Drawing.Size(75, 23);
+            this.button_exercises_save.TabIndex = 8;
+            this.button_exercises_save.Text = "Save";
+            this.button_exercises_save.UseVisualStyleBackColor = true;
+            this.button_exercises_save.Click += new System.EventHandler(this.button_exercises_save_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(48, 6);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 20);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Exercises";
+            // 
+            // button_exercises_delete
+            // 
+            this.button_exercises_delete.Location = new System.Drawing.Point(615, 465);
+            this.button_exercises_delete.Name = "button_exercises_delete";
+            this.button_exercises_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_exercises_delete.TabIndex = 7;
+            this.button_exercises_delete.Text = "Delete";
+            this.button_exercises_delete.UseVisualStyleBackColor = true;
+            this.button_exercises_delete.Click += new System.EventHandler(this.button_exercises_delete_Click);
+            // 
+            // button_exercises_reset
+            // 
+            this.button_exercises_reset.Location = new System.Drawing.Point(534, 466);
+            this.button_exercises_reset.Name = "button_exercises_reset";
+            this.button_exercises_reset.Size = new System.Drawing.Size(75, 23);
+            this.button_exercises_reset.TabIndex = 6;
+            this.button_exercises_reset.Text = "Reset";
+            this.button_exercises_reset.UseVisualStyleBackColor = true;
+            this.button_exercises_reset.Click += new System.EventHandler(this.button_exercises_reset_Click);
+            // 
+            // button_exercises_new
+            // 
+            this.button_exercises_new.Location = new System.Drawing.Point(173, 465);
+            this.button_exercises_new.Name = "button_exercises_new";
+            this.button_exercises_new.Size = new System.Drawing.Size(75, 23);
+            this.button_exercises_new.TabIndex = 5;
+            this.button_exercises_new.Text = "New";
+            this.button_exercises_new.UseVisualStyleBackColor = true;
+            this.button_exercises_new.Click += new System.EventHandler(this.button_exercises_new_Click);
+            // 
+            // listBox_exercises
+            // 
+            this.listBox_exercises.FormattingEnabled = true;
+            this.listBox_exercises.Location = new System.Drawing.Point(3, 29);
+            this.listBox_exercises.Name = "listBox_exercises";
+            this.listBox_exercises.Size = new System.Drawing.Size(164, 459);
+            this.listBox_exercises.TabIndex = 0;
             // 
             // panel_classes
             // 
@@ -892,14 +896,14 @@
             this.Text = "TeacherInterface";
             this.panel_menu.ResumeLayout(false);
             this.panel_main.ResumeLayout(false);
-            this.panel_exercises.ResumeLayout(false);
-            this.panel_exercises.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel_students.ResumeLayout(false);
             this.panel_students.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel_exercises.ResumeLayout(false);
+            this.panel_exercises.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel_classes.ResumeLayout(false);
             this.panel_classes.PerformLayout();
             this.tabs_classes.ResumeLayout(false);
