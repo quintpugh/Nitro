@@ -148,6 +148,8 @@
             this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox_userType);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "LoginInterface";
             this.Text = "TurboType Login";
             this.ResumeLayout(false);
