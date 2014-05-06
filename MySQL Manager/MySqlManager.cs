@@ -42,9 +42,11 @@ namespace MySQL_Manager
             }
         }
 
-        // This property is used to get the private MySqlManager 'instance'
-        // if 'instance' hasn't been instatiated yet, it instantiates the
-        // variable using the private constructor.
+        /// <summary>
+        /// This property is used to get the private MySqlManager 'instance' if 
+        /// 'instance' hasn't been instatiated yet, it instantiates thvariable 
+        /// using the private constructor.
+        /// </summary>
         public static MySqlManager Instance
         {
             get
