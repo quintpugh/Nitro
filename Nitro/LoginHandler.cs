@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Login
 {
-    /// <summary>Class that contains the LoginHandler, which grants authentication to the user
+    /// <summary>
     /// This class contains the methods that facilitate the login authentication process. These methods determine if the user 
     /// information entered is valid within the database.
     /// </summary>
@@ -14,7 +14,7 @@ namespace Login
     {
         public LoginHandler(){}
 
-        /// <summary>This method determines if the user information is valid in the database
+        /// <summary>
         /// This method determines if the user information entered is valid within the database.
         /// It uses a MySQL query to count the number of users in the respective table that match the given user information.
         /// If the value is 1, it returns true and grants authentication. Otherwise it returns false and authentication is denied.
@@ -41,8 +41,6 @@ namespace Login
                     throw new Exception("How did you get a user that doesn't exist?");
             }
 
-            //Query returns the number of users in the database with the respective information. If the query returns 1
-            //the user will be granted authentication, otherwise they will not.
             string str = "select count(*) from " + table + " where username='" + uName + "' and password='" + pWord + "'";
             
             int count = Convert.ToInt32(MySQL_Manager.MySqlManager.Instance.ExecuteScalar(str));

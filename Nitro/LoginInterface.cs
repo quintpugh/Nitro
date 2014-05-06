@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Login
 {
-    /// <summary>Class that handles the Login Interface
+    /// <summary>
     /// This class is associated with the Login Module and handles all interface interactions
     /// It contains various textboxes that a user must enter information to authenticate further into the system.
     /// Authenitication begins once the "Login" button has been clicked.
@@ -19,7 +19,7 @@ namespace Login
     {
         private LoginHandler loginHandler;
 
-        /// <summary>Constructor method of the Login Interface
+        /// <summary>
         /// The constructor method of the interface, which initalizes the components needed for the system.
         /// Also sets the default index for the "User Type" combobox to Students.
         /// </summary>
@@ -30,7 +30,7 @@ namespace Login
             loginHandler = new LoginHandler();
         }
 
-        /// <summary>Event-based method that handles Login button click.
+        /// <summary>
         /// This method handles the event when the Login button is clicked.
         /// After the event is activated, the method uses the LoginHandler class to determine if the login information is correctly 
         /// entered for the respective user type. It then loads the respective module and passes the username.
@@ -80,8 +80,8 @@ namespace Login
             }
         }
 
-        /// <summary>Event method that handles when another module (Student, Teacher, Dba) closes
-        /// This method handles the event when another module is closed through a logout button. Once this event is encountered
+        /// <summary>
+        /// This method handles the event when another module (Student, Teacher, DBA) is closed through a logout button. Once this event is encountered
         /// it reloads the Login Module and displays the Login Interface.
         /// </summary>
         /// <param name="sender"></param>
